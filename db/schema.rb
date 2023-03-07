@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_123545) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_124409) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_123545) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["universe_id"], name: "index_creatures_on_universe_id"
+  end
+
+  create_table "funs", force: :cascade do |t|
+    t.bigint "party_id", null: false
+    t.bigint "option_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_funs_on_option_id"
+    t.index ["party_id"], name: "index_funs_on_party_id"
   end
 
   create_table "options", force: :cascade do |t|
@@ -54,6 +63,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_123545) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "races", force: :cascade do |t|
+    t.string "name"
+    t.bigint "universe_id", null: false
+    t.string "culture"
+    t.string "divinity"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["universe_id"], name: "index_races_on_universe_id"
+  end
+
   create_table "universes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -75,6 +95,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_123545) do
   end
 
   add_foreign_key "creatures", "universes"
+  add_foreign_key "funs", "options"
+  add_foreign_key "funs", "parties"
   add_foreign_key "parties", "universes"
   add_foreign_key "parties", "users"
+  add_foreign_key "races", "universes"
 end
