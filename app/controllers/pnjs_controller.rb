@@ -1,0 +1,2 @@
+class PnjsController < ApplicationController
+end

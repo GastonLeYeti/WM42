@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_132011) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_133100) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -124,6 +124,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_132011) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pnjs", force: :cascade do |t|
+    t.string "name"
+    t.integer "lvl"
+    t.bigint "job_id", null: false
+    t.string "status"
+    t.bigint "race_id", null: false
+    t.bigint "architecture_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["architecture_id"], name: "index_pnjs_on_architecture_id"
+    t.index ["job_id"], name: "index_pnjs_on_job_id"
+    t.index ["race_id"], name: "index_pnjs_on_race_id"
+  end
+
   create_table "races", force: :cascade do |t|
     t.string "name"
     t.bigint "universe_id", null: false
@@ -191,6 +205,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_132011) do
   add_foreign_key "parties", "users"
   add_foreign_key "party_races", "parties"
   add_foreign_key "party_races", "races"
+  add_foreign_key "pnjs", "architectures"
+  add_foreign_key "pnjs", "jobs"
+  add_foreign_key "pnjs", "races"
   add_foreign_key "races", "universes"
   add_foreign_key "weapjobs", "jobs"
   add_foreign_key "weapjobs", "weapons"
