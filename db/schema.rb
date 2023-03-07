@@ -155,6 +155,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    
   end
 
   create_table "users", force: :cascade do |t|
@@ -217,4 +218,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
   add_foreign_key "weapjobs", "weapons"
   add_foreign_key "weapons", "armories"
   add_foreign_key "weapons", "parties"
+
 end
