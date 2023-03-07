@@ -1,0 +1,2 @@
+class Fun < ApplicationRecord
+end

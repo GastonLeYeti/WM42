@@ -1,0 +1,2 @@
+class CreaturesController < ApplicationController
+end

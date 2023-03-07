@@ -1,0 +1,2 @@
+class Weapjob < ApplicationRecord
+end

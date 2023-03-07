@@ -1,0 +1,2 @@
+class ArmoriesController < ApplicationController
+end

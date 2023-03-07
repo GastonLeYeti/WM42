@@ -1,0 +1,2 @@
+class PartiesController < ApplicationController
+end
