@@ -1,0 +1,2 @@
+class ArchitecturesController < ApplicationController
+end
