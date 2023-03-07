@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_134251) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_134907) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,9 +34,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_134251) do
 
   create_table "bibles", force: :cascade do |t|
     t.text "content"
-    t.integer "party_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "party_id", null: false
+    t.index ["party_id"], name: "index_bibles_on_party_id"
   end
 
   create_table "buildings", force: :cascade do |t|
@@ -121,7 +122,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_134251) do
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "party_id"
+    t.bigint "party_id", null: false
     t.index ["party_id"], name: "index_players_on_party_id"
   end
 
@@ -196,6 +197,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_134251) do
   add_foreign_key "architectures", "buildings"
   add_foreign_key "architectures", "cities"
   add_foreign_key "armories", "universes"
+  add_foreign_key "bibles", "parties"
   add_foreign_key "cities", "maps"
   add_foreign_key "creatures", "universes"
   add_foreign_key "funs", "options"
