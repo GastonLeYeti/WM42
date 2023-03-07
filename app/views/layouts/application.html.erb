@@ -3,6 +3,8 @@
   <head>
     <title>WM42</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,8 +13,12 @@
   </head>
 
   <body>
+    <%= render "composants/navbar" %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>

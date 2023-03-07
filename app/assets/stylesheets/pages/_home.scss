@@ -1,1 +1,50 @@
 // Specific CSS for your home-page
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: $tertiary-color-dark;
+}
+.shine_text-light h1,
+.shine_text-light h2,
+.shine_text-light h3,
+.shine_text-light h4,
+.shine_text-light h5,
+.shine_text-light h6,
+.shine_text-light p {
+  color: $shine-color-light;
+  text-shadow: none;
+}
+
+i.material-icons {
+  color: $shine-color-dark;
+}
+
+.parallax img {
+  filter: brightness(70%);
+  top: -50%;
+}
+
+.container{
+  &.shine_bg-light{
+    background: rgba($shine-color-light, 0.5);
+  }
+
+  &.primary_bg{
+    width: 100%;
+      .section {
+        padding: 0;
+        .row .col.s7{
+          padding: 0;
+        }
+      }
+  }
+}
+
+.img_section{
+  width: 100%;
+  height: auto;
+}

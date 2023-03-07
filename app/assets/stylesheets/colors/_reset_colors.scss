@@ -1,0 +1,27 @@
+$primary-color: #40011E !default;
+$primary-color-light: lighten($primary-color, 15%) !default;
+$primary-color-dark: $primary-color !default;
+
+$secondary-color: #8C031C !default;
+$secondary-color-light: lighten($secondary-color, 15%) !default;
+$secondary-color-dark: darken($secondary-color, 15%) !default;
+
+$tertiary-color: #8C0368 !default;
+$tertiary-color-light: lighten($tertiary-color, 15%) !default;
+$tertiary-color-dark: darken($tertiary-color, 15%) !default;
+
+$quaternary-color: #8124BF !default;
+$quaternary-color-light: lighten($quaternary-color, 15%) !default;
+$quaternary-color-dark: darken($quaternary-color, 15%) !default;
+
+$gold-color: #BF9B30 !default;
+$gold-color-light: lighten($gold-color, 15%) !default;
+$gold-color-dark: darken($gold-color, 15%) !default;
+
+$shine-color: #BFA27E !default;
+$shine-color-light: lighten($shine-color, 15%) !default;
+$shine-color-dark: darken($shine-color, 15%) !default;
+
+$success-color: color("green", "base") !default;
+$error-color: color("red", "base") !default;
+$link-color: $gold-color !default;

@@ -143,6 +143,8 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.2)
+    material_icons (4.0.0)
+      railties (>= 3.2)
     materialize-sass (1.0.0.1)
       autoprefixer-rails (>= 6.0.3)
     matrix (0.4.2)
@@ -284,6 +286,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
+  material_icons
   materialize-sass
   pg (~> 1.1)
   puma (~> 5.0)
