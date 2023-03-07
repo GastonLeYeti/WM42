@@ -1,0 +1,2 @@
+class PartyRace < ApplicationRecord
+end
