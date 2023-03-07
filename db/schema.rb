@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_130620) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_130928) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_130620) do
     t.datetime "updated_at", null: false
     t.index ["building_id"], name: "index_architectures_on_building_id"
     t.index ["city_id"], name: "index_architectures_on_city_id"
+  end
+
+  create_table "armories", force: :cascade do |t|
+    t.string "type"
+    t.string "weapon_range"
+    t.bigint "universe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["universe_id"], name: "index_armories_on_universe_id"
   end
 
   create_table "bibles", force: :cascade do |t|
@@ -138,6 +147,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_130620) do
 
   add_foreign_key "architectures", "buildings"
   add_foreign_key "architectures", "cities"
+  add_foreign_key "armories", "universes"
   add_foreign_key "cities", "maps"
   add_foreign_key "creatures", "universes"
   add_foreign_key "funs", "options"
