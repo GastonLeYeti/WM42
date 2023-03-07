@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_134907) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,9 +34,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_134907) do
 
   create_table "bibles", force: :cascade do |t|
     t.text "content"
+    t.bigint "party_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "party_id", null: false
     t.index ["party_id"], name: "index_bibles_on_party_id"
   end
 
@@ -120,9 +120,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_134907) do
 
   create_table "players", force: :cascade do |t|
     t.string "username"
+    t.bigint "party_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "party_id", null: false
     t.index ["party_id"], name: "index_players_on_party_id"
   end
 
