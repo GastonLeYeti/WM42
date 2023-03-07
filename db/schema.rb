@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_133100) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_134251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -119,9 +119,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_133100) do
 
   create_table "players", force: :cascade do |t|
     t.string "username"
-    t.integer "party_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "party_id"
+    t.index ["party_id"], name: "index_players_on_party_id"
   end
 
   create_table "pnjs", force: :cascade do |t|
@@ -205,6 +206,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_133100) do
   add_foreign_key "parties", "users"
   add_foreign_key "party_races", "parties"
   add_foreign_key "party_races", "races"
+  add_foreign_key "players", "parties"
   add_foreign_key "pnjs", "architectures"
   add_foreign_key "pnjs", "jobs"
   add_foreign_key "pnjs", "races"
