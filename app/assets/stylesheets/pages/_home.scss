@@ -30,7 +30,7 @@ i.material-icons {
 
 .container{
   &.shine_bg-light{
-    background: rgba($shine-color-light, 0.5);
+    background: rgba($shine-color-light, 0.5) !important;
   }
 
   &.primary_bg{
