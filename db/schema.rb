@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_125353) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_07_125930) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,6 +37,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_125353) do
     t.datetime "updated_at", null: false
     t.index ["option_id"], name: "index_funs_on_option_id"
     t.index ["party_id"], name: "index_funs_on_party_id"
+  end
+
+  create_table "maps", force: :cascade do |t|
+    t.bigint "party_id", null: false
+    t.string "name"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["party_id"], name: "index_maps_on_party_id"
   end
 
   create_table "options", force: :cascade do |t|
@@ -106,6 +115,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_125353) do
   add_foreign_key "creatures", "universes"
   add_foreign_key "funs", "options"
   add_foreign_key "funs", "parties"
+  add_foreign_key "maps", "parties"
   add_foreign_key "parties", "universes"
   add_foreign_key "parties", "users"
   add_foreign_key "party_races", "parties"
