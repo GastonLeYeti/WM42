@@ -1,0 +1,2 @@
+class WeapjobsController < ApplicationController
+end
