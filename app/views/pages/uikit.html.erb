@@ -1,0 +1,150 @@
+<div class="container">
+<h1>Kit Ui</h1>
+  <div class="row">
+    <h2>Inputs</h2>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="password" type="password" class="validate">
+        <label for="password">Input classique</label>
+      </div>
+    </div>
+  </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_telephone" type="tel" class="validate">
+          <label for="icon_telephone">Avec icone</label>
+        </div>
+  <div class="row">
+    <h2>Buttons</h2>
+    <h6>Floating</h6>
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <h6>Buttons</h6>
+    <a class="waves-effect waves-light btn">Sans icone</a>
+    <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>avec icone</a>
+    </div>
+    <h2>Card objet</h2>
+      <div class="col s6 m3">
+        <h2 class="header">Horizontal Card</h2>
+          <div class="card horizontal">
+            <div class="card-image">
+            <img src="https://i.pinimg.com/236x/67/5f/31/675f31b94938ce9f3f759bd4138f3ba2.jpg">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    <h2>Search bar</h2>
+     <nav>
+        <div class="nav-wrapper">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+    </nav>
+    <h2>Dropdown</h2>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">Game Rules</a></li>
+      <li><a href="#!">My Account</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">Log Out</a></li>
+    </ul>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </nav>
+    <h2>Avatar to dropdown</h2>
+      <div class="chip">
+        <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" alt="Contact Person">
+      John Doe
+      </div>
+      <div>
+        <ul id="dropdown2" class="dropdown-content">
+          <li><a href="#!">one<span class="badge">1</span></a></li>
+          <li><a href="#!">two<span class="new badge">1</span></a></li>
+          <li><a href="#!">three</a></li>
+        </ul>
+          <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
+      </div>
+    <h2>Switches</h2>
+      <h6>On/Off Switch</h6>
+        <div class="switch">
+          <label>
+            Off
+            <input type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+
+      <h6>Disabled Switch</h6>
+        <div class="switch">
+          <label>
+            Off
+            <input disabled type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+    <h2>Checkboxes</h2>
+      <h6>Checkbox Stylée</h6>
+        <p>
+          <label>
+            <input type="checkbox" checked="checked" />
+            <span>Stylééée</span>
+          </label>
+        </p>
+      <h6>Checkbox Filled</h6>
+        <p>
+          <label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span>Filled in</span>
+          </label>
+        </p>
+    <h2>Icons</h2>
+      <i class="large material-icons">insert_chart</i>
+      <i class="medium material-icons">insert_chart</i>
+      <i class="small material-icons">insert_chart</i>
+    <h2>Loader de formulaire</h2>
+        <div class="progress">
+          <div class="determinate" style="width: 0%"></div>
+        </div>
+        <div class="progress">
+          <div class="determinate" style="width: 30%"></div>
+        </div>
+        <div class="progress">
+          <div class="determinate" style="width: 50%"></div>
+        </div>
+        <div class="progress">
+          <div class="determinate" style="width: 70%"></div>
+        </div>
+        <div class="progress">
+          <div class="determinate" style="width: 100%"></div>
+        </div>
+    <h2>Modal</h2>
+      <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Modal Header</h4>
+          <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
+    <h2>Petite Blague</h2>
+      <a onclick="M.toast({html: 'Je suis une petite blagounette'})" class="btn">Blague !</a>
+    <h2></h2>
