@@ -5,4 +5,9 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
 
   has_many :parties
+
+  validates :username, presence: true
+  validates :email, uniqueness: true
+  validates :password, presence: true
+  validates :password_confirmation, presence: true
 end
