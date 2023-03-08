@@ -3,6 +3,9 @@ class Weapon < ApplicationRecord
   belongs_to :party
   belongs_to :pnj, optional: true
 
-  # ADD REFERENCE KEY TO WEAPON ON PNJ MODEL
-  # has_many :pnjs
+  validates :name, presence: true
+  validates :level, presence: true
+  validates :rarity, presence: true
+  validates :price, presence: true
+  validates :lootable, inclusion: { in: [true, false] }
 end

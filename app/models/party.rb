@@ -7,4 +7,6 @@ class Party < ApplicationRecord
   has_many :funs
   has_many :options, through: :funs
   has_many :pnjs
+  validates :name, presence: true
+  validates :bible, presence: true
 end
