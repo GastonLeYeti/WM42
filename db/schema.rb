@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_08_115215) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_121625) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -199,6 +199,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_115215) do
     t.datetime "updated_at", null: false
     t.text "description"
     t.bigint "pnj_id"
+    t.string "weapon_range"
     t.index ["armory_id"], name: "index_weapons_on_armory_id"
     t.index ["party_id"], name: "index_weapons_on_party_id"
     t.index ["pnj_id"], name: "index_weapons_on_pnj_id"
