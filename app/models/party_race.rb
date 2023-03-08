@@ -1,2 +1,0 @@
-class PartyRace < ApplicationRecord
-end

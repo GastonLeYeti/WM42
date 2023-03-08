@@ -1,2 +1,0 @@
-class Weapjob < ApplicationRecord
-end

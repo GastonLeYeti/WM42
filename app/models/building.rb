@@ -1,3 +1,4 @@
 class Building < ApplicationRecord
-  belongs_to :city, through: :architectures
+  has_many :architectures
+  has_many :pnj, through: :architectures
 end
