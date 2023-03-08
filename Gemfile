@@ -43,6 +43,7 @@ gem "materialize-sass"
 gem 'material_icons'
 
 gem "cloudinary"
+gem "dotenv-rails", groups: [:development, :test]
 
 
 
