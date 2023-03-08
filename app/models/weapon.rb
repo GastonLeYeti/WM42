@@ -1,5 +1,8 @@
 class Weapon < ApplicationRecord
   belongs_to :armory
   belongs_to :party
-  has_and_belongs_to_many :jobs, through: :weapjobs
+  belongs_to :pnj, optional: true
+
+  # ADD REFERENCE KEY TO WEAPON ON PNJ MODEL
+  # has_many :pnjs
 end

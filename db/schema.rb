@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_115215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,14 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["universe_id"], name: "index_armories_on_universe_id"
-  end
-
-  create_table "bibles", force: :cascade do |t|
-    t.text "content"
-    t.bigint "party_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_bibles_on_party_id"
   end
 
   create_table "buildings", force: :cascade do |t|
@@ -61,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
     t.bigint "universe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
     t.index ["universe_id"], name: "index_creatures_on_universe_id"
   end
 
@@ -105,17 +98,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
     t.bigint "universe_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "bible"
     t.index ["universe_id"], name: "index_parties_on_universe_id"
     t.index ["user_id"], name: "index_parties_on_user_id"
-  end
-
-  create_table "party_races", force: :cascade do |t|
-    t.bigint "party_id", null: false
-    t.bigint "race_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_party_races_on_party_id"
-    t.index ["race_id"], name: "index_party_races_on_race_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -135,8 +120,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
     t.bigint "architecture_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "party_id"
+    t.text "description"
     t.index ["architecture_id"], name: "index_pnjs_on_architecture_id"
     t.index ["job_id"], name: "index_pnjs_on_job_id"
+    t.index ["party_id"], name: "index_pnjs_on_party_id"
     t.index ["race_id"], name: "index_pnjs_on_race_id"
   end
 
@@ -171,15 +159,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "weapjobs", force: :cascade do |t|
-    t.bigint "weapon_id", null: false
-    t.bigint "job_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["job_id"], name: "index_weapjobs_on_job_id"
-    t.index ["weapon_id"], name: "index_weapjobs_on_weapon_id"
-  end
-
   create_table "weapons", force: :cascade do |t|
     t.string "name"
     t.integer "level"
@@ -190,14 +169,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
     t.bigint "party_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
+    t.bigint "pnj_id"
     t.index ["armory_id"], name: "index_weapons_on_armory_id"
     t.index ["party_id"], name: "index_weapons_on_party_id"
+    t.index ["pnj_id"], name: "index_weapons_on_pnj_id"
   end
 
   add_foreign_key "architectures", "buildings"
   add_foreign_key "architectures", "cities"
   add_foreign_key "armories", "universes"
-  add_foreign_key "bibles", "parties"
   add_foreign_key "cities", "maps"
   add_foreign_key "creatures", "universes"
   add_foreign_key "funs", "options"
@@ -206,15 +187,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141624) do
   add_foreign_key "maps", "parties"
   add_foreign_key "parties", "universes"
   add_foreign_key "parties", "users"
-  add_foreign_key "party_races", "parties"
-  add_foreign_key "party_races", "races"
   add_foreign_key "players", "parties"
   add_foreign_key "pnjs", "architectures"
   add_foreign_key "pnjs", "jobs"
+  add_foreign_key "pnjs", "parties"
   add_foreign_key "pnjs", "races"
   add_foreign_key "races", "universes"
-  add_foreign_key "weapjobs", "jobs"
-  add_foreign_key "weapjobs", "weapons"
   add_foreign_key "weapons", "armories"
   add_foreign_key "weapons", "parties"
+  add_foreign_key "weapons", "pnjs"
 end
