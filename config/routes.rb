@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "pages#dashboard"
+  root to: "pages#weapons"
   resources :parties, only: %i[show new create destroy] do
     resources :players, only: %i[index show]
     resources :maps, only: %i[index show]
