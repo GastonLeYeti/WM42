@@ -43,10 +43,6 @@ gem "materialize-sass"
 gem 'material_icons'
 
 gem "cloudinary"
-gem "dotenv-rails", groups: [:development, :test]
-
-
-
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

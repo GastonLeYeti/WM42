@@ -4,6 +4,12 @@ p "importing seeds..."
 p "importing user seeds..."
 load(Rails.root.join('db', 'seeds', 'user_seeds.rb'))
 
+userNikoFind = User.find_by(username: "Niko")
+userNikoId = userNikoFind.id
+
+userAdminFind = User.find_by(username: "admin_root")
+userAdminId = userAdminFind.id
+
 p "importing universe seeds..."
 load(Rails.root.join('db', 'seeds', 'universe_seeds.rb'))
 
