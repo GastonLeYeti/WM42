@@ -1,6 +1,6 @@
-$primary-color: #40011E !default;
+$primary-color: #8124BF !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
-$primary-color-dark: $primary-color !default;
+$secondary-color-dark: darken($primary-color, 15%) !default;
 
 $secondary-color: #8C031C !default;
 $secondary-color-light: lighten($secondary-color, 15%) !default;
@@ -14,11 +14,11 @@ $quaternary-color: #8124BF !default;
 $quaternary-color-light: lighten($quaternary-color, 15%) !default;
 $quaternary-color-dark: darken($quaternary-color, 15%) !default;
 
-$gold-color: #BF9B30 !default;
+$gold-color: #C09B2F !default;
 $gold-color-light: lighten($gold-color, 15%) !default;
 $gold-color-dark: darken($gold-color, 15%) !default;
 
-$shine-color: #BFA27E !default;
+$shine-color: #C0A27E !default;
 $shine-color-light: lighten($shine-color, 15%) !default;
 $shine-color-dark: darken($shine-color, 15%) !default;
 
