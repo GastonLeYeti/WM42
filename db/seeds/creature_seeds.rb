@@ -5,7 +5,7 @@ p "#############################################"
 p "#############################################"
 
 p "Destroying all creatures ..."
-Creatures.destroy_all
+Creature.destroy_all
 
 p "Creating creatures..."
 

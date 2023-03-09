@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :parties
 
+  has_one_attached :avatar
+
   validates :username, presence: true
   validates :email, uniqueness: true
   validates :password, presence: true
