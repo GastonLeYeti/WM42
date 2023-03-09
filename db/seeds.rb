@@ -30,3 +30,18 @@ load(Rails.root.join('db', 'seeds', 'creature_seeds.rb'))
 
 p "importing races seeds..."
 load(Rails.root.join('db', 'seeds', 'race_seeds.rb'))
+
+p "importing weapons seeds..."
+load(Rails.root.join('db', 'seeds', 'weapon_seeds.rb'))
+
+# armory = Armory.find_by(type: "couteau")
+# armoryId = armory.id
+
+# party = Party.find_by(name: "Post Apocalyptic")
+# partyId = party.id
+
+p "importing armories seeds..."
+load(Rails.root.join('db', 'seeds', 'armory_seeds.rb'))
+
+p "importing parties seeds..."
+load(Rails.root.join('db', 'seeds', 'party_seeds.rb'))
