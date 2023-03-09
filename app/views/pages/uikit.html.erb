@@ -102,39 +102,14 @@
     <div class="row">
       <h2>Dropdown</h2>
     </div>
-    <div class="row" id="navbar">
-      <ul id="dropdown1" class="dropdown-content text-glighten">
-
-        <li><a href="#!">Game Rules</a></li>
-        <li><a href="#!">My Account</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">Log Out</a></li>
-      </ul>
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">WM</a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                <i class="material-icons right drop-arrow">arrow_drop_down</i>
-              <div class="chip">
-                <img src="https://res.cloudinary.com/dlixoduzo/image/upload/v1678200826/Gaston_LeYeti_loutre_qui_joue_de_lhamonica_39c2c097-b838-4000-b89b-72c8da453b71_ngkmyz.png" alt="Contact Person" class="loutre_harmoniciste">
-                John Doe
-              </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+    <%= render "composants/navbar" %>
     <div class="row nav-dashboard" id="nav-dashboard">
-      <div class="col s12">
-        <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
-        <span class="nav-map" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
-        <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
-        <span class="nav-weapons" id="nav-weapons"><i class="fa-solid fa-star nav-star"></i>Weapons</span>
-        <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
-      </div>
+    <div class="col s12 nav-dashboard-tabs">
+      <span class="nav-active" id="nav-bible"><i class="fa-solid fa-star nav-star"></i>Bible</span>
+      <span class="nav-map" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+      <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+      <span class="nav-weapons" id="nav-weapons"><i class="fa-regular fa-star nav-star"></i>Weapons</span>
+      <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
     </div>
     <div class="row">
       <h2>Avatar to dropdown</h2>
@@ -245,3 +220,4 @@
       <a onclick="M.toast({html: 'Je suis une petite blagounette'})" class="btn">Blague !</a>
     </div>
   </div>
+</div>
