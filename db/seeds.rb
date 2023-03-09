@@ -7,6 +7,9 @@ load(Rails.root.join('db', 'seeds', 'user_seeds.rb'))
 p "importing universe seeds..."
 load(Rails.root.join('db', 'seeds', 'universe_seeds.rb'))
 
+p "importing buildings seeds..."
+load(Rails.root.join('db', 'seeds', 'building_seeds.rb'))
+
 universeMeta = Universe.find_by(name: "Meta")
 metaId = universeMeta.id
 
@@ -30,3 +33,9 @@ load(Rails.root.join('db', 'seeds', 'creature_seeds.rb'))
 
 p "importing races seeds..."
 load(Rails.root.join('db', 'seeds', 'race_seeds.rb'))
+
+p "importing pnjs seeds..."
+load(Rails.root.join('db', 'seeds', 'pnj_seeds.rb'))
+
+p "importing jobs seeds..."
+load(Rails.root.join('db', 'seeds', 'job_seeds.rb'))
