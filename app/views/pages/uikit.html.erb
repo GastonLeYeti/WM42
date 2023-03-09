@@ -2,46 +2,94 @@
 <h1>Kit Ui</h1>
   <div class="row">
     <h2>Inputs</h2>
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
-        <label for="password">Input classique</label>
-      </div>
+  </div>
+  <div class="row" id="input-password-field">
+    <div class="input-field col s6">
+      <input id="password" type="password" class="validate">
+      <label for="password">Input classique</label>
     </div>
   </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone">Avec icone</label>
-        </div>
+  <div class="row" id="input-phone-field">
+    <div class="input-field col s6">
+        <i class="material-icons prefix">phone</i>
+        <input id="icon_telephone" type="tel" class="validate">
+        <label for="icon_telephone">Avec icone</label>
+      </div>
+    </div>
   <div class="row">
     <h2>Buttons</h2>
     <h6>Floating</h6>
+  </div>
+  <div class="row" id="round-floating-btn">
     <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+  </div>
+  <div class="row">
     <h6>Buttons</h6>
+  </div>
+  <div class="row" id="btn-without-icon">
     <a class="waves-effect waves-light btn">Sans icone</a>
+  </div>
+  <div class="row" id="btn-with-icon">
     <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>avec icone</a>
-    </div>
-    <h2>Card objet</h2>
-      <div class="col s6 m3">
-        <h2 class="header">Horizontal Card</h2>
-          <div class="card horizontal">
-            <div class="card-image">
+  </div>
+  <div class="row">
+    <h2>Card PNJ</h2>
+  </div>
+  <div class="row" id="pnj-card">
+    <div class="col s6 m3">
+        <div class="card horizontal pnj-card-container">
+          <div class="card-image col s6">
             <img src="https://i.pinimg.com/236x/67/5f/31/675f31b94938ce9f3f759bd4138f3ba2.jpg">
+          </div>
+          <div class="card-content pnj-card-content col s6">
+            <div class="row">
+              <span class="pnj_name">PNJ NAME</span>
             </div>
-            <div class="card-stacked">
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-              </div>
+            <div class="row pnj_status">
+              <i class="fa-solid fa-up-long"></i>Level
+            </div>
+            <div class="row pnj_status">
+              <i class="fa-solid fa-earth-asia"></i>Race
+            </div>
+            <div class="row pnj_status">
+              <i class="fa-solid fa-khanda"></i>Job
+            </div>
+            <div class="row pnj_status">
+              <i class="fa-solid fa-user-group"></i> Allier
             </div>
           </div>
+        </div>
       </div>
-    <h2>Search bar</h2>
-     <nav>
-        <div class="nav-wrapper">
+    </div>
+    <div class="row">
+    <h2>Card Object</h2>
+  </div>
+  <div class="row" id="object-card">
+    <div class="col s6 m4">
+        <div class="card horizontal object-card-container">
+          <div class="card-image col s3">
+            <img src="https://img1.freepng.fr/20180325/lre/kisspng-middle-ages-knightly-sword-longsword-viking-sword-swords-5ab7a9c17dc6f0.6784556315219859855152.jpg">
+          </div>
+          <div class="card-content object-card-content col s9">
+            <div class="row">
+              <span class="weapon-lvl">Niv.5</span><span class="weapon-rarity">Très rare</span><i class="fa-regular fa-circle"></i>
+            </div>
+            <div class="row">
+              <span class="object_name">Épée de Hourglard</span>
+            </div>
+            <div class="row">
+              <i class="fa-solid fa-coins"></i><span class="weapon-price">48.99</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+      <h2>Search bar</h2>
+    </div>
+    <div class="row" id="search-bar">
+        <div class="nav-wrapper search-bar col s5">
           <form>
             <div class="input-field">
               <input id="search" type="search" required>
@@ -50,37 +98,58 @@
             </div>
           </form>
         </div>
-    </nav>
-    <h2>Dropdown</h2>
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">Game Rules</a></li>
-      <li><a href="#!">My Account</a></li>
-      <li class="divider"></li>
-      <li><a href="#!">Log Out</a></li>
-    </ul>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
+    </div>
+    <div class="row">
+      <h2>Dropdown</h2>
+    </div>
+    <div class="row" id="navbar">
+      <ul id="dropdown1" class="dropdown-content text-glighten">
+
+        <li><a href="#!">Game Rules</a></li>
+        <li><a href="#!">My Account</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Log Out</a></li>
+      </ul>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">WM</a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                <i class="material-icons right drop-arrow">arrow_drop_down</i>
+              <div class="chip">
+                <img src="https://res.cloudinary.com/dlixoduzo/image/upload/v1678200826/Gaston_LeYeti_loutre_qui_joue_de_lhamonica_39c2c097-b838-4000-b89b-72c8da453b71_ngkmyz.png" alt="Contact Person" class="loutre_harmoniciste">
+                John Doe
+              </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="row nav-dashboard" id="nav-dashboard">
+      <div class="col s12">
+        <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
+        <span class="nav-map" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+        <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+        <span class="nav-weapons" id="nav-weapons"><i class="fa-solid fa-star nav-star"></i>Weapons</span>
+        <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
       </div>
-    </nav>
-    <h2>Avatar to dropdown</h2>
+    </div>
+    <div class="row">
+      <h2>Avatar to dropdown</h2>
+    </div>
+    <div class="row">
       <div class="chip">
         <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" alt="Contact Person">
-      John Doe
+          John Doe
       </div>
-      <div>
-        <ul id="dropdown2" class="dropdown-content">
-          <li><a href="#!">one<span class="badge">1</span></a></li>
-          <li><a href="#!">two<span class="new badge">1</span></a></li>
-          <li><a href="#!">three</a></li>
-        </ul>
-          <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
-      </div>
-    <h2>Switches</h2>
+    </div>
+    <div class="row">
+      <h2>Switches</h2>
       <h6>On/Off Switch</h6>
+    </div>
+    <div class="row">
         <div class="switch">
           <label>
             Off
@@ -89,8 +158,11 @@
             On
           </label>
         </div>
-
+    </div>
+    <div class="row">
       <h6>Disabled Switch</h6>
+    </div>
+    <div class="row">
         <div class="switch">
           <label>
             Off
@@ -99,26 +171,42 @@
             On
           </label>
         </div>
-    <h2>Checkboxes</h2>
+    </div>
+    <div class="row">
+      <h2>Checkboxes</h2>
       <h6>Checkbox Stylée</h6>
+    </div>
+    <div class="row">
         <p>
           <label>
             <input type="checkbox" checked="checked" />
             <span>Stylééée</span>
           </label>
         </p>
+    </div>
+    <div class="row">
       <h6>Checkbox Filled</h6>
+    </div>
+    <div class="row">
         <p>
           <label>
             <input type="checkbox" class="filled-in" checked="checked" />
             <span>Filled in</span>
           </label>
         </p>
-    <h2>Icons</h2>
+    </div>
+    <div class="row">
+      <h2>Icons</h2>
+    </div>
+    <div class="row">
       <i class="large material-icons">insert_chart</i>
       <i class="medium material-icons">insert_chart</i>
       <i class="small material-icons">insert_chart</i>
-    <h2>Loader de formulaire</h2>
+    </div>
+    <div class="row">
+      <h2>Loader de formulaire</h2>
+    </div>
+    <div class="row">
         <div class="progress">
           <div class="determinate" style="width: 0%"></div>
         </div>
@@ -134,9 +222,13 @@
         <div class="progress">
           <div class="determinate" style="width: 100%"></div>
         </div>
-    <h2>Modal</h2>
+    </div>
+    <div class="row">
+      <h2>Modal</h2>
+    </div>
+    <div class="row">
       <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-      <div id="modal1" class="modal">
+        <div id="modal1" class="modal">
         <div class="modal-content">
           <h4>Modal Header</h4>
           <p>A bunch of text</p>
@@ -145,6 +237,11 @@
           <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
       </div>
-    <h2>Petite Blague</h2>
+    </div>
+    <div class="row">
+      <h2>Petite Blague</h2>
+    </div>
+    <div class="row">
       <a onclick="M.toast({html: 'Je suis une petite blagounette'})" class="btn">Blague !</a>
-    <h2></h2>
+    </div>
+  </div>
