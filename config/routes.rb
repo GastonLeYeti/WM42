@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "pages#home"
+  root to: "pages#uikit"
   resources :parties, only: %i[show new create destroy] do
     resources :players, only: %i[index show]
     resources :maps, only: %i[index show]
