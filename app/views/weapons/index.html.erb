@@ -11,13 +11,26 @@
 
   <div class="row nav-dashboard" id="nav-dashboard">
     <div class="col s12 nav-dashboard-tabs">
+
+      <%= link_to party_path(@party) do %>
       <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
-      <span class="nav-map" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+      <% end %>
+      <%= link_to party_maps_path(@party) do %>
+      <span class="nav-maps" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+      <% end %>
+      <%= link_to party_players_path(@party) do %>
       <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+      <% end %>
+      <%= link_to party_weapons_path(@party) do %>
       <span class="nav-active" id="nav-weapons"><i class="fa-solid fa-star nav-star"></i>Weapons</span>
+      <% end %>
+      <%= link_to party_pnjs_path(@party) do %>
       <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
+      <% end %>
+
     </div>
   </div>
+
   <div class="row" id="object-card">
     <div class="col s6 m4">
         <div class="card horizontal object-card-container">

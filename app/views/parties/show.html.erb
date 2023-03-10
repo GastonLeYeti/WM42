@@ -7,4 +7,95 @@
     </div>
     <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>avec icone</a>
   </div>
-</div>
+
+
+<div class="row nav-dashboard" id="nav-dashboard">
+    <div class="col s12 nav-dashboard-tabs">
+
+      <%= link_to party_path(@party) do %>
+      <span class="nav-active" id="nav-bible"><i class="fa-solid fa-star nav-star"></i>Bible</span>
+      <% end %>
+      <%= link_to party_maps_path(@party) do %>
+      <span class="nav-maps" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+      <% end %>
+      <%= link_to party_players_path(@party) do %>
+      <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+      <% end %>
+      <%= link_to party_weapons_path(@party) do %>
+      <span class="nav-weapons" id="nav-weapons"><i class="fa-regular fa-star nav-star"></i>Weapons</span>
+      <% end %>
+      <%= link_to party_pnjs_path(@party) do %>
+      <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
+      <% end %>
+
+    </div>
+  </div>
+
+
+    <div class="row">
+      <div class="col s8 bible" id="bible">
+        <h2>Ma bible</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem iste, ut delectus quo, minima ex temporibus unde, sequi corporis illum rem facilis quaerat dignissimos laboriosam! Doloremque est voluptatem nostrum iusto?</p>
+      </div>
+
+    <div id="col s4 récap-univers">
+      <h2>Univers Récap</h2>
+    </div>
+    <div class="row">
+      <div class="col s6 m4">
+        <div class="card blue-grey lighten-1 recap-univers">
+          <div class="card-content white-text">
+            <span class="card-title">Récap de l'Univers</span>
+            <div class="univers-content">
+              <div class="row recap-line">
+                <i class="fa-solid fa-circle round-univers"></i>
+                <span class="dashline"></span>
+                <span class="univers-name">Post Apocalyptique</span>
+              </div>
+              <div class="row recap-line">
+                <i class="fa-solid fa-circle round-univers"></i>
+                <span class="dashline"></span>
+                <span class="univers-name">4 Joueurs</span>
+              </div>
+              <div class="row recap-line">
+                <i class="fa-solid fa-circle round-univers"></i>
+                <span class="dashline"></span>
+                <span class="univers-name">Culture du Démon</span>
+              </div>
+              <div class="row recap-line">
+                <i class="fa-solid fa-circle round-univers"></i>
+                <span class="dashline"></span>
+                <span class="univers-name">Louise I love you</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s6 m3">
+        <div class="card blue-grey lighten-1 recap-univers">
+          <div class="card-content white-text">
+            <span class="card-title">Players</span>
+            <div class="players-content">
+              <div class="row player">
+                <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
+                <span>John Doe</span>
+              </div>
+              <div class="row player">
+                <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
+                <span>John Doe</span>
+              </div>
+              <div class="row player">
+                <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
+                <span>John Doe</span>
+              </div>
+              <div class="row player">
+                <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
+                <span>John Doe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
