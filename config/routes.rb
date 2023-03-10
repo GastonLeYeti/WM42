@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
+<<<<<<< HEAD
 
   root to: "pages#dashboard"
 
   resources :parties, only: %i[show new create destroy] do
+=======
+  root to: "pages#home"
+  resources :parties, only: %i[show index new create destroy] do
+>>>>>>> bb53484a60fc19103d927caa0228d278de65e95c
     resources :players, only: %i[index show]
     resources :maps, only: %i[index show]
     resources :pnjs, only: %i[index show]
