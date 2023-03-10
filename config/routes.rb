@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: "pages#home"
   resources :parties, only: %i[show index new create destroy] do
     resources :players, only: %i[index show]
