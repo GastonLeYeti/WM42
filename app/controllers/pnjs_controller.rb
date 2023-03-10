@@ -1,6 +1,7 @@
 class PnjsController < ApplicationController
 
   def index
+    @party = Party.find(params[:party_id])
     @pnjs = Pnj.all
   end
 

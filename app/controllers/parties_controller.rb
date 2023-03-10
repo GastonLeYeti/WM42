@@ -1,7 +1,7 @@
 class PartiesController < ApplicationController
 
   def index
-    @Parties = Party.all
+    @party = Party.all
   end
 
   def show
@@ -21,6 +21,10 @@ class PartiesController < ApplicationController
     end
   end
 
+  def maps
+
+  end
+
   def destroy
     @party = Party.find(params[:id])
     @party.destroy
@@ -29,6 +33,7 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:user_id, :name, :universe_id, :bible)
+    params.require(:party).permit(:name, :bible, :universe_id, :user_id)
   end
+
 end
