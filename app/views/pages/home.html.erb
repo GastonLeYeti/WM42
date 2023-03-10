@@ -1,4 +1,4 @@
-
+<%= render "composants/navbar" %>
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container shine_bg-light">
@@ -8,16 +8,18 @@
           <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
         </div>
         <div class="row center">
-          <a href="" class="btn-large waves-effect waves-light">Get Started</a>
+        <%= link_to new_party_path do %>
+          <span class="btn-large waves-effect waves-light">Get Started</span>
+        <% end %>
         </div>
         <br><br>
-
-      </div>
+        </div>
     </div>
     <div class="parallax">
       <%= image_tag ("pages/background1-1.png"), class: "" %>
     </div>
   </div>
+
 
 
   <div class="container">
