@@ -4,10 +4,21 @@
 nav
   background-color: $background-color !important
   color: $background-color-30
+  ul
+    a
+      position: relative
+      z-index: 20
+      &:hover
+        background-color: rgba(0, 0, 0, 0) !important
 .dropdown-content
   background-color: $background-color
   color: $background-color-30
-  top: 64px !important
+  top: 28px !important
+  padding-top: 36px
+  width: 18% !important
+  right: 20px !important
+  left: auto !important
+  z-index: 10
 .username-nav
   padding: 15px
   color: $gold-color
