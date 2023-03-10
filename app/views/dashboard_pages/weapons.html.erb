@@ -19,6 +19,13 @@
     </div>
   </div>
   <div class="row" id="object-card">
+
+  <% @Weapons.each do |w| %>
+    <%= w.name %>
+    <%= w.price %>
+    <%= w.rarity %>
+    <%= w.level %>
+  <% end %>
     <div class="col s6 m4">
         <div class="card horizontal object-card-container">
           <div class="card-image col s3">
