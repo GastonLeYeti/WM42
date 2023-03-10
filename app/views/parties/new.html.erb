@@ -1,1 +1,15 @@
-<h1>FORMULAURE VIEW</h1>
+
+
+<%= simple_form_for @party do |f| %>
+
+  <%= f.input :player_name_1, label: 'Joueur 1', required: true, input_html: {id: 'player_name', type: 'text', class: 'input-field'} %>
+  <%= f.input :player_name_2, label: 'Joueur 2', required: true, input_html: {id: 'player_name', type: 'text', class: 'input-field'} %>
+  <%= f.input :player_name_3, label: 'Joueur 3', required: true, input_html: {id: 'player_name', type: 'text', class: 'input-field'} %>
+  <%= f.input :player_name_4, label: 'Joueur 4', required: true, input_html: {id: 'player_name', type: 'text', class: 'input-field'} %>
+  <%= f.input :party_type, label: 'Type de partie', required: true, collection: ['Fantasy', 'Sci-fi', 'Moderne', 'Historique', 'Post-apo', 'Aléatoire'], as: :radio_buttons %>
+  <%= f.input :party_size, label: 'Taille de la partie', required: true, collection: ['Petite', 'Moyenne', 'Grande'], as: :radio_buttons %>
+  <%= f.input :geography, label: 'Géographie', required: true, collection: ['Dune', 'Désert', 'Forêt', 'Mer', 'Montagne', 'Aléatoire'], as: :check_boxes %>
+  <%= f.input :city, label: 'Ajoutez une ville', input_html: {class: 'btn-floating btn-large waves-effect waves-light red'} %>
+  <%= f.input :universe, label: 'Peuplez votre univers', required: true, collection: ['Aztèques', 'Aliens', 'Cyborgs', 'Humains', 'Vampires', 'Loups-Garous', 'Nains', 'Vikings', 'Aléatoire'], as: :check_boxes %>
+  <%= f.button :submit, class: 'waves-effect waves-light btn', value: 'Envoyer' %>
+<% end %>
