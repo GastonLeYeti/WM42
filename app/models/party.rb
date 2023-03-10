@@ -1,7 +1,7 @@
 class Party < ApplicationRecord
   has_one :user
   belongs_to :universe
-  has_many :players, dependent: :destroy
+  has_many :players
   has_many :weapons, dependent: :destroy
   has_many :maps, dependent: :destroy
   has_many :funs, dependent: :destroy
