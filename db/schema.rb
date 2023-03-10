@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_09_232438) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_10_112444) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -145,11 +145,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_232438) do
     t.bigint "job_id", null: false
     t.string "status"
     t.bigint "race_id", null: false
-    t.bigint "architecture_id", null: false
+    t.bigint "architecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "party_id"
     t.text "description"
+    t.integer "weapon_id"
     t.index ["architecture_id"], name: "index_pnjs_on_architecture_id"
     t.index ["job_id"], name: "index_pnjs_on_job_id"
     t.index ["party_id"], name: "index_pnjs_on_party_id"
@@ -205,26 +206,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_232438) do
     t.index ["pnj_id"], name: "index_weapons_on_pnj_id"
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "architectures", "buildings"
-  add_foreign_key "architectures", "cities"
-  add_foreign_key "armories", "universes"
-  add_foreign_key "cities", "maps"
-  add_foreign_key "creatures", "universes"
-  add_foreign_key "funs", "options"
-  add_foreign_key "funs", "parties"
-  add_foreign_key "jobs", "universes"
-  add_foreign_key "maps", "parties"
-  add_foreign_key "parties", "universes"
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id", on_delete: :cascade
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id", on_delete: :cascade
+  add_foreign_key "architectures", "buildings", on_delete: :cascade
+  add_foreign_key "architectures", "cities", on_delete: :cascade
+  add_foreign_key "armories", "universes", on_delete: :cascade
+  add_foreign_key "cities", "maps", on_delete: :cascade
+  add_foreign_key "creatures", "universes", on_delete: :cascade
+  add_foreign_key "funs", "options", on_delete: :cascade
+  add_foreign_key "funs", "parties", on_delete: :cascade
+  add_foreign_key "jobs", "universes", on_delete: :cascade
+  add_foreign_key "maps", "parties", on_delete: :cascade
+  add_foreign_key "parties", "universes", on_delete: :cascade
   add_foreign_key "parties", "users", on_delete: :cascade
-  add_foreign_key "players", "parties"
-  add_foreign_key "pnjs", "architectures"
-  add_foreign_key "pnjs", "jobs"
-  add_foreign_key "pnjs", "parties"
-  add_foreign_key "pnjs", "races"
-  add_foreign_key "races", "universes"
-  add_foreign_key "weapons", "armories"
-  add_foreign_key "weapons", "parties"
-  add_foreign_key "weapons", "pnjs"
+  add_foreign_key "players", "parties", on_delete: :cascade
+  add_foreign_key "pnjs", "architectures", on_delete: :cascade
+  add_foreign_key "pnjs", "jobs", on_delete: :cascade
+  add_foreign_key "pnjs", "parties", on_delete: :cascade
+  add_foreign_key "pnjs", "races", on_delete: :cascade
+  add_foreign_key "pnjs", "weapons", on_delete: :nullify
+  add_foreign_key "races", "universes", on_delete: :cascade
+  add_foreign_key "weapons", "armories", on_delete: :cascade
+  add_foreign_key "weapons", "parties", on_delete: :cascade
+  add_foreign_key "weapons", "pnjs", on_delete: :cascade
 end

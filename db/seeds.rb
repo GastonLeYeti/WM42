@@ -13,11 +13,6 @@ p User.count
 User.destroy_all
 p User.count
 
-p "Destroying all parties ..."
-p Party.count
-Party.destroy_all
-p Party.count
-
 p "Destroying all buildings ..."
 p Building.count
 Building.destroy_all
@@ -67,6 +62,11 @@ p "Destroying all players ..."
 p Player.count
 Player.destroy_all
 p Player.count
+
+p "Destroying all parties ..."
+p Party.count
+Party.destroy_all
+p Party.count
 
 p "Destroying all universes ..."
 p Universe.count
@@ -1361,7 +1361,7 @@ p "#############################################"
 p "Creating armories..."
 
 lame1 = Armory.new(
-  :type                => "Lame",
+  :kind                => "Lame",
   :weapon_range        => "cac",
   :universe_id         => metaId,
 )
@@ -1370,7 +1370,7 @@ lame1Id = lame1.id
 p "armory Lame created!"
 
 pistolet2 = Armory.new(
-  :type                => "Pistolet",
+  :kind                => "Pistolet",
   :weapon_range        => "mid",
   :universe_id         => postApocalypticId,
 )
@@ -1379,7 +1379,7 @@ pistolet2Id = pistolet2.id
 p "armory Pistolet created!"
 
 fap3 = Armory.new(
-  :type                => "Fusil à pompe",
+  :kind                => "Fusil à pompe",
   :weapon_range        => "mid",
   :universe_id         => postApocalypticId,
 )
@@ -1388,7 +1388,7 @@ fap3Id = fap3.id
 p "armory Fusil à pompe created!"
 
 grenade4 = Armory.new(
-  :type                => "Grenade",
+  :kind                => "Grenade",
   :weapon_range        => "mid",
   :universe_id         => postApocalypticId,
 )
@@ -1397,7 +1397,7 @@ grenade4Id = grenade4.id
 p "armory Grenade created!"
 
 aap5 = Armory.new(
-  :type                => "Arme à projectile",
+  :kind                => "Arme à projectile",
   :weapon_range        => "long",
   :universe_id         => metaId,
 )
@@ -1406,7 +1406,7 @@ aap5Id = aap5.id
 p "armory Arme à projectile created!"
 
 lanceflamme6 = Armory.new(
-  :type                => "Lance-flamme",
+  :kind                => "Lance-flamme",
   :weapon_range        => "cac",
   :universe_id         => postApocalypticId,
 )
@@ -1415,7 +1415,7 @@ lanceflamme6Id = lanceflamme6.id
 p "armory Lance-flamme created!"
 
 fassaut7 = Armory.new(
-  :type                => "Fusil d'assaut",
+  :kind                => "Fusil d'assaut",
   :weapon_range        => "mid",
   :universe_id         => postApocalypticId,
 )
@@ -1424,7 +1424,7 @@ fassaut7Id = fassaut7.id
 p "armory Fusil d'assaut created!"
 
 sniper8 = Armory.new(
-  :type                => "Sniper",
+  :kind                => "Sniper",
   :weapon_range        => "long",
   :universe_id         => postApocalypticId,
 )
@@ -1433,7 +1433,7 @@ sniper8Id = sniper8.id
 p "armory Sniper created!"
 
 aaenergy9 = Armory.new(
-  :type                => "Arme à énergie",
+  :kind                => "Arme à énergie",
   :weapon_range        => "long",
   :universe_id         => postApocalypticId,
 )
@@ -1442,7 +1442,7 @@ aaenergy9Id = aaenergy9.id
 p "armory Arme à énergie created!"
 
 contondante10 = Armory.new(
-  :type                => "Contondante",
+  :kind                => "Contondante",
   :weapon_range        => "cac",
   :universe_id         => postApocalypticId,
 )
@@ -1843,7 +1843,7 @@ archi1 = Architecture.new(
 )
 archi1.save!
 archi1Id = archi1.id
-p "archi #{archi1.building1Id.name} created!"
+p "archi #{Architecture.count} created!"
 
 archi2 = Architecture.new(
   :city_id             => city1Id,
@@ -1851,7 +1851,7 @@ archi2 = Architecture.new(
 )
 archi2.save!
 archi2Id = archi1.id
-p "archi #{archi2.building1Id.name} created!"
+p "archi #{Architecture.count} created!"
 
 archi3 = Architecture.new(
   :city_id             => city1Id,
@@ -1859,7 +1859,7 @@ archi3 = Architecture.new(
 )
 archi3.save!
 archi3Id = archi3.id
-p "archi #{archi3.building1Id.name} created!"
+p "archi #{Architecture.count} created!"
 
 
 
@@ -1921,7 +1921,7 @@ pnj4 = Pnj.new(
   :job_id            => exorcistId,
   :status            => "Ennemi",
   :race_id           => goule15Id,
-  :architecture_id   => "",
+  :architecture_id   => archi2Id,
   :party_id          => party1Id,
   :weapon_id         => weapon10Id,
   :description       => "Viper est le cruel chef d'une bande de pillards qui terrorisent le désert. Il est un maître stratège et utilise la force de sa bande en nombre pour vaincre ses ennemis. Il est connu pour sa brutalité et a la réputation de ne laisser aucun survivant.",
