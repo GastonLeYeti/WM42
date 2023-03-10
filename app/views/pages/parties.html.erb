@@ -9,29 +9,16 @@
   </div>
 
 
-  <div class="row nav-dashboard" id="nav-dashboard">
-  <div class="col s12 nav-dashboard-tabs">
-    <%= link_to '#parties', class: 'nav-active', id: 'nav-bible' do %>
-      <i class="fa-solid fa-star nav-star"></i>Bible
-    <% end %>
-
-    <%= link_to '#map', class: 'nav-map', id: 'nav-map' do %>
-      <i class="fa-regular fa-star nav-star"></i>Map
-    <% end %>
-
-    <%= link_to '#players', class: 'nav-players', id: 'nav-players' do %>
-      <i class="fa-regular fa-star nav-star"></i>Players
-    <% end %>
-
-    <%= link_to '#weapons', class: 'nav-weapons', id: 'nav-weapons' do %>
-      <i class="fa-regular fa-star nav-star"></i>Weapons
-    <% end %>
-
-    <%= link_to '#pnj', class: 'nav-pnj', id: 'nav-pnj' do %>
-      <i class="fa-regular fa-star nav-star"></i>PNJ
-    <% end %>
+ <div class="row nav-dashboard" id="nav-dashboard">
+    <div class="col s12 nav-dashboard-tabs">
+      <span class="nav-active" id="nav-bible"><i class="fa-solid fa-star nav-star"></i>Bible</span>
+      <span class="nav-maps" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+      <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+      <span class="nav-weapons" id="nav-weapons"><i class="fa-regular fa-star nav-star"></i>Weapons</span>
+      <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
+    </div>
   </div>
-</div>
+
 
     <div class="row">
       <div class="col s8 bible" id="bible">
