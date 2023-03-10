@@ -22,6 +22,8 @@ class PnjsController < ApplicationController
     end
   end
 
+
+
   private
 
   def pnj_params
