@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "pages#parties"
+  root to: "pages#home"
   resources :parties, only: %i[show index new create destroy] do
     resources :players, only: %i[index show]
     resources :maps, only: %i[index show]
@@ -13,5 +13,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
 end
