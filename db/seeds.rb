@@ -9,43 +9,70 @@ photo_Admin = File.open URI.open("https://res.cloudinary.com/dlixoduzo/image/upl
 # kill all existing data
 
 p "Destroying all users ..."
+p User.count
 User.destroy_all
-
-p "Destroying all universes ..."
-Universe.destroy_all
+p User.count
 
 p "Destroying all parties ..."
+p Party.count
 Party.destroy_all
+p Party.count
 
 p "Destroying all buildings ..."
+p Building.count
 Building.destroy_all
+p Building.count
 
 p "Destroying all creatures ..."
+p Creature.count
 Creature.destroy_all
+p Creature.count
 
 p "Destroying all races ..."
+p Race.count
 Race.destroy_all
+p Race.count
 
 p "Destroying all armories ..."
+p Armory.count
 Armory.destroy_all
+p Armory.count
 
 p "Destroying all weapons ..."
+p Weapon.count
 Weapon.destroy_all
+p Weapon.count
 
 p "Destroying all jobs ..."
+p Job.count
 Job.destroy_all
+p Job.count
 
 p "Destroying all cities ..."
+p City.count
 City.destroy_all
+p City.count
 
 p "Destroying all architectures ..."
+p Architecture.count
 Architecture.destroy_all
+p Architecture.count
 
 p "Destroying all pnjs ..."
+p Pnj.count
 Pnj.destroy_all
+p Pnj.count
 
 p "Destroying all players ..."
+p Player.count
 Player.destroy_all
+p Player.count
+
+p "Destroying all universes ..."
+p Universe.count
+Universe.destroy_all
+p Universe.count
+
 
 p "#############################################"
 p "#############################################"
