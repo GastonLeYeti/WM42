@@ -5,5 +5,4 @@ class Map < ApplicationRecord
   has_many :buildings, through: :architectures
   validates :name, presence: true
   validates :content, presence: true
-  
 end
