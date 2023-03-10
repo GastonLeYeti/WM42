@@ -2,8 +2,8 @@
 <div class="container">
   <div class="dashboard-title">
     <div class="dashboard-party-infos">
-      <h1>L'apo de Nico</h1>
-      <span>Crée le 24.02.2022</span>
+      <h1><%= @party.name %></h1>
+      <span><%= @party.created_at %></span>
     </div>
     <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>avec icone</a>
   </div>
@@ -30,31 +30,32 @@
     </div>
   </div>
 
-
-  <div class="row" id="pnj-card">
-    <div class="col s6 m3">
-        <div class="card horizontal pnj-card-container">
+<div class="row" id="pnj-card">
+<% @pnjs.each do | pnj |  %>
+  <div class="col m3 s12">
+      <div class="card horizontal pnj-card-container">
           <div class="card-image col s6">
             <img src="https://i.pinimg.com/236x/67/5f/31/675f31b94938ce9f3f759bd4138f3ba2.jpg">
           </div>
           <div class="card-content pnj-card-content col s6">
             <div class="row">
-              <span class="pnj_name">PNJ NAME</span>
+              <span class="pnj_name"> <%= pnj.name %></span>
             </div>
             <div class="row pnj_status">
-              <i class="fa-solid fa-up-long"></i>Level
+              <i class="fa-solid fa-up-long"></i><%= pnj.lvl %>
             </div>
             <div class="row pnj_status">
-              <i class="fa-solid fa-earth-asia"></i>Race
+              <i class="fa-solid fa-earth-asia"></i> <%= pnj.race.name %>
             </div>
             <div class="row pnj_status">
-              <i class="fa-solid fa-khanda"></i>Job
+              <i class="fa-solid fa-khanda"></i><%= pnj.job.name %>
             </div>
             <div class="row pnj_status">
-              <i class="fa-solid fa-user-group"></i> Allier
+              <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
             </div>
           </div>
         </div>
       </div>
+    <% end %>
     </div>
   </div>

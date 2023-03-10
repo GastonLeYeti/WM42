@@ -1,6 +1,7 @@
 class Pnj < ApplicationRecord
   belongs_to :job
-  has_many :races, through: :pnjs, dependent: :destroy
+  # has_many :races, through: :pnjs, dependent: :destroy
+  belongs_to :race
   belongs_to :architecture
   belongs_to :party
   has_one :weapon
