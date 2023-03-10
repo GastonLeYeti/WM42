@@ -1,4 +1,9 @@
 class PartiesController < ApplicationController
+
+  def index
+    @Parties = Party.all
+  end
+
   def show
     @party = Party.find(params[:id])
   end
