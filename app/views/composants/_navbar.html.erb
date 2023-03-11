@@ -18,7 +18,7 @@
       <li><a href="#!">Game Rules</a></li>
       <li><a href="#!">My Account</a></li>
       <li class="divider"></li>
-      <li><a href="#!">Log Out</a></li>
+      <li><%= link_to "Sign Out", sign_out_path, :method => :delete %></li>
     </ul>
     <nav>
       <div class="container">
@@ -30,7 +30,11 @@
                 <%# <i class="material-icons right drop-arrow">arrow_drop_down</i> %>
               <div class="chip">
                 <img src="https://res.cloudinary.com/dlixoduzo/image/upload/v1678200826/Gaston_LeYeti_loutre_qui_joue_de_lhamonica_39c2c097-b838-4000-b89b-72c8da453b71_ngkmyz.png" alt="Contact Person" class="loutre_harmoniciste">
-                John Doe
+                <% if current_user %>
+                <%= current_user.username %>
+                <% else %>
+                <%= "Guest" %>
+                <% end %>
               </div>
               </a>
             </li>
@@ -40,4 +44,3 @@
     </nav>
   </div>
 </div>
-
