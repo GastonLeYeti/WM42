@@ -42,8 +42,7 @@
     <div class="col s12">
       <div class="card blue-grey lighten-1 recap-univers">
         <div class="card-content white-text">
-          <span class="card-title">Récap de l'Univers</span>
-          <%= @party.id %>
+          <span class="card-title">Univers #<%= @party.id %></span>
           <div class="univers-content">
             <div class="row recap-line">
               <i class="fa-solid fa-circle round-univers"></i>
@@ -55,21 +54,24 @@
               <span class="dashline"></span>
               <span class="univers-name"><%= @party.players.count %> players</span>
             </div>
+            <% @party.maps.each do |map| %>
+              <div class="row recap-line">
+                <i class="fa-solid fa-circle round-univers"></i>
+                <span class="dashline"></span>
+                <span class="univers-name">
+                    <%= map.name %>
+                </span>
+              </div>
+            <% end %>
             <div class="row recap-line">
               <i class="fa-solid fa-circle round-univers"></i>
               <span class="dashline"></span>
-              <span class="univers-name">
-                <%= @party.maps.each do |map| %>
-                  <div>
-                    <h2><%= map %></h2>
-                  </div>
-                <% end %>
-              </span>
+              <span class="univers-name"><%= @party.universe.creature.count %></span>
             </div>
             <div class="row recap-line">
               <i class="fa-solid fa-circle round-univers"></i>
               <span class="dashline"></span>
-              <span class="univers-name">Louise I love you</span>
+              <span class="univers-name">Nope</span>
             </div>
           </div>
         </div>
