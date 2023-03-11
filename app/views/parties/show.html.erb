@@ -1,12 +1,3 @@
-<h1>PARTY SHOW</h1>
-<h1><%= @party.name %></h1>
-
-<h2>Bible</h2>
-<p><%= @party.bible %></p>
-
-<h2>Players</h2>
-<p><%= @party.players %></p>
-
 <%= render "composants/navbar" %>
 <div class="container">
   <div class="dashboard-title">
@@ -46,25 +37,34 @@
         <p><%= @party.bible %></p>
       </div>
 
-      <div id="col s4 récap-univers" class="col s4">
-        <div class="row">
-        <div class="col s12">
+<div class="col s4">
+  <div class="row">
+    <div class="col s12">
+      <div class="card blue-grey lighten-1 recap-univers">
+        <div class="card-content white-text">
           <span class="card-title">Récap de l'Univers</span>
+          <%= @party.id %>
           <div class="univers-content">
             <div class="row recap-line">
               <i class="fa-solid fa-circle round-univers"></i>
               <span class="dashline"></span>
-              <span class="univers-name">Post Apocalyptique</span>
+              <span class="univers-name"><%= @party.universe.name %></span>
             </div>
             <div class="row recap-line">
               <i class="fa-solid fa-circle round-univers"></i>
               <span class="dashline"></span>
-              <span class="univers-name">4 Joueurs</span>
+              <span class="univers-name"><%= @party.players.count %> players</span>
             </div>
             <div class="row recap-line">
               <i class="fa-solid fa-circle round-univers"></i>
               <span class="dashline"></span>
-              <span class="univers-name">Culture du Démon</span>
+              <span class="univers-name">
+                <%= @party.maps.each do |map| %>
+                  <div>
+                    <h2><%= map %></h2>
+                  </div>
+                <% end %>
+              </span>
             </div>
             <div class="row recap-line">
               <i class="fa-solid fa-circle round-univers"></i>
@@ -72,36 +72,39 @@
               <span class="univers-name">Louise I love you</span>
             </div>
           </div>
-          </div>
-          </div>
         </div>
-      <div class="col s6 m3">
-        <div class="card blue-grey lighten-1 recap-univers">
-          <div class="card-content white-text">
-            <span class="card-title">Players</span>
-            <div class="players-content">
-              <div class="row player">
-                <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
-                <span>John Doe</span>
-              </div>
-              <div class="row player">
-                <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
-                <span>John Doe</span>
-              </div>
-              <div class="row player">
-                <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
-                <span>John Doe</span>
-              </div>
-              <div class="row player">
-                <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
-                <span>John Doe</span>
-              </div>
+      </div>
+    </div>
+    <div class="col s12">
+      <div class="card blue-grey lighten-1 recap-univers">
+        <div class="card-content white-text">
+          <span class="card-title">Players</span>
+          <div class="players-content">
+            <div class="row player">
+              <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
+              <span>John Doe</span>
+            </div>
+            <div class="row player">
+              <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
+              <span>John Doe</span>
+            </div>
+            <div class="row player">
+              <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
+              <span>John Doe</span>
+            </div>
+            <div class="row player">
+              <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
+              <span>John Doe</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
       </div>
 
     </div>
   </div>
-
