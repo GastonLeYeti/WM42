@@ -7,6 +7,6 @@
   <%#= f.input :size, label: 'Taille de la partie', required: true, collection: ['Petite', 'Moyenne', 'Grande'], as: :radio_buttons %>
   <%#= f.input :geography, label: 'Géographie', required: true, collection: ['Dune', 'Désert', 'Forêt', 'Mer', 'Montagne', 'Aléatoire'], as: :check_boxes %>
   <%= f.input :name, label: 'Ajoutez une ville', input_html: {class: 'btn-floating btn-large waves-effect waves-light red'} %>
-  <%= f.input :universe, label: 'Peuplez votre univers', required: true, collection: ['Aztèques', 'Aliens', 'Cyborgs', 'Humains', 'Vampires', 'Loups-Garous', 'Nains', 'Vikings', 'Aléatoire'], as: :check_boxes %>
+  <%= f.input :race, label: 'Peuplez votre univers', required: true, collection: ['Aztèques', 'Aliens', 'Cyborgs', 'Humains', 'Vampires', 'Loups-Garous', 'Nains', 'Vikings', 'Aléatoire'], as: :check_boxes %>
   <%= f.button :submit, class: 'waves-effect waves-light btn', value: 'Envoyer' %>
 <% end %>
