@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_10_112444) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_12_164309) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -127,6 +127,33 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_10_112444) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "bible"
+    t.string "player_1"
+    t.string "player_2"
+    t.string "player_3"
+    t.string "player_4"
+    t.string "player_5"
+    t.string "player_6"
+    t.string "player_7"
+    t.string "player_8"
+    t.string "player_9"
+    t.string "player_10"
+    t.integer "party_size"
+    t.string "race_1_name"
+    t.string "race_2_name"
+    t.string "race_3_name"
+    t.string "universe_type"
+    t.string "geography_1"
+    t.string "geography_2"
+    t.string "city_1_name"
+    t.integer "city_1_size"
+    t.string "city_1_building_1"
+    t.string "city_1_building_2"
+    t.string "city_2_name"
+    t.integer "city_2_size"
+    t.string "city_2_building_1"
+    t.string "city_2_building_2"
+    t.string "mythical_creature_1_name"
+    t.string "mythical_creature_2_name"
     t.index ["universe_id"], name: "index_parties_on_universe_id"
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
