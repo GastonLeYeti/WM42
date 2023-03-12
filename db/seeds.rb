@@ -1929,6 +1929,62 @@ pnj4 = Pnj.new(
 pnj4.save!
 p "pnj Viper created!"
 
+pnj1 = Pnj.new(
+  :name               => "Mara",
+  :lvl                => "2",
+  :job_id             => survivorId,
+  :status             => "Ally",
+  :race_id            => humain19Id,
+  :architecture_id    => archi1Id,
+  :party_id           => party1Id,
+  :weapon_id          => weapon1Id,
+  :description        => "Mara est une survivante robuste et astucieuse qui a réussi à rester en vie dans le désert post-apocalyptique en cherchant des fournitures et en évitant les gangs dangereux. Elle est toujours à la recherche d'une bonne affaire et possède un œil aiguisé pour repérer les articles de valeur.",
+)
+pnj1.save!
+p "pnj #{pnj1.name} created!"
+
+pnj2 = Pnj.new(
+  :name               => "Zephyr",
+  :lvl                => "5",
+  :job_id             => tavernierId,
+  :status             => "Enemy",
+  :race_id            => viking10Id,
+  :architecture_id    => archi3Id,
+  :party_id           => party1Id,
+  :weapon_id          => weapon3Id,
+  :description => "",
+)
+pnj2.save!
+p "pnj Zephyr created!"
+
+pnj3 = Pnj.new(
+  :name             => "Anna",
+  :lvl              => "3",
+  :job_id           => infiermerId,
+  :status           => "Allier",
+  :race_id          => viking10Id,
+  :architecture_id  => archi2Id,
+  :party_id         => party1Id,
+  :weapon_id        => weapon2Id,
+  :description      => "Anna est une médecin aimable et attentionnée qui voyage dans le désert en offrant ses services à quiconque en a besoin. Elle est compétente pour traiter les blessures et les maladies et possède un talent naturel pour calmer les patients. Elle est toujours à la recherche de nouveaux fournitures médicales à ajouter à son kit.",
+)
+pnj3.save!
+p "pnj Anna created!"
+
+pnj4 = Pnj.new(
+  :name              => "Viper",
+  :lvl               => "10",
+  :job_id            => exorcistId,
+  :status            => "Ennemi",
+  :race_id           => goule15Id,
+  :architecture_id   => archi2Id,
+  :party_id          => party1Id,
+  :weapon_id         => weapon10Id,
+  :description       => "Viper est le cruel chef d'une bande de pillards qui terrorisent le désert. Il est un maître stratège et utilise la force de sa bande en nombre pour vaincre ses ennemis. Il est connu pour sa brutalité et a la réputation de ne laisser aucun survivant.",
+)
+pnj4.save!
+p "pnj Viper created!"
+
 
 p "#############################################"
 p "#############################################"

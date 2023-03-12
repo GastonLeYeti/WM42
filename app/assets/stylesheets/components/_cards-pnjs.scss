@@ -1,0 +1,30 @@
+.pnj-card-container {
+  background-color: $background-color-30;
+  color: #FFF;
+
+  .col {
+    padding: 0
+  }
+}
+.card-image {
+  padding: 0 0 0 0
+}
+.pnj-card-content {
+  padding: 5px 5px 0 5px;
+  text-align: center;
+  column-gap: 25px;
+  align-self: self-start;
+}
+.row {
+  margin: 5px 0;
+}
+
+.pnj_name {
+  font-weight: 600
+}
+
+.fa-solid {
+  margin: 0 5px 0 0;
+  padding: 0 5px 0 0;
+  text-align: left!important;
+}

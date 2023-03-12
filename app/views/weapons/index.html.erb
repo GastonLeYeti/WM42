@@ -1,12 +1,6 @@
 <%= render "composants/navbar" %>
 <div class="container">
-  <div class="dashboard-title">
-    <div class="dashboard-party-infos">
-      <h1><%= @party.name %></h1>
-      <span><%= @party.created_at %></span>
-    </div>
-    <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>YO</a>
-  </div>
+  <%= render "composants/header_parties" %>
 
 
   <div class="row nav-dashboard" id="nav-dashboard">
