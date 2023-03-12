@@ -1,0 +1,27 @@
+.col {
+  padding:0 0 0 0 !important;
+}
+
+.dashboard-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .dashboard-party-infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  h1 {
+    color:$white-color;
+    margin:0;
+  }
+}
+
+h2 {
+  color:$white-color;
+}
+p {
+  color:$white-color!important;
+}

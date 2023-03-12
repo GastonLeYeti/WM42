@@ -1,19 +1,9 @@
-<%# <nav class="primary_bg gold_text-light" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
 
-      <ul id="nav-mobile" class="sidenav primary_bg gold_text-light">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav> %>
 <div class="row" id="navbar">
     <ul id="dropdown1" class="dropdown-content text-glighten">
-      <li><a href="">Game Rules</a></li>
+
+      <li><%= link_to "Game Rules", game_rules_pages_path %></li>
+
       <li><a href="">My Account</a></li>
       <li class="divider"></li>
       <li><%= link_to "Sign Out", sign_out_path, :method => :delete %></li>
@@ -21,10 +11,12 @@
     <nav>
       <div class="container">
         <div class="nav-wrapper">
+
           <a href="" class="brand-logo">WM</a>
           <ul class="right hide-on-med-and-down">
             <li>
               <a class="dropdown-trigger" href="#" data-target="dropdown1">
+
                 <%# <i class="material-icons right drop-arrow">arrow_drop_down</i> %>
                 <% if current_user %>
               <div class="chip">
