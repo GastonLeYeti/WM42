@@ -1,0 +1,10 @@
+<%# <%= curent_user.username %>
+<%= render "composants/navbar" %>
+<div class="container">
+  <div class="row">
+    <h1>Index des parties</h1>
+  </div>
+
+<% current_user.parties.each do |party| %>
+  <%= party.name %>
+<% end %>
