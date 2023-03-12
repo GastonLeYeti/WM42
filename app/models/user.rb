@@ -13,4 +13,8 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates :password_confirmation, presence: true
 
+  def has_parties?
+    parties.count > 0
+  end
+
 end
