@@ -1,8 +1,8 @@
 <%= simple_form_for @party do |f| %>
   <%= f.input :name, label: 'Nom de la partie' %>
   <% f.input :bible, :as => :hidden, :input_html => { :value => 'blblblblbl' } %>
-  <%= f.input :universe_id, collection: @universes %>
-  <%= f.input :player_1, label: 'Joueur 1', required: true %>
+  <%= f.input :universe_id, collection: @universes, label_method: :universe_type %>
+  <%= f.input :player_1, label: 'Joueur 1' %>
   <%= f.input :player_2, label: 'Joueur 2' %>
   <%= f.input :player_3, label: 'player_3' %>
   <%= f.input :player_4, label: 'player_4' %>
@@ -16,7 +16,7 @@
   <%= f.input :race_1_name, label: 'race_1_name' %>
   <%= f.input :race_2_name, label: 'race_2_name' %>
   <%= f.input :race_3_name, label: 'race_3_name' %>
-  <%= f.input :universe_type, label: 'universe_type' %>
+  <%# <%= f.input :universe_type, label: 'universe_type' %>
   <%= f.input :geography_1, label: 'geography_1' %>
   <%= f.input :geography_2, label: 'geography_2' %>
   <%= f.input :city_1_name, label: 'city_1_name' %>
