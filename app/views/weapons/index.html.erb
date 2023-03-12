@@ -1,0 +1,56 @@
+<%= render "composants/navbar" %>
+<div class="container">
+  <%= render "composants/header_parties" %>
+
+
+  <div class="row nav-dashboard" id="nav-dashboard">
+    <div class="col s12 nav-dashboard-tabs">
+
+      <%= link_to party_path(@party) do %>
+      <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
+      <% end %>
+      <%= link_to party_maps_path(@party) do %>
+      <span class="nav-maps" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+      <% end %>
+      <%= link_to party_players_path(@party) do %>
+      <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+      <% end %>
+      <%= link_to party_weapons_path(@party) do %>
+      <span class="nav-active" id="nav-weapons"><i class="fa-solid fa-star nav-star"></i>Weapons</span>
+      <% end %>
+      <%= link_to party_pnjs_path(@party) do %>
+      <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row" id="object-card">
+    <% @weapons.each do |weapon| %>
+    <div class="col s3">
+      <div class="card horizontal object-card-container">
+        <div class="card-image col s3">
+          <img src="https://img1.freepng.fr/20180325/lre/kisspng-middle-ages-knightly-sword-longsword-viking-sword-swords-5ab7a9c17dc6f0.6784556315219859855152.jpg">
+        </div>
+        <div class="card-content object-card-content col s9">
+          <div class="row">
+            <span class="weapon-lvl">Lvl <%= weapon.level %></span>
+            <span class="weapon-rarity"><%= weapon.rarity %></span>
+          </div>
+          <div class="row">
+            <span class="object_name"><%= weapon.name %></span>
+          </div>
+          <%# <div class="row"> %>
+            <%# <span class="object_name"><%= weapon.description</span> %>
+          <%# </div> %>
+          <div class="row">
+            <span class="object_name">Lootable<%= weapon.lootable %></span>
+          </div>
+          <div class="row">
+            <i class="fa-solid fa-coins"></i><span class="weapon-price"><%= weapon.price %></span>
+          </div>
+        </div>
+      </div>
+      </div>
+      <% end %>
+  </div>
+</div>

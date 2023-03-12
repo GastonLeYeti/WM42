@@ -1,0 +1,28 @@
+.container_log_in {
+  background-color: $background-color-70;
+  display: grid;
+  border: 1px solid $gold-color;
+  margin-top: 10vh;
+
+  h2 {
+    font-size: 36px;
+    text-align: justify;
+
+  }
+}
+
+.links_devise {
+  display: flex;
+  justify-content: space-between;
+  color: $gold-color;
+}
+.devise_log_btn {
+  display: flex;
+  justify-content: flex-end;
+  color: $gold-color;
+}
+
+.btn_down_log:hover {
+  color: $shine-color;
+
+}

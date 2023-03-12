@@ -1,0 +1,20 @@
+.header_parties {
+  // display: flex;
+
+  .icon_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    position: relative;
+    top: 8.5vh;
+
+      .dp48 {
+        font-size: 36px;
+      }
+    }
+  h1 {
+    font-size: 36px!important;
+
+  }
+}

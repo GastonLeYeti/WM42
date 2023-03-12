@@ -42,6 +42,7 @@ gem "devise"
 gem "materialize-sass"
 gem 'material_icons'
 
+
 gem "cloudinary"
 
 
@@ -69,6 +70,11 @@ group :development, :test do
   gem "dotenv-rails"
 
 end
+
+
+# gem "simple_form_materialize", "~>1.2.0"
+
+
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
