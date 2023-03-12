@@ -208,12 +208,12 @@ party1 = Party.new(
   :user_id              => userNiko.id,
 )
 party1.save!
-party1Id = party1.id
+party1id = party1.id
 p "party #{party1.name} created!"
 
 party2 = Party.new(
-  :name                 => "Les Aventuriers du grand Nicolas",
-  :bible                => "Une partie de train. On va faire un tour de France. ",
+  :name                 => "Les Aventuriers des guerriers de l'ombre",
+  :bible                => "Dans cette partie de JDR, vous allez pouvoir plongez dans l'univers de la guerre des clans. Vous allez pouvoir incarnez un chat et vivre des aventures incroyables.",
   :universe_id          => postApocalypticId,
   :user_id              => userNiko.id,
 )
@@ -1468,7 +1468,7 @@ weapon1 = Weapon.new(
   :price               => 65,
   :armory_id           => aap5Id,
   :lootable            => true,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Un arc de fortune fabriqué à partir de matériaux de récupération tels que des tuyaux en métal, des pièces de vélo et du ruban adhésif. Plus dangereux qu'il n'y paraît",
 )
 weapon1.save!
@@ -1482,7 +1482,7 @@ weapon2 = Weapon.new(
   :price               => 75,
   :armory_id           => fap3Id,
   :lootable            => true,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Un fusil de chasse classique au design robuste qui peut résister aux conditions difficiles des terres désolées.",
 )
 weapon2.save!
@@ -1496,7 +1496,7 @@ weapon3 = Weapon.new(
   :price               => 15,
   :armory_id           => lame1Id,
   :lootable            => true,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Une machette usée qui a visiblement vu de nombreuses batailles. Sa lame rouillée ajoute un élément de danger, car toute blessure qu'elle inflige pourrait s'infecter.",
 )
 weapon3.save!
@@ -1510,7 +1510,7 @@ weapon4 = Weapon.new(
   :price               => 240,
   :armory_id           => lanceflamme6Id,
   :lootable            => false,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Un sac à dos volumineux avec un réservoir de carburant et une buse qui émet des flammes. C'est une arme rare et très recherchée qui peut facilement décimer des groupes d'ennemis et cuire des steaks de coyote en un rien de temps. Utilisation optimale à courte distance.",
 )
 weapon4.save!
@@ -1524,7 +1524,7 @@ weapon5 = Weapon.new(
   :price               => 75,
   :armory_id           => grenade4Id,
   :lootable            => true,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Un dispositif explosif fabriqué à partir d'un conteneur en métal rempli de clous et d'autres objets tranchants. Il est souvent utilisé comme piège ou jeté en dernier recours.",
 )
 weapon5.save!
@@ -1538,7 +1538,7 @@ weapon6 = Weapon.new(
   :price               => 120,
   :armory_id           => aap5Id,
   :lootable            => true,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Une arbalète de chasse simple à entretenir et mortelle à courte ou moyenne distance. Les carreaux ne sont pas faciles à trouver, il vaut mieux s'assurer de les récupérer autant que possible après un tir.",
 )
 weapon6.save!
@@ -1552,7 +1552,7 @@ weapon7 = Weapon.new(
   :price               => 60,
   :armory_id           => contondante10Id,
   :lootable            => true,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Une arme de mêlée polyvalente qui peut être utilisée à la fois pour le combat et la récupération. Son poids et sa force brute la rendent efficace contre les zombies, mutants et androïdes.",
 )
 weapon7.save!
@@ -1566,7 +1566,7 @@ weapon8 = Weapon.new(
   :price               => 180,
   :armory_id           => pistolet2Id,
   :lootable            => true,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Un revolver robuste facile à entretenir et à réparer, très prisé des pillards pour sa fiabilité. Cette version moddée est équipée d'un stabilisateur et d'un pointeur laser.",
 )
 weapon8.save!
@@ -1580,7 +1580,7 @@ weapon9 = Weapon.new(
   :price               => 185,
   :armory_id           => lame1Id,
   :lootable            => false,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Une arme hybride qui combine les meilleurs aspects d'une machette et d'une épée. Elle est souvent fabriquée à partir de pièces de récupération et affûtée à l'aide de méthodes primitives. Oubliez son aspect bricolé, vous rigolerez moins quand quand elle sifflera près de vos oreilles!",
 )
 weapon9.save!
@@ -1594,7 +1594,7 @@ weapon10 = Weapon.new(
   :price               => 75,
   :armory_id           => grenade4Id,
   :lootable            => true,
-  :party_id            => party1Id,
+  :party_id            => party2Id,
   :description         => "Un dispositif de type lance-pierre qui lance des grenades artisanales sur une courte distance. Il est souvent utilisé pour des tactiques de guérilla et des attaques surprises.",
 )
 weapon10.save!
@@ -1790,7 +1790,7 @@ p "Creating one map..."
 mapDeNiko = Map.new(
   :name                 => "La map de Niko",
   :content              => '<div id="maze_container"><div id="maze" data-steps="142"><div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="door exit"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class="key"></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="nubbin"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="nubbin"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="nubbin wall"></div><div class="nubbin wall"></div><div class="nubbin wall wall"></div><div class="nubbin wall"></div><div class="nubbin wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="nubbin wall"></div><div class="nubbin wall"></div><div class="nubbin wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="nubbin"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="nubbin"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class="nubbin wall"></div><div class="nubbin wall"></div><div class="nubbin wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="nubbin"></div><div class=""></div><div class="wall"></div><div class="wall sentinel"></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="nubbin"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="nubbin"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class=""></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div><div class=""></div><div class="wall"></div></div><div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="door entrance hero"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div><div class="wall"></div></div></div></div>',
-  :party_id              => party1Id,
+  :party_id              => party2Id,
 )
 mapDeNiko.save!
 mapDeNikoId = mapDeNiko.id
@@ -1880,7 +1880,7 @@ pnj1 = Pnj.new(
   :status             => "Ally",
   :race_id            => humain19Id,
   :architecture_id    => archi1Id,
-  :party_id           => party1Id,
+  :party_id           => party2Id,
   :weapon_id          => weapon1Id,
   :description        => "Mara est une survivante robuste et astucieuse qui a réussi à rester en vie dans le désert post-apocalyptique en cherchant des fournitures et en évitant les gangs dangereux. Elle est toujours à la recherche d'une bonne affaire et possède un œil aiguisé pour repérer les articles de valeur.",
 )
@@ -1894,7 +1894,7 @@ pnj2 = Pnj.new(
   :status             => "Enemy",
   :race_id            => viking10Id,
   :architecture_id    => archi3Id,
-  :party_id           => party1Id,
+  :party_id           => party2Id,
   :weapon_id          => weapon3Id,
   :description => "",
 )
@@ -1908,7 +1908,7 @@ pnj3 = Pnj.new(
   :status           => "Allier",
   :race_id          => viking10Id,
   :architecture_id  => archi2Id,
-  :party_id         => party1Id,
+  :party_id         => party2Id,
   :weapon_id        => weapon2Id,
   :description      => "Anna est une médecin aimable et attentionnée qui voyage dans le désert en offrant ses services à quiconque en a besoin. Elle est compétente pour traiter les blessures et les maladies et possède un talent naturel pour calmer les patients. Elle est toujours à la recherche de nouveaux fournitures médicales à ajouter à son kit.",
 )
@@ -1922,7 +1922,7 @@ pnj4 = Pnj.new(
   :status            => "Ennemi",
   :race_id           => goule15Id,
   :architecture_id   => archi2Id,
-  :party_id          => party1Id,
+  :party_id          => party2Id,
   :weapon_id         => weapon10Id,
   :description       => "Viper est le cruel chef d'une bande de pillards qui terrorisent le désert. Il est un maître stratège et utilise la force de sa bande en nombre pour vaincre ses ennemis. Il est connu pour sa brutalité et a la réputation de ne laisser aucun survivant.",
 )
@@ -1936,7 +1936,7 @@ pnj1 = Pnj.new(
   :status             => "Ally",
   :race_id            => humain19Id,
   :architecture_id    => archi1Id,
-  :party_id           => party1Id,
+  :party_id           => party2Id,
   :weapon_id          => weapon1Id,
   :description        => "Mara est une survivante robuste et astucieuse qui a réussi à rester en vie dans le désert post-apocalyptique en cherchant des fournitures et en évitant les gangs dangereux. Elle est toujours à la recherche d'une bonne affaire et possède un œil aiguisé pour repérer les articles de valeur.",
 )
@@ -1950,7 +1950,7 @@ pnj2 = Pnj.new(
   :status             => "Enemy",
   :race_id            => viking10Id,
   :architecture_id    => archi3Id,
-  :party_id           => party1Id,
+  :party_id           => party2Id,
   :weapon_id          => weapon3Id,
   :description => "",
 )
@@ -1964,7 +1964,7 @@ pnj3 = Pnj.new(
   :status           => "Allier",
   :race_id          => viking10Id,
   :architecture_id  => archi2Id,
-  :party_id         => party1Id,
+  :party_id         => party2Id,
   :weapon_id        => weapon2Id,
   :description      => "Anna est une médecin aimable et attentionnée qui voyage dans le désert en offrant ses services à quiconque en a besoin. Elle est compétente pour traiter les blessures et les maladies et possède un talent naturel pour calmer les patients. Elle est toujours à la recherche de nouveaux fournitures médicales à ajouter à son kit.",
 )
@@ -1978,7 +1978,7 @@ pnj4 = Pnj.new(
   :status            => "Ennemi",
   :race_id           => goule15Id,
   :architecture_id   => archi2Id,
-  :party_id          => party1Id,
+  :party_id          => party2Id,
   :weapon_id         => weapon10Id,
   :description       => "Viper est le cruel chef d'une bande de pillards qui terrorisent le désert. Il est un maître stratège et utilise la force de sa bande en nombre pour vaincre ses ennemis. Il est connu pour sa brutalité et a la réputation de ne laisser aucun survivant.",
 )
@@ -1996,35 +1996,35 @@ p "Creating players..."
 
 player1 = Player.new(
   :username               => "Charly",
-  :party_id              => party1Id,
+  :party_id              => party2Id,
 )
 player1.save!
 p "player #{player1.username} created!"
 
 player2 = Player.new(
   :username               => "Keev",
-  :party_id              => party1Id,
+  :party_id              => party2Id,
 )
 player2.save!
 p "player #{player2.username} created!"
 
 player3 = Player.new(
   :username               => "Brice",
-  :party_id              => party1Id,
+  :party_id              => party2Id,
 )
 player3.save!
 p "player #{player3.username} created!"
 
 player4 = Player.new(
   :username               => "Eliott",
-  :party_id              => party1Id,
+  :party_id              => party2Id,
 )
 player4.save!
 p "player #{player4.username} created!"
 
 player5 = Player.new(
   :username               => "Luce",
-  :party_id              => party1Id,
+  :party_id              => party2Id,
 )
 player5.save!
 p "player #{player5.username} created!"

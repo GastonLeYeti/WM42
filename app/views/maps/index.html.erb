@@ -2,12 +2,13 @@
 <div class="container">
 <%= render "composants/header_parties" %>
 
-<div class="row nav-dashboard" id="nav-dashboard">
+  <div class="row nav-dashboard" id="nav-dashboard">
     <div class="col s12 nav-dashboard-tabs">
 
       <%= link_to party_path(@party) do %>
         <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
       <% end %>
+
         <span class="nav-active" id="nav-map"><i class="fa-solid fa-star nav-star"></i>Map</span>
 
       <%= link_to party_players_path(@party) do %>
@@ -22,3 +23,11 @@
 
     </div>
   </div>
+
+  <div class="row">
+    <div class="col s12">
+
+    </div>
+  </div>
+
+</div>
