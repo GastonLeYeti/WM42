@@ -12,30 +12,26 @@
     </div>
   </nav> %>
 <div class="row" id="navbar">
-
     <ul id="dropdown1" class="dropdown-content text-glighten">
-
-      <li><a href="#!">Game Rules</a></li>
-      <li><a href="#!">My Account</a></li>
+      <li><a href="">Game Rules</a></li>
+      <li><a href="">My Account</a></li>
       <li class="divider"></li>
       <li><%= link_to "Sign Out", sign_out_path, :method => :delete %></li>
     </ul>
     <nav>
       <div class="container">
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">WM</a>
+          <a href="" class="brand-logo">WM</a>
           <ul class="right hide-on-med-and-down">
             <li>
-              <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+              <a class="dropdown-trigger" href="#" data-target="dropdown1">
                 <%# <i class="material-icons right drop-arrow">arrow_drop_down</i> %>
+                <% if current_user %>
               <div class="chip">
                 <img src="https://res.cloudinary.com/dlixoduzo/image/upload/v1678200826/Gaston_LeYeti_loutre_qui_joue_de_lhamonica_39c2c097-b838-4000-b89b-72c8da453b71_ngkmyz.png" alt="Contact Person" class="loutre_harmoniciste">
-                <% if current_user %>
-                <%= current_user.username %>
-                <% else %>
-                <%= "Guest" %>
-                <% end %>
+                <%= current_user.username %> #<%= current_user.id %><%= Random.rand(10000000) %>
               </div>
+                <% end %>
               </a>
             </li>
           </ul>
