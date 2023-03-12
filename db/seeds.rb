@@ -1936,7 +1936,7 @@ pnj1 = Pnj.new(
   :status             => "Ally",
   :race_id            => humain19Id,
   :architecture_id    => archi1Id,
-  :party_id           => party1Id,
+  :party_id           => party2Id,
   :weapon_id          => weapon1Id,
   :description        => "Mara est une survivante robuste et astucieuse qui a réussi à rester en vie dans le désert post-apocalyptique en cherchant des fournitures et en évitant les gangs dangereux. Elle est toujours à la recherche d'une bonne affaire et possède un œil aiguisé pour repérer les articles de valeur.",
 )
@@ -1950,7 +1950,7 @@ pnj2 = Pnj.new(
   :status             => "Enemy",
   :race_id            => viking10Id,
   :architecture_id    => archi3Id,
-  :party_id           => party1Id,
+  :party_id           => party2Id,
   :weapon_id          => weapon3Id,
   :description => "",
 )
@@ -1964,7 +1964,7 @@ pnj3 = Pnj.new(
   :status           => "Allier",
   :race_id          => viking10Id,
   :architecture_id  => archi2Id,
-  :party_id         => party1Id,
+  :party_id         => party2Id,
   :weapon_id        => weapon2Id,
   :description      => "Anna est une médecin aimable et attentionnée qui voyage dans le désert en offrant ses services à quiconque en a besoin. Elle est compétente pour traiter les blessures et les maladies et possède un talent naturel pour calmer les patients. Elle est toujours à la recherche de nouveaux fournitures médicales à ajouter à son kit.",
 )
@@ -1978,7 +1978,7 @@ pnj4 = Pnj.new(
   :status            => "Ennemi",
   :race_id           => goule15Id,
   :architecture_id   => archi2Id,
-  :party_id          => party1Id,
+  :party_id          => party2Id,
   :weapon_id         => weapon10Id,
   :description       => "Viper est le cruel chef d'une bande de pillards qui terrorisent le désert. Il est un maître stratège et utilise la force de sa bande en nombre pour vaincre ses ennemis. Il est connu pour sa brutalité et a la réputation de ne laisser aucun survivant.",
 )
