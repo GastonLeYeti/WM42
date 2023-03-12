@@ -1,7 +1,7 @@
 <%= simple_form_for @party do |f| %>
   <%= f.input :name, label: 'Nom de la partie' %>
   <% f.input :bible, :as => :hidden, :input_html => { :value => 'blblblblbl' } %>
-  <%= f.input :universe_id, collection: @universes %>
+<%= f.input :universe_id, collection: @universes, label_method: :universe_type %>
   <%= f.input :player_1, label: 'Joueur 1', required: true %>
   <%= f.input :player_2, label: 'Joueur 2' %>
   <%= f.input :player_3, label: 'player_3' %>
