@@ -40,8 +40,8 @@
 
   <div class="row" id="weapon-cards-container">
     <% @weapons.sort_by{|weapon| weapon.level }.group_by(&:level).each do |level, weapons| %>
-    <div class="col s12">
-      <h3>Level <%= level %></h3>
+    <div class="col s12 bible_title">
+            <h2>Level <%= level %></h2>
           </div>
               <% weapons.each do |weapon| %>
                 <div class="col s3" data-search-target="card">
