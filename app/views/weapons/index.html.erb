@@ -28,16 +28,16 @@
     <% @weapons.sort_by(&:level).each do |weapon| %>
     <div class="col s3">
       <div class="card horizontal object-card-container">
-        <div class="card-image col s3">
+        <div class="card-image col s6">
           <img src="https://img1.freepng.fr/20180325/lre/kisspng-middle-ages-knightly-sword-longsword-viking-sword-swords-5ab7a9c17dc6f0.6784556315219859855152.jpg">
         </div>
         <div class="card-content object-card-content col s9">
           <div class="row">
             <span class="weapon-lvl">Lvl <%= weapon.level %></span>
-            <span class="weapon-rarity"><%= weapon.rarity %></span>
+            <span class="weapon-rarity truncate"><%= weapon.rarity %></span>
           </div>
           <div class="row">
-            <span class="object_name"><%= weapon.name %></span>
+            <span class="object_name valign-wrapper"><%= weapon.name %></span>
           </div>
           <%# <div class="row"> %>
             <%# <span class="object_name"><%= weapon.description</span> %>
