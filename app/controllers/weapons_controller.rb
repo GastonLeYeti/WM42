@@ -1,14 +1,12 @@
 class WeaponsController < ApplicationController
   def index
-    @party = Party.find(params[:party_id])
-
     @weapons = Weapon.all
+    @party = Party.find(params[:party_id])
   end
 
   def show
     @weapon = Weapon.find(params[:id])
   end
-
 
   private
 
