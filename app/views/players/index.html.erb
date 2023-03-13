@@ -2,7 +2,7 @@
 <div class="container">
   <%= render "composants/header_parties" %>
 
-<div class="row nav-dashboard" id="nav-dashboard">
+  <div class="row nav-dashboard" id="nav-dashboard">
     <div class="col s12 nav-dashboard-tabs">
 
       <%= link_to party_path(@party) do %>
@@ -23,3 +23,43 @@
 
     </div>
   </div>
+
+  <div class="row row_bible" id="player-card">
+    <div class="col s12 bible">
+
+      <div class="row">
+        <div class="col s12 bible_title">
+          <h2>Players</h2>
+        </div>
+      </div>
+
+      <div class="row">
+
+                <% @party.players.each do |player| %>
+                  <div class="col s3">
+
+                      <% sex_image_au_hasard = ["female","male"].sample %>
+                      <% metier_image_au_hasard = ["alchemist","artificer","bard","cleric","druid","mage","monk","paladin","rogue","sorcerer","warlock","warrior"].sample %>
+                      <% where_image_au_hasard = ["indoor","outdoor"].sample %>
+
+
+                    <div class="card card-player">
+                      <div class="card-image waves-effect waves-block waves-dark">
+                        <%= image_tag("pnj_cards/#{sex_image_au_hasard}_#{metier_image_au_hasard}_#{where_image_au_hasard}.png") %>
+                      </div>
+                      <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><%= player.username %></span>
+                      </div>
+
+                    </div>
+
+                  </div>
+                <% end %>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
