@@ -26,18 +26,18 @@
   <div class="row row_bible" id="pnj-card">
     <div class="col s12 bible">
 
-   <div data-controller="search">
-   <div class="nav-wrapper search-bar col s9 m6 l5">
-    <form data-action="submit->search#submit">
-      <div class="input-field">
-        <input id="search" type="search" required data-search-target="input" data-action="keyup->search#submit">
-        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons" data-action="click->search#clear">close</i>
-      </div>
-    </form>
-  </div>
+      <div data-controller="search">
+        <div class="nav-wrapper search-bar col s9 m6 l5">
+          <form data-action="submit->search#submit">
+            <div class="input-field">
+              <input id="search" type="search" required data-search-target="input" data-action="keyup->search#submit">
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons" data-action="click->search#clear">close</i>
+            </div>
+          </form>
+        </div>
 
-  <div class="row" id="pnj-cards-container">
+        <div class="row" id="pnj-cards-container">
           <% @pnjs.sort_by{|pnj| pnj.lvl }.group_by(&:lvl).each do |level, pnjs| %>
             <div class="col s12">
               <h3>Level <%= level %></h3>
@@ -53,16 +53,16 @@
                       <span class="pnj_name"><%= pnj.name %></span>
                     </div>
                     <div class="row pnj_status">
-                      <i class="fa-solid fa-up-long"></i><%= pnj.lvl %>
+                      <i class="fa-solid fa-up-long"></i> &nbsp; <%= pnj.lvl %>
                     </div>
                     <div class="row pnj_status">
-                      <i class="fa-solid fa-earth-asia"></i> <%= pnj.races.name %>
+                      <i class="fa-solid fa-earth-asia"></i> &nbsp; <%= pnj.races.name %>
                     </div>
                     <div class="row pnj_status">
-                      <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
+                      <i class="fa-solid fa-user-group"></i> &nbsp; <%= pnj.status %>
                     </div>
                     <div class="row pnj_status">
-                      <i class="fa-solid fa-khanda"></i>
+                      <i class="fa-solid fa-khanda"></i> &nbsp;
                       <span class="job searchElement">
                         <%= pnj.job.name %>
                       </span>
@@ -73,7 +73,7 @@
             <% end %>
           <% end %>
         </div>
-        </div>
+      </div>
     </div>
   </div>
 </div>
