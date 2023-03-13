@@ -8,6 +8,6 @@ class Party < ApplicationRecord
   has_many :options, through: :funs, dependent: :destroy
   has_many :pnjs, dependent: :destroy
   has_many :races, through: :pnjs, dependent: :destroy
-  # validates :name, presence: true
+  validates :name, presence: true
   # validates :bible, presence: true
 end

@@ -12,14 +12,19 @@ class PartiesController < ApplicationController
     @party = Party.new
     @players = @party.players
     @races = Race.pluck(:name).uniq
+    @geography = []
   end
 
   def create
     @party = Party.new(party_params)
-    @party.user_id = current_user.id
     @party.name = party_params[:name]
-    if @party.save
-      redirect_to @party, notice: 'Successfully created a party.'
+    @party.user_id = current_user.id
+    @universe = Universe.find_by_id(@party.universe_id)
+    # @party.universe_id = @universe.id
+    # @party.universe_type = party_params[:universe_id]
+    # @universe.id = @party.universe_idq
+    if @party.save!
+      redirect_to party_path(@party), notice: 'Successfully created a party.'
     else
       render :new
     end
