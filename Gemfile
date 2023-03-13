@@ -35,7 +35,7 @@ gem "jbuilder"
 
 
 
-
+gem "pg_search"
 
 gem "devise"
 
