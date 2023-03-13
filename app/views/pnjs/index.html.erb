@@ -26,58 +26,54 @@
   <div class="row row_bible" id="pnj-card">
     <div class="col s12 bible">
 
-      <div class="row" id="search-bar">
-        <div class="nav-wrapper search-bar col s9 m6 l5">
-          <form>
-            <div class="input-field">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>
-        </div>
+   <div data-controller="search">
+   <div class="nav-wrapper search-bar col s9 m6 l5">
+    <form data-action="submit->search#submit">
+      <div class="input-field">
+        <input id="search" type="search" required data-search-target="input" data-action="keyup->search#submit">
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons" data-action="click->search#clear">close</i>
       </div>
-
-  <div class="row">
-  <% @pnjs.sort_by{|pnj| pnj.lvl }.group_by(&:lvl).each do |level, pnjs| %>
-    <div class="col s12">
-      <h3>Level <%= level %></h3>
-    </div>
-    <% pnjs.each do |pnj| %>
-      <div class="col s12 m6 l3">
-        <div class="card horizontal pnj-card-container">
-          <div class="card-image col s6">
-            <%= image_tag ("pnj_cards/random_1.png"), class: "" %>
-          </div>
-          <div class="card-content pnj-card-content col s6">
-            <div class="row">
-              <span class="pnj_name"><%= pnj.name %></span>
-            </div>
-            <div class="row pnj_status">
-              <i class="fa-solid fa-up-long"></i><%= pnj.lvl %>
-            </div>
-            <div class="row pnj_status">
-              <i class="fa-solid fa-earth-asia"></i> <%= pnj.races.name %>
-            </div>
-            <div class="row pnj_status">
-              <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
-            </div>
-            <div class="row pnj_status">
-              <i class="fa-solid fa-khanda"></i><%= pnj.job.name %>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
-
-
-
-    </div>
-
+    </form>
   </div>
 
-
+  <div class="row" id="pnj-cards-container">
+          <% @pnjs.sort_by{|pnj| pnj.lvl }.group_by(&:lvl).each do |level, pnjs| %>
+            <div class="col s12">
+              <h3>Level <%= level %></h3>
+            </div>
+            <% pnjs.each do |pnj| %>
+              <div class="col s12 m6 l3" data-search-target="card">
+                <div class="card horizontal pnj-card-container">
+                  <div class="card-image col s6">
+                    <%= image_tag ("pnj_cards/male_druid_outdoor.png"), class: "" %>
+                  </div>
+                  <div class="card-content pnj-card-content col s6">
+                    <div class="row">
+                      <span class="pnj_name"><%= pnj.name %></span>
+                    </div>
+                    <div class="row pnj_status">
+                      <i class="fa-solid fa-up-long"></i><%= pnj.lvl %>
+                    </div>
+                    <div class="row pnj_status">
+                      <i class="fa-solid fa-earth-asia"></i> <%= pnj.races.name %>
+                    </div>
+                    <div class="row pnj_status">
+                      <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
+                    </div>
+                    <div class="row pnj_status">
+                      <i class="fa-solid fa-khanda"></i>
+                      <span class="job searchElement">
+                        <%= pnj.job.name %>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        </div>
+    </div>
+  </div>
 </div>
