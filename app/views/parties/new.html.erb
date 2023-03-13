@@ -1,3 +1,78 @@
+<%= render "composants/navbar" %>
+<div class="container">
+  <div class="row title">
+    <div class="col s12">
+      <h1>Créer une partie</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <%= simple_form_for @party do |f| %>
+        <div class="first_section">
+          <h2> Informations générales </h2>
+          <div class="input-field col s12">
+            <%= f.input :name, placeholder: 'Nom de la partie', label: 'Nom de la partie', class: 'party_name' %>
+          </div>
+
+          <%= f.input :universe_id,
+            placeholder: "Univers",
+            label: "Univers",
+            collection: [['Science Fiction', 69], ['Heroic Fantasy', 70], ['Moderne', 71], ['Historique', 72], ['Post Apocalyptique', 73]],
+            as: :radio_buttons,
+            input_html: { class: 'universe_id' },
+            item_label_class: 'universe_id',
+            item_wrapper_class: 'universe_id'
+          %>
+
+          <% (1..6).each do |i| %>
+            <div class="input-field col s4">
+              <%= f.input "player_#{i}", label: "Joueur #{i}", placeholder: "Joueur #{i}" %>
+            </div>
+          <% end %>
+
+          <%= f.input :races, placeholder: "Ajoutez des races", collection: @races, as: :check_boxes %>
+
+          <%= f.input :mythical_creature_1_name, label: 'Ajoutez un type de créature mythique' %>
+          <%= f.input :mythical_creature_2_name, label: 'Ajoutez un deuxième type de créature mythique' %>
+
+        </div>
+
+        <div class="first_section">
+          <h2> Carte </h2>
+          <%= f.input :party_size, placeholder: 'Taille de la carte', label: 'Taille de la carte', collection: ['Petite', 'Moyenne', 'Grande'], as: :radio_buttons  %>
+
+        <%#= f.input :party_size, placeholder: 'Taille de la partie', collection: @races, as: :radio_buttons %>
+
+        <%#= f.input :race_1_name, label: 'Race 1', collection: @races %>
+        <%#= f.input :race_2_name, label: 'Race 2', collection: @races %>
+        <%#= f.input :race_3_name, label: 'Race 3', collection: @races %>
+
+        <%# <%= f.input :universe_type, label: 'universe_type' %>
+
+        <%#= f.input :geography, placeholder: "Ajoutez des éléments géographiques", collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'], as: :check_boxes %>
+
+          <%= f.input :geography_1, label: 'Element géographique 1', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
+          <%= f.input :geography_2, label: 'Element géographique 2', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
+
+          <%= f.input :city_1_name, label: 'Nom de la ville 1' %>
+          <%= f.input :city_1_size, label: 'Taille de la ville 1', collection: ['Petite', 'Moyenne', 'Grande'] %>
+          <%= f.input :city_1_building_1, label: 'Ajoutez un bâtiment à la ville 1' %>
+          <%= f.input :city_1_building_2, label: 'Ajoutez un 2ème bâtiment à la ville 1' %>
+
+          <%= f.input :city_2_name, label: 'Nom de la ville 2' %>
+          <%= f.input :city_2_size, label: 'Taille de la ville 2', collection: ['Petite', 'Moyenne', 'Grande'] %>
+          <%= f.input :city_2_building_1, label: 'Ajoutez un bâtiment à la ville 2' %>
+          <%= f.input :city_2_building_2, label: 'Ajoutez un 2ème bâtiment à la ville 2' %>
+
+          <%= f.input :bible, :as => :hidden, :input_html => { :value => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae ultricies odio, non commodo sapien. Suspendisse eget varius nisi, quis tristique risus. Phasellus urna nunc, congue eget porta sit amet, mollis id ante. Maecenas dignissim risus malesuada neque fringilla, non feugiat odio suscipit. Fusce a aliquet metus, luctus semper elit. Vivamus at nisi eget est dignissim cursus id at tellus. Aenean eget nunc feugiat, scelerisque ante ac, pretium elit. Duis lobortis mauris sed mauris pulvinar euismod. Maecenas vulputate neque vel efficitur blandit.' } %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <%# <%= simple_form_for @party do |f| %>
 <%#   <%= f.input :name, label: 'Nom de la partie' %>
 <%#   <% f.input :bible, :as => :hidden, :input_html => { :value => 'blblblblbl' } %>
@@ -31,65 +106,3 @@
 <%#   <%= f.input :mythical_creature_2_name, label: 'mythical_creature_2_name' %>
 <%#   <%= f.button :submit %>
 <%# <% end %>
-
-<%= render "composants/navbar" %>
-<div class="container">
-  <div class="row title">
-    <div class="col s12">
-      <h1>Créer une partie</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s12">
-      <%= simple_form_for @party do |f| %>
-        <div class="first_section">
-          <h2> Informations générales </h2>
-          <div class="input-field col s12">
-            <%= f.input :name, placeholder: 'Nom de la partie', label: 'Nom de la partie', class: 'party_name' %>
-          </div>
-
-
-          <%= f.input :universe_type,
-            label: "Univers",
-            collection: ['Univers 1', 'Univers 2', 'Univers 3', 'Univers 4', 'Univers 5', 'Univers 6'],
-            as: :radio_buttons,
-            input_html: { class: 'universe_type' },
-            item_label_class: 'universe_type',
-            item_wrapper_class: 'universe_type'
-          %>
-
-          <% (1..6).each do |i| %>
-            <div class="input-field col s4">
-              <%= f.input "player_#{i}", label: "Joueur #{i}", placeholder: "Joueur #{i}" %>
-            </div>
-          <% end %>
-
-          <%= f.input :party_size, label: 'party_size' %>
-        </div>
-
-
-
-        <%= f.input :race_1_name, label: 'race_1_name', collection: @races %>
-        <%= f.input :race_2_name, label: 'race_2_name' %>
-        <%= f.input :race_3_name, label: 'race_3_name' %>
-
-
-        <%# <%= f.input :universe_type, label: 'universe_type' %>
-        <%= f.input :geography_1, label: 'geography_1' %>
-        <%= f.input :geography_2, label: 'geography_2' %>
-        <%= f.input :city_1_name, label: 'city_1_name' %>
-        <%= f.input :city_1_size, label: 'city_1_size' %>
-        <%= f.input :city_1_building_1, label: 'city_1_building_1' %>
-        <%= f.input :city_1_building_2, label: 'city_1_building_2' %>
-        <%= f.input :city_2_name, label: 'city_2_name' %>
-        <%= f.input :city_2_size, label: 'city_2_size' %>
-        <%= f.input :city_2_building_1, label: 'city_2_building_1' %>
-        <%= f.input :city_2_building_2, label: 'city_2_building_2' %>
-        <%= f.input :mythical_creature_1_name, label: 'mythical_creature_1_name' %>
-        <%= f.input :mythical_creature_2_name, label: 'mythical_creature_2_name' %>
-        <% f.input :bible, :as => :hidden, :input_html => { :value => 'blblblblbl' } %>
-        <%= f.button :submit %>
-      <% end %>
-    </div>
-  </div>
-</div>
