@@ -49,12 +49,14 @@
           </div>
 
 
-          <% ['Univers 1', 'Univers 2', 'Univers 3', 'Univers 4', 'Univers 5', 'Univers 6'].each do |univers| %>
-            <div>
-              <%= f.radio_button :universe_type, univers, class: "with-gap" %>
-              <%= f.label :universe_type, univers %>
-            </div>
-          <% end %>
+          <%= f.input :universe_type,
+            label: "Univers",
+            collection: ['Univers 1', 'Univers 2', 'Univers 3', 'Univers 4', 'Univers 5', 'Univers 6'],
+            as: :radio_buttons,
+            input_html: { class: 'universe_type' },
+            item_label_class: 'universe_type',
+            item_wrapper_class: 'universe_type'
+          %>
 
           <% (1..6).each do |i| %>
             <div class="input-field col s4">
@@ -64,9 +66,14 @@
 
           <%= f.input :party_size, label: 'party_size' %>
         </div>
-        <%= f.input :race_1_name, label: 'race_1_name' %>
+
+
+
+        <%= f.input :race_1_name, label: 'race_1_name', collection: @races %>
         <%= f.input :race_2_name, label: 'race_2_name' %>
         <%= f.input :race_3_name, label: 'race_3_name' %>
+
+
         <%# <%= f.input :universe_type, label: 'universe_type' %>
         <%= f.input :geography_1, label: 'geography_1' %>
         <%= f.input :geography_2, label: 'geography_2' %>

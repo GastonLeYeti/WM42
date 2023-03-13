@@ -10,6 +10,9 @@ class PartiesController < ApplicationController
 
   def new
     @party = Party.new
+
+    @players = @party.players
+    @races = Race.pluck(:name).uniq
   end
 
   def create
