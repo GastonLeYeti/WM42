@@ -13,3 +13,139 @@
     font-size: 24px;
   }
 }
+
+
+
+/* Radio Buttons
+   ========================================================================== */
+/* line 5, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:not(:checked),
+[type="radio"]:checked {
+  /* position: absolute; */
+  /* opacity: 0; */
+  /* pointer-events: none; */
+}
+
+/* line 12, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:not(:checked) + span,
+[type="radio"]:checked + span {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+  transition: .28s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+/* line 25, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"] + span:before,
+[type="radio"] + span:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+  transition: .28s ease;
+}
+
+/* Unchecked styles */
+/* line 39, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:not(:checked) + span:before,
+[type="radio"]:not(:checked) + span:after,
+[type="radio"]:checked + span:before,
+[type="radio"]:checked + span:after,
+.with-gap[type="radio"]:checked + span:before,
+.with-gap[type="radio"]:checked + span:after {
+  border-radius: 50%;
+}
+
+/* line 48, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:not(:checked) + span:before,
+[type="radio"]:not(:checked) + span:after {
+  border: 2px solid #5a5a5a;
+}
+
+/* line 53, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:not(:checked) + span:after {
+  transform: scale(0);
+}
+
+/* Checked styles */
+/* line 58, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:checked + span:before {
+  border: 2px solid transparent;
+}
+
+/* line 62, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:checked + span:after,
+.with-gap[type="radio"]:checked + span:before,
+.with-gap[type="radio"]:checked + span:after {
+  border: 2px solid #26a69a;
+}
+
+/* line 68, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:checked + span:after,
+.with-gap[type="radio"]:checked + span:after {
+  background-color: #26a69a;
+}
+
+/* line 73, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:checked + span:after {
+  transform: scale(1.02);
+}
+
+/* Radio With gap */
+/* line 78, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+.with-gap[type="radio"]:checked + span:after {
+  transform: scale(0.5);
+}
+
+/* Focused styles */
+/* line 83, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+.tabbed[type="radio"]:focus + span:before {
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Disabled Radio With gap */
+/* line 88, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+.with-gap[type="radio"]:disabled:checked + span:before {
+  border: 2px solid rgba(0, 0, 0, 0.42);
+}
+
+/* line 92, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+.with-gap[type="radio"]:disabled:checked + span:after {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.42);
+}
+
+/* Disabled style */
+/* line 98, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:disabled:not(:checked) + span:before,
+[type="radio"]:disabled:checked + span:before {
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.42);
+}
+
+/* line 104, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:disabled + span {
+  color: rgba(0, 0, 0, 0.42);
+}
+
+/* line 108, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:disabled:not(:checked) + span:before {
+  border-color: rgba(0, 0, 0, 0.42);
+}
+
+/* line 112, ../../../../.rvm/gems/ruby-3.1.2/gems/materialize-sass-1.0.0.1/assets/stylesheets/materialize/components/forms/_radio-buttons.scss */
+[type="radio"]:disabled:checked + span:after {
+  background-color: rgba(0, 0, 0, 0.42);
+  border-color: #949494;
+}

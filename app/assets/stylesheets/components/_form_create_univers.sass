@@ -1,0 +1,15 @@
+form#new_party
+  h1, h2, h3, h4, h5, h6
+    color: $shine-color
+  [type="radio"]:not(:checked), [type="radio"]:checked
+    position: inherit
+    opacity: 1
+    pointer-events: none
+  .input-field
+    .party_name
+      input::placeholder
+        color: $shiny-shine-color
+    input#party_name.validate
+      color: $primary-color
+    label
+      display: none

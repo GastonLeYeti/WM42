@@ -12,6 +12,7 @@ class MapsController < ApplicationController
   private
 
   def map_params
-    params.require(:map).permit(:name, :description, :universe_id)
+    params.require(:map).permit(:name, :content, :universe_id)
+    # params.require(:map).permit(:name, :description, :universe_id)
   end
 end

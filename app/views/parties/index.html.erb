@@ -1,10 +1,55 @@
 <%# <%= curent_user.username %>
 <%= render "composants/navbar" %>
 <div class="container">
-  <div class="row">
-    <h1>Index des parties</h1>
+  <div class="row title">
+    <h1><%= 'Livre'.pluralize(current_user.parties.count) %> des aventures</h1>
   </div>
 
-<% current_user.parties.each do |party| %>
-  <%= party.name %>
-<% end %>
+  <div class="row">
+
+    <div class="col s12 m4">
+      <div class="card card_party new hoverable">
+        <div class="card-image">
+          <%= image_tag "party_cards/Univers_new.png" %>
+          <span class="card-title">Nouveau Monde</span>
+          <%= link_to new_party_path, class: "btn-floating btn-large halfway-fab waves-effect waves-light primary_bg hoverable" do %>
+            <i class="material-icons">add_circle</i>
+          <% end %>
+        </div>
+        <div class="card-content">
+          <p>
+            <blockquote>
+              Venez créer votre propre univers et vos propres règles !
+            </blockquote>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <% current_user.parties.each do |party| %>
+      <div class="col s12 m4">
+        <div class="card card_party hoverable">
+          <div class="card-image">
+            <%= image_tag "party_cards/Univers_PostApocalyptic.png" %>
+            <span class="card-title"><%= party.name %></span>
+            <%= link_to party_path(party.id), class: "btn-floating btn-large halfway-fab waves-effect waves-light primary_bg hoverable" do %>
+              <i class="material-icons">visibility</i>
+            <% end %>
+          </div>
+          <div class="card-content">
+            <span class="pils"><i class="material-icons">group</i> <%= party.players.count %></span>
+            <span class="pils"><i class="material-icons">language</i> <%= party.universe.name %></span>
+            <blockquote>
+              <% party_bible = party.bible %>
+              <% if party_bible.length > 102 %>
+                <%= party_bible[0, 84] + "..." %>
+              <% else %>
+                <%= party_bible %>
+              <% end %>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>

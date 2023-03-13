@@ -1,4 +1,6 @@
 $primary-color: #8124BF;
+$dark-primary-color: darken($primary-color, 20%) !default;
+
 
 $background-color: #2A2E32;
 
@@ -11,6 +13,7 @@ $background-color-30: #c0c3c7;
 $gold-color: #C09B2F;
 
 $shine-color: #C0A27E;
+$shiny-shine-color: lighten($shine-color, 15%) !default;
 
 $white-color: #fff;
 
@@ -18,6 +21,8 @@ $white-color: #fff;
 // $octonary-color: #fff;
 // $nonary-color: #fff;
 // $denary-color: #fff;
+
+$gradiant-primary-color: linear-gradient(165deg, $background-color-70, $dark-primary-color);
 
 body {
   background:$background-color

@@ -1,6 +1,6 @@
 $primary-color: #8124BF !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
-$secondary-color-dark: darken($primary-color, 15%) !default;
+$primary-color-dark: darken($primary-color, 15%) !default;
 
 $secondary-color: #8C031C !default;
 $secondary-color-light: lighten($secondary-color, 15%) !default;
