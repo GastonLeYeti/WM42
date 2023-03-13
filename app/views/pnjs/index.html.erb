@@ -2,38 +2,56 @@
 <div class="container">
   <%= render "composants/header_parties" %>
 
-<div class="row nav-dashboard" id="nav-dashboard">
+  <div class="row nav-dashboard" id="nav-dashboard">
     <div class="col s12 nav-dashboard-tabs">
-
       <%= link_to party_path(@party) do %>
-      <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
+        <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
       <% end %>
       <%= link_to party_maps_path(@party) do %>
-      <span class="nav-maps" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+        <span class="nav-maps" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
       <% end %>
       <%= link_to party_players_path(@party) do %>
-      <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+        <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
       <% end %>
       <%= link_to party_weapons_path(@party) do %>
-      <span class="nav-weapons" id="nav-weapons"><i class="fa-regular fa-star nav-star"></i>Weapons</span>
+        <span class="nav-weapons" id="nav-weapons"><i class="fa-regular fa-star nav-star"></i>Weapons</span>
       <% end %>
-      <%= link_to party_pnjs_path(@party) do %>
+        <%= link_to party_pnjs_path(@party) do %>
       <span class="nav-active" id="nav-pnj"><i class="fa-solid fa-star nav-star"></i>PNJ</span>
       <% end %>
-
     </div>
   </div>
 
-<div class="row" id="pnj-card">
-<% @pnjs.each do | pnj |  %>
-  <div class="col m3 s12">
-      <div class="card horizontal pnj-card-container">
+
+  <div class="row row_bible" id="pnj-card">
+    <div class="col s12 bible">
+
+      <div class="row" id="search-bar">
+        <div class="nav-wrapper search-bar col s9 m6 l5">
+          <form>
+            <div class="input-field">
+              <input id="search" type="search" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </div>
+          </form>
+        </div>
+      </div>
+
+  <div class="row">
+  <% @pnjs.sort_by{|pnj| pnj.lvl }.group_by(&:lvl).each do |level, pnjs| %>
+    <div class="col s12">
+      <h3>Level <%= level %></h3>
+    </div>
+    <% pnjs.each do |pnj| %>
+      <div class="col s12 m6 l3">
+        <div class="card horizontal pnj-card-container">
           <div class="card-image col s6">
-            <img src="https://i.pinimg.com/236x/67/5f/31/675f31b94938ce9f3f759bd4138f3ba2.jpg">
+            <%= image_tag ("pnj_cards/random_1.png"), class: "" %>
           </div>
           <div class="card-content pnj-card-content col s6">
             <div class="row">
-              <span class="pnj_name"> <%= pnj.name %></span>
+              <span class="pnj_name"><%= pnj.name %></span>
             </div>
             <div class="row pnj_status">
               <i class="fa-solid fa-up-long"></i><%= pnj.lvl %>
@@ -42,14 +60,24 @@
               <i class="fa-solid fa-earth-asia"></i> <%= pnj.races.name %>
             </div>
             <div class="row pnj_status">
-              <i class="fa-solid fa-khanda"></i><%= pnj.job.name %>
+              <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
             </div>
             <div class="row pnj_status">
-              <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
+              <i class="fa-solid fa-khanda"></i><%= pnj.job.name %>
             </div>
           </div>
         </div>
       </div>
     <% end %>
+  <% end %>
+</div>
+
+
+
+
     </div>
+
   </div>
+
+
+</div>
