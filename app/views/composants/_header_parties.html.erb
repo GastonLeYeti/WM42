@@ -4,7 +4,7 @@
       <h1><%= @party.name %></h1>
     </div>
     <div class="row">
-      <h6>Party created at <%= @party.created_at  %></h6>
+      <h6>Party crée le <%= @party.created_at.strftime("%d/%m/%Y")  %></h6>
     </div>
   </div>
   <div class="col s3 icon_container center-align valign-wrapper">
