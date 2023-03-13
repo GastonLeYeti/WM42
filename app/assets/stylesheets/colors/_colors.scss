@@ -1,6 +1,7 @@
 $primary-color: #8124BF;
 $dark-primary-color: darken($primary-color, 20%) !default;
 
+
 $background-color: #2A2E32;
 
 $background-color-70: #34383C;
@@ -20,6 +21,8 @@ $white-color: #fff;
 // $octonary-color: #fff;
 // $nonary-color: #fff;
 // $denary-color: #fff;
+
+$gradiant-primary-color: linear-gradient(165deg, $background-color-70, $dark-primary-color);
 
 body {
   background:$background-color
