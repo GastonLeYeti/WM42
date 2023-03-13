@@ -1,30 +1,40 @@
 .pnj-card-container {
+  margin-top: 10px;
+  padding: 0;
   background-color: $background-color-30;
-  color: #FFF;
 
-  .col {
-    padding: 0
+
+
+  .pnj-card-content {
+    padding: 0;
+    padding-left: 20px;
+  }
+  .card-image {
+    padding: 0;
+    object-fit: fill;
+    white-space: nowrap;
+
+  }
+
+  .row {
+    margin: .4rem;
+  }
+
+
+
+  .pnj_name {
+    font-weight: bold;
   }
 }
-.card-image {
-  padding: 0 0 0 0
-}
-.pnj-card-content {
-  padding: 5px 5px 0 5px;
-  text-align: center;
-  column-gap: 25px;
-  align-self: self-start;
-}
-.row {
-  margin: 5px 0;
+
+
+.pnj-card-container:hover {
+  box-shadow: 0 0 0 0.2rem $gold-color;
+  transition: box-shadow 0.5s;
+
 }
 
-.pnj_name {
-  font-weight: 600
-}
-
-.fa-solid {
-  margin: 0 5px 0 0;
-  padding: 0 5px 0 0;
-  text-align: left!important;
+.search-bar {
+  background-color: $background-color-30;
+  margin-left: 1.3vh!important;
 }

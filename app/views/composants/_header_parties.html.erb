@@ -1,13 +1,15 @@
 <div class="row header_parties title">
-  <div class="col s9">
-    <div class="row">
-      <h1><%= @party.name %></h1>
+  <div class="col s12 bible">
+    <div class="col s9">
+      <div class="row">
+        <h1><%= @party.name %></h1>
+      </div>
+      <div class="row">
+        <h6>Party created at <%= @party.created_at  %></h6>
+      </div>
     </div>
-    <div class="row">
-      <h6>Party created at <%= @party.created_at  %></h6>
+    <div class="col s3 icon_container center-align valign-wrapper">
+        <a onclick="M.toast({html: 'Je suis une petite blagounette'})" ><i class="material-icons dp48">local_florist</i></a>
     </div>
-  </div>
-  <div class="col s3 icon_container center-align valign-wrapper">
-      <a onclick="M.toast({html: 'Je suis une petite blagounette'})" ><i class="material-icons dp48">local_florist</i></a>
   </div>
 </div>
