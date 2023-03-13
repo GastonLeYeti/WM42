@@ -13,4 +13,5 @@ class WeaponsController < ApplicationController
   def weapon_params
     params.require(:weapon).permit(:name, :description, :bonus, :bonus_type, :universe_id)
   end
+
 end
