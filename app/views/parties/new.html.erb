@@ -1,49 +1,88 @@
-<%= simple_form_for @party do |f| %>
-  <%= f.input :name, label: 'Nom de la partie' %>
-  <% f.input :bible, :as => :hidden, :input_html => { :value => 'blblblblbl' } %>
-<%= f.input :universe_id, collection: @universes, label_method: :universe_type %>
-  <%= f.input :player_1, label: 'Joueur 1', required: true %>
-  <%= f.input :player_2, label: 'Joueur 2' %>
-  <%= f.input :player_3, label: 'player_3' %>
-  <%= f.input :player_4, label: 'player_4' %>
-  <%= f.input :player_5, label: 'player_5' %>
-  <%= f.input :player_6, label: 'player_6' %>
-  <%= f.input :player_7, label: 'player_7' %>
-  <%= f.input :player_8, label: 'player_8' %>
-  <%= f.input :player_9, label: 'player_9' %>
-  <%= f.input :player_10, label: 'player_10' %>
-  <%= f.input :party_size, label: 'party_size' %>
-  <%= f.input :race_1_name, label: 'race_1_name' %>
-  <%= f.input :race_2_name, label: 'race_2_name' %>
-  <%= f.input :race_3_name, label: 'race_3_name' %>
-  <%= f.input :universe_type, label: 'universe_type' %>
-  <%= f.input :geography_1, label: 'geography_1' %>
-  <%= f.input :geography_2, label: 'geography_2' %>
-  <%= f.input :city_1_name, label: 'city_1_name' %>
-  <%= f.input :city_1_size, label: 'city_1_size' %>
-  <%= f.input :city_1_building_1, label: 'city_1_building_1' %>
-  <%= f.input :city_1_building_2, label: 'city_1_building_2' %>
-  <%= f.input :city_2_name, label: 'city_2_name' %>
-  <%= f.input :city_2_size, label: 'city_2_size' %>
-  <%= f.input :city_2_building_1, label: 'city_2_building_1' %>
-  <%= f.input :city_2_building_2, label: 'city_2_building_2' %>
-  <%= f.input :mythical_creature_1_name, label: 'mythical_creature_1_name' %>
-  <%= f.input :mythical_creature_2_name, label: 'mythical_creature_2_name' %>
-  <%= f.button :submit %>
-<% end %>
+<%# <%= simple_form_for @party do |f| %>
+<%#   <%= f.input :name, label: 'Nom de la partie' %>
+<%#   <% f.input :bible, :as => :hidden, :input_html => { :value => 'blblblblbl' } %>
+<%# <%= f.input :universe_id, collection: @universes, label_method: :universe_type %>
+<%#   <%= f.input :player_1, label: 'Joueur 1', required: true %>
+<%#   <%= f.input :player_2, label: 'Joueur 2' %>
+<%#   <%= f.input :player_3, label: 'player_3' %>
+<%#   <%= f.input :player_4, label: 'player_4' %>
+<%#   <%= f.input :player_5, label: 'player_5' %>
+<%#   <%= f.input :player_6, label: 'player_6' %>
+<%#   <%= f.input :player_7, label: 'player_7' %>
+<%#   <%= f.input :player_8, label: 'player_8' %>
+<%#   <%= f.input :player_9, label: 'player_9' %>
+<%#   <%= f.input :player_10, label: 'player_10' %>
+<%#   <%= f.input :party_size, label: 'party_size' %>
+<%#   <%= f.input :race_1_name, label: 'race_1_name' %>
+<%#   <%= f.input :race_2_name, label: 'race_2_name' %>
+<%#   <%= f.input :race_3_name, label: 'race_3_name' %>
+<%#   <%= f.input :universe_type, label: 'universe_type' %>
+<%#   <%= f.input :geography_1, label: 'geography_1' %>
+<%#   <%= f.input :geography_2, label: 'geography_2' %>
+<%#   <%= f.input :city_1_name, label: 'city_1_name' %>
+<%#   <%= f.input :city_1_size, label: 'city_1_size' %>
+<%#   <%= f.input :city_1_building_1, label: 'city_1_building_1' %>
+<%#   <%= f.input :city_1_building_2, label: 'city_1_building_2' %>
+<%#   <%= f.input :city_2_name, label: 'city_2_name' %>
+<%#   <%= f.input :city_2_size, label: 'city_2_size' %>
+<%#   <%= f.input :city_2_building_1, label: 'city_2_building_1' %>
+<%#   <%= f.input :city_2_building_2, label: 'city_2_building_2' %>
+<%#   <%= f.input :mythical_creature_1_name, label: 'mythical_creature_1_name' %>
+<%#   <%= f.input :mythical_creature_2_name, label: 'mythical_creature_2_name' %>
+<%#   <%= f.button :submit %>
+<%# <% end %>
+
+<%= render "composants/navbar" %>
+<div class="container">
+  <div class="row title">
+    <div class="col s12">
+      <h1>Créer une partie</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12">
+      <%= simple_form_for @party do |f| %>
+        <div class="first_section">
+          <h2> Informations générales </h2>
+          <div class="input-field col s12">
+            <%= f.input :name, placeholder: 'Nom de la partie', label: 'Nom de la partie', class: 'party_name' %>
+          </div>
 
 
+          <% ['Univers 1', 'Univers 2', 'Univers 3', 'Univers 4', 'Univers 5', 'Univers 6'].each do |univers| %>
+            <div>
+              <%= f.radio_button :universe_type, univers, class: "with-gap" %>
+              <%= f.label :universe_type, univers %>
+            </div>
+          <% end %>
 
+          <% (1..6).each do |i| %>
+            <div class="input-field col s4">
+              <%= f.input "player_#{i}", label: "Joueur #{i}", placeholder: "Joueur #{i}" %>
+            </div>
+          <% end %>
 
-<%#= simple_form_for @party do |f| %>
-  <%#= f.input :name, label: 'Joueur 1', required: true, input_html: {id: 'player_name', type: 'text', class: 'input-field'} %>
-  <%#= f.input :name, label: 'Joueur 2', required: true, input_html: {id: 'player_name', type: 'text', class: 'input-field'} %>
-  <%#= f.input :name, label: 'Joueur 3', required: true, input_html: {id: 'player_name', type: 'text', class: 'input-field'} %>
-  <%#= f.input :name, label: 'Joueur 4', required: true, input_html: {id: 'player_name', type: 'text', class: 'input-field'} %>
-  <%#= f.input :universe, label: 'Type de partie', required: true, collection: ['Fantasy', 'Sci-fi', 'Moderne', 'Historique', 'Post-apo', 'Aléatoire'], as: :radio_buttons %>
-  <%#= f.input :size, label: 'Taille de la partie', required: true, collection: ['Petite', 'Moyenne', 'Grande'], as: :radio_buttons %>
-  <%#= f.input :geography, label: 'Géographie', required: true, collection: ['Dune', 'Désert', 'Forêt', 'Mer', 'Montagne', 'Aléatoire'], as: :check_boxes %>
-  <%#= f.input :name, label: 'Ajoutez une ville', input_html: {class: 'btn-floating btn-large waves-effect waves-light red'} %>
-  <%#= f.input :universe, label: 'Peuplez votre univers', required: true, collection: ['Aztèques', 'Aliens', 'Cyborgs', 'Humains', 'Vampires', 'Loups-Garous', 'Nains', 'Vikings', 'Aléatoire'], as: :check_boxes %>
-  <%#= f.button :submit, class: 'waves-effect waves-light btn', value: 'Envoyer' %>
-<%# end %>
+          <%= f.input :party_size, label: 'party_size' %>
+        </div>
+        <%= f.input :race_1_name, label: 'race_1_name' %>
+        <%= f.input :race_2_name, label: 'race_2_name' %>
+        <%= f.input :race_3_name, label: 'race_3_name' %>
+        <%# <%= f.input :universe_type, label: 'universe_type' %>
+        <%= f.input :geography_1, label: 'geography_1' %>
+        <%= f.input :geography_2, label: 'geography_2' %>
+        <%= f.input :city_1_name, label: 'city_1_name' %>
+        <%= f.input :city_1_size, label: 'city_1_size' %>
+        <%= f.input :city_1_building_1, label: 'city_1_building_1' %>
+        <%= f.input :city_1_building_2, label: 'city_1_building_2' %>
+        <%= f.input :city_2_name, label: 'city_2_name' %>
+        <%= f.input :city_2_size, label: 'city_2_size' %>
+        <%= f.input :city_2_building_1, label: 'city_2_building_1' %>
+        <%= f.input :city_2_building_2, label: 'city_2_building_2' %>
+        <%= f.input :mythical_creature_1_name, label: 'mythical_creature_1_name' %>
+        <%= f.input :mythical_creature_2_name, label: 'mythical_creature_2_name' %>
+        <% f.input :bible, :as => :hidden, :input_html => { :value => 'blblblblbl' } %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -25,7 +25,16 @@
   </div>
 
   <div class="row">
+
+    <% @maps.each do |map| %>
     <div class="col s12">
+      <h1><%= map.name %></h1>
+    </div>
+    <div class="col s8 offset-s2">
+      <%= map.content.html_safe %>
+    </div>
+    </div>
+    <% end %>
 
     </div>
   </div>

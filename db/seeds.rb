@@ -203,7 +203,7 @@ p "Creating parties..."
 
 party1 = Party.new(
   :name                 => "Les Aventuriers du petit Nicolas",
-  :bible              => "Une partie de train. On va faire un tour de France. ",
+  :bible              => "Bienvenue dans un monde ravagé par la destruction, où les ruines des anciennes civilisations côtoient les déserts radioactifs et les villes en ruines. Dans cet univers post-apocalyptique, vous allez incarner des survivants courageux, qui ont réussi à traverser les épreuves les plus difficiles pour atteindre le point de départ de votre aventure. /n Vous allez devoir affronter des dangers inconnus, qu'ils soient naturels ou créés par les restes de la technologie du passé. Vous allez rencontrer des communautés de survivants qui ont chacune leur propre histoire et leurs propres secrets. Vous allez explorer des lieux mystérieux et dangereux, pour découvrir des trésors cachés ou pour tenter de comprendre ce qui est arrivé au monde. /n Le monde post-apocalyptique est un endroit impitoyable, où la survie est une lutte quotidienne, où les choix sont souvent difficiles et les conséquences graves. Mais c'est également un monde plein de promesses, où les héros peuvent se révéler, où les amitiés les plus solides peuvent se former et où l'espoir peut renaître. /nÊtes-vous prêts à affronter les dangers du monde post-apocalyptique, à explorer ses mystères et à créer votre propre histoire dans ce monde en ruines ? Alors, embarquez pour une aventure unique et inoubliable, où tout est possible et où votre destin est entre vos mains.",
   :universe_id          => postApocalypticId,
   :user_id              => userNiko.id,
 )
@@ -213,7 +213,7 @@ p "party #{party1.name} created!"
 
 party2 = Party.new(
   :name                 => "Les Aventuriers des guerriers de l'ombre",
-  :bible                => "Dans cette partie de JDR, vous allez pouvoir plongez dans l'univers de la guerre des clans. Vous allez pouvoir incarnez un chat et vivre des aventures incroyables.",
+  :bible              => "Bienvenue dans un monde ravagé par la destruction, où les ruines des anciennes civilisations côtoient les déserts radioactifs et les villes en ruines. Dans cet univers post-apocalyptique, vous allez incarner des survivants courageux, qui ont réussi à traverser les épreuves les plus difficiles pour atteindre le point de départ de votre aventure. /n Vous allez devoir affronter des dangers inconnus, qu'ils soient naturels ou créés par les restes de la technologie du passé. Vous allez rencontrer des communautés de survivants qui ont chacune leur propre histoire et leurs propres secrets. Vous allez explorer des lieux mystérieux et dangereux, pour découvrir des trésors cachés ou pour tenter de comprendre ce qui est arrivé au monde. /n Le monde post-apocalyptique est un endroit impitoyable, où la survie est une lutte quotidienne, où les choix sont souvent difficiles et les conséquences graves. Mais c'est également un monde plein de promesses, où les héros peuvent se révéler, où les amitiés les plus solides peuvent se former et où l'espoir peut renaître. /nÊtes-vous prêts à affronter les dangers du monde post-apocalyptique, à explorer ses mystères et à créer votre propre histoire dans ce monde en ruines ? Alors, embarquez pour une aventure unique et inoubliable, où tout est possible et où votre destin est entre vos mains.",
   :universe_id          => postApocalypticId,
   :user_id              => userNiko.id,
 )
