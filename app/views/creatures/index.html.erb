@@ -16,18 +16,18 @@
       <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
       <% end %>
       <%= link_to party_weapons_path(@party) do %>
-      <span class="nav-active" id="nav-weapons"><i class="fa-solid fa-star nav-star"></i>Weapons</span>
+      <span class="nav-weapons" id="nav-weapons"><i class="fa-regular fa-star nav-star"></i>Weapons</span>
       <% end %>
       <%= link_to party_pnjs_path(@party) do %>
       <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
       <% end %>
       <%= link_to party_creatures_path(@party) do %>
-      <span class="nav-creatures" id="nav-creatures"><i class="fa-regular fa-star nav-star"></i>Creatures</span>
+      <span class="nav-active" id="nav-creatures"><i class="fa-solid fa-star nav-star"></i>Creatures</span>
       <% end %>
     </div>
   </div>
 
-  <div class="row row_bible" id="weapon-card">
+  <div class="row row_bible" id="creature-card">
     <div class="col s12 bible">
     <div data-controller="search">
         <div class="nav-wrapper search-bar col s5">
@@ -40,30 +40,28 @@
           </form>
         </div>
 
-  <div class="row" id="weapon-cards-container">
-    <% @weapons.sort_by{|weapon| weapon.level }.group_by(&:level).each do |level, weapons| %>
-    <div class="col s12">
-      <h3>Level <%= level %></h3>
+  <div class="row" id="creature-cards-container">
+    <% meta_universe = Universe.find_by_name("Meta") %>
+    <% @creatures.where(universe_id: @party.universe.id).or(@creatures.where(universe_id: meta_universe)).sort_by{|creature| creature.lvl }.group_by(&:lvl).each do |lvl, creatures| %>
+    <div class="col s12 bible_title">
+      <h2>Level <%= lvl %></h2>
           </div>
-              <% weapons.each do |weapon| %>
+              <% creatures.each do |creature| %>
                 <div class="col s3" data-search-target="card">
                   <div class="card horizontal object-card-container">
                     <div class="card-image col s6">
-                      <img src="https://img1.freepng.fr/20180325/lre/kisspng-middle-ages-knightly-sword-longsword-viking-sword-swords-5ab7a9c17dc6f0.6784556315219859855152.jpg">
+                      <img src="https://c8.alamy.com/compfr/g16bp5/la-mise-en-valeur-d-une-couleur-un-lengendary-harpy-creature-dans-les-versions-anterieures-de-la-mythologie-grecque-les-harpies-etaient-decrits-comme-de-belles-jeunes-filles-aile-plus-tard-ils-sont-devenus-des-monstres-ailes-avec-le-visage-d-une-vieille-femme-laide-et-equipe-d-azur-forte-serres-l-g16bp5.jpg">
                     </div>
                   <div class="card-content object-card-content col s9">
-                    <div class="row">
-                      <span class="weapon-lvl">Lvl <%= weapon.level %></span>
-                      <span class="weapon-rarity truncate"><%= weapon.rarity %></span>
-                    </div>
                   <div class="row">
-                    <span class="object_name valign-wrapper name searchElement"><%= weapon.name %></span>
+                    <span class="creature_name valign-wrapper name searchElement"> <%= creature.name.capitalize %></span>
                   </div>
-                  <div class="row">
-                    <span class="object_name">Lootable <%= weapon.lootable %></span>
-                  </div>
-                  <div class="row">
-                    <i class="fa-solid fa-coins"></i><span class="weapon-price"><%= weapon.price %></span>
+                  <div class="row creature_description">
+                    <% if creature.description.length > 102 %>
+                    <span> <%= creature.description[0, 84] + "..." %></span>
+                    <% else %>
+                    <span> <%= creature.description %></span>
+                    <% end %>
                   </div>
                 </div>
               </div>

@@ -10,11 +10,4 @@ class Pnj < ApplicationRecord
   validates :lvl, presence: true
   validates :status, presence: true
 
-include PgSearch::Model
-  pg_search_scope :search_by_name_and_job,
-  against: [ :name, :job ],
-  using: {
-    tsearch: { prefix: true }
-  }
-
 end
