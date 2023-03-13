@@ -14,10 +14,9 @@
             <%= f.input :name, placeholder: 'Nom de la partie', label: 'Nom de la partie', class: 'party_name' %>
           </div>
 
-          <%= f.input :universe_id,
+          <%= f.association :universe,
             placeholder: "Univers",
             label: "Univers",
-            collection: [['Science Fiction', 69], ['Heroic Fantasy', 70], ['Moderne', 71], ['Historique', 72], ['Post Apocalyptique', 73]],
             as: :radio_buttons,
             input_html: { class: 'universe_id' },
             item_label_class: 'universe_id',
@@ -41,16 +40,6 @@
           <h2> Carte </h2>
           <%= f.input :party_size, placeholder: 'Taille de la carte', label: 'Taille de la carte', collection: ['Petite', 'Moyenne', 'Grande'], as: :radio_buttons  %>
 
-        <%#= f.input :party_size, placeholder: 'Taille de la partie', collection: @races, as: :radio_buttons %>
-
-        <%#= f.input :race_1_name, label: 'Race 1', collection: @races %>
-        <%#= f.input :race_2_name, label: 'Race 2', collection: @races %>
-        <%#= f.input :race_3_name, label: 'Race 3', collection: @races %>
-
-        <%# <%= f.input :universe_type, label: 'universe_type' %>
-
-        <%#= f.input :geography, placeholder: "Ajoutez des éléments géographiques", collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'], as: :check_boxes %>
-
           <%= f.input :geography_1, label: 'Element géographique 1', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
           <%= f.input :geography_2, label: 'Element géographique 2', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
 
@@ -64,10 +53,10 @@
           <%= f.input :city_2_building_1, label: 'Ajoutez un bâtiment à la ville 2' %>
           <%= f.input :city_2_building_2, label: 'Ajoutez un 2ème bâtiment à la ville 2' %>
 
-          <%= f.input :bible, :as => :hidden, :input_html => { :value => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae ultricies odio, non commodo sapien. Suspendisse eget varius nisi, quis tristique risus. Phasellus urna nunc, congue eget porta sit amet, mollis id ante. Maecenas dignissim risus malesuada neque fringilla, non feugiat odio suscipit. Fusce a aliquet metus, luctus semper elit. Vivamus at nisi eget est dignissim cursus id at tellus. Aenean eget nunc feugiat, scelerisque ante ac, pretium elit. Duis lobortis mauris sed mauris pulvinar euismod. Maecenas vulputate neque vel efficitur blandit.' } %>
+          <%= f.input :bible, :as => :hidden, :input_html => { :value => '' } %>
           <%= f.button :submit %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
