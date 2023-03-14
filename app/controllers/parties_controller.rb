@@ -1,6 +1,6 @@
 class PartiesController < ApplicationController
 
-  require 'openai'
+  # require 'openai'
 
   def index
     @party = Party.all
