@@ -47,7 +47,7 @@
       <h2>Level <%= lvl %></h2>
           </div>
               <% creatures.each do |creature| %>
-                <div class="col s12 m6" data-search-target="card">
+                <div class="col s12 m4" data-search-target="card">
                   <div class="card horizontal object-card-container">
                     <div class="card-image col s3">
                       <img src="https://c8.alamy.com/compfr/g16bp5/la-mise-en-valeur-d-une-couleur-un-lengendary-harpy-creature-dans-les-versions-anterieures-de-la-mythologie-grecque-les-harpies-etaient-decrits-comme-de-belles-jeunes-filles-aile-plus-tard-ils-sont-devenus-des-monstres-ailes-avec-le-visage-d-une-vieille-femme-laide-et-equipe-d-azur-forte-serres-l-g16bp5.jpg">
@@ -57,8 +57,10 @@
                     <span class="creature_name valign-wrapper name searchElement"> <%= creature.name.capitalize %></span>
                   </div>
                   <div class="row creature-lvl">
-                      <i class="fa-solid fa-up-long"></i>  <%= creature.lvl %>
+                    <div class="col s1">
+                      <%= creature.lvl %>
                     </div>
+                  </div>
                   <div class="row creature_description">
                     <% if creature.description.length > 102 %>
                     <span> <%= creature.description[0, 84] + "..." %></span>
