@@ -23,6 +23,7 @@ class PartiesController < ApplicationController
     @party.user_id = current_user.id
     @universe = Universe.find_by_id(@party.universe_id)
 
+
     create_maps(@party.party_size)
     generate_bible(@party)
     # @party.universe_id = @universe.id

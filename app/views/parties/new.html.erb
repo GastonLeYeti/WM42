@@ -33,26 +33,48 @@
 
           <%= f.input :races, placeholder: "Ajoutez des races", collection: @races, as: :check_boxes, include_hidden: false %>
 
-          <%= f.input :mythical_creature_1_name, label: 'Ajoutez un type de créature mythique' %>
-          <%= f.input :mythical_creature_2_name, label: 'Ajoutez un deuxième type de créature mythique' %>
+          <div class="col s6">
+            <%= f.input :mythical_creature_1_name, label: 'Ajoutez un type de créature mythique' %>
+          </div>
+          <div class="col s6">
+            <%= f.input :mythical_creature_2_name, label: 'Ajoutez un deuxième type de créature mythique' %>
+          </div>
 
         </div>
 
         <div class="first_section">
           <h2> Carte </h2>
 
-          <%= f.input :geography_1, label: 'Element géographique 1', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
-          <%= f.input :geography_2, label: 'Element géographique 2', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
 
-          <%= f.input :city_1_name, label: 'Nom de la ville 1' %>
-          <%= f.input :city_1_size, label: 'Taille de la ville 1', collection: ['Petite', 'Moyenne', 'Grande'] %>
-          <%= f.input :city_1_building_1, label: 'Ajoutez un bâtiment à la ville 1' %>
-          <%= f.input :city_1_building_2, label: 'Ajoutez un 2ème bâtiment à la ville 1' %>
 
-          <%= f.input :city_2_name, label: 'Nom de la ville 2' %>
-          <%= f.input :city_2_size, label: 'Taille de la ville 2', collection: ['Petite', 'Moyenne', 'Grande'] %>
-          <%= f.input :city_2_building_1, label: 'Ajoutez un bâtiment à la ville 2' %>
-          <%= f.input :city_2_building_2, label: 'Ajoutez un 2ème bâtiment à la ville 2' %>
+          <div class="col s12">
+            <h6> Elements géographiques </h6>
+          </div>
+
+          <div class="col s6">
+            <%= f.input :geography_1, label: 'Element géographique 1', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
+          </div>
+          <div class="col s6">
+            <%= f.input :geography_2, label: 'Element géographique 2', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
+          </div>
+
+          <div class="col s12">
+            <h6> Crééz des villes </h6>
+          </div>
+
+          <div class="col s6">
+            <%= f.input :city_1_name, label: 'Nom de la ville 1' %>
+            <%= f.input :city_1_size, label: 'Taille de la ville 1', collection: ['Petite', 'Moyenne', 'Grande'] %>
+            <%= f.input :city_1_building_1, label: 'Ajoutez un bâtiment à la ville 1' %>
+            <%= f.input :city_1_building_2, label: 'Ajoutez un 2ème bâtiment à la ville 1' %>
+          </div>
+
+          <div class="col s6">
+            <%= f.input :city_2_name, label: 'Nom de la ville 2' %>
+            <%= f.input :city_2_size, label: 'Taille de la ville 2', collection: ['Petite', 'Moyenne', 'Grande'] %>
+            <%= f.input :city_2_building_1, label: 'Ajoutez un bâtiment à la ville 2' %>
+            <%= f.input :city_2_building_2, label: 'Ajoutez un 2ème bâtiment à la ville 2' %>
+          </div>
 
           <%= f.input :bible, :as => :hidden, :input_html => { :value => '' } %>
           <%= f.button :submit %>
