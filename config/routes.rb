@@ -24,8 +24,10 @@ Rails.application.routes.draw do
     resources :creatures, only: %i[index]
   end
 
-  resources :maps, only: :update
-
+  resources :maps, only: :update do
+    # resources :cities, only: :update
+  end
+  resources :cities, only: :update
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
