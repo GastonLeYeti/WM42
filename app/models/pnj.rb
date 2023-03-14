@@ -1,7 +1,7 @@
 class Pnj < ApplicationRecord
   belongs_to :job
 
-  has_many :races, dependent: :destroy
+  belongs_to :race, dependent: :destroy
 
   belongs_to :architecture
   belongs_to :party

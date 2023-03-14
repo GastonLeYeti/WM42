@@ -1651,7 +1651,7 @@ p "Creating job..."
 p "General Job loading..."
 
 archer = Job.new(
-  :name         => "Archer",
+  :name         => "archer",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1681,7 +1681,7 @@ priestId = priest.id
 p "job #{priest.name} created!"
 
 warrior = Job.new(
-  :name         => "Warrior",
+  :name         => "warrior",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1691,7 +1691,7 @@ warriorId = warrior.id
 p "job #{warrior.name} created!"
 
 mage_long = Job.new(
-  :name         => "Mage",
+  :name         => "mage",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1701,7 +1701,7 @@ mage_longId = mage_long.id
 p "job #{mage_long.name} created!"
 
 mage_mid = Job.new(
-  :name         => "Mage",
+  :name         => "mage",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1711,7 +1711,7 @@ mage_midId = mage_mid.id
 p "job #{mage_mid.name} created!"
 
 rogue = Job.new(
-  :name         => "Rogue",
+  :name         => "rogue",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1721,7 +1721,7 @@ rogueId = rogue.id
 p "job #{rogue.name} created!"
 
 cleric = Job.new(
-  :name         => "Cleric",
+  :name         => "cleric",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1731,7 +1731,7 @@ clericId = cleric.id
 p "job #{cleric.name} created!"
 
 bard = Job.new(
-  :name         => "Bard",
+  :name         => "bard",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1741,7 +1741,7 @@ bardId = bard.id
 p "job #{bard.name} created!"
 
 druid = Job.new(
-  :name         => "Druid",
+  :name         => "druid",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1751,7 +1751,7 @@ druidId = druid.id
 p "job #{druid.name} created!"
 
 paladin = Job.new(
-  :name         => "Paladin",
+  :name         => "paladin",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1761,7 +1761,7 @@ paladinId = paladin.id
 p "job #{paladin.name} created!"
 
 ranger = Job.new(
-  :name         => "Ranger",
+  :name         => "ranger",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1771,7 +1771,7 @@ rangerId = ranger.id
 p "job #{ranger.name} created!"
 
 monk = Job.new(
-  :name         => "Monk",
+  :name         => "monk",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1781,7 +1781,7 @@ monkId = monk.id
 p "job #{monk.name} created!"
 
 warlock = Job.new(
-  :name         => "Warlock",
+  :name         => "warlock",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1791,7 +1791,7 @@ warlockId = warlock.id
 p "job #{warlock.name} created!"
 
 barbarian = Job.new(
-  :name         => "Barbarian",
+  :name         => "barbarian",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1801,7 +1801,7 @@ barbarianId = barbarian.id
 p "job #{barbarian.name} created!"
 
 sorcerer = Job.new(
-  :name         => "Sorcerer",
+  :name         => "sorcerer",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1811,7 +1811,7 @@ sorcererId = sorcerer.id
 p "job #{sorcerer.name} created!"
 
 fighter = Job.new(
-  :name         => "Fighter",
+  :name         => "fighter",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1821,7 +1821,7 @@ fighterId = fighter.id
 p "job #{fighter.name} created!"
 
 artificer = Job.new(
-  :name         => "Artificer",
+  :name         => "artificer",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1831,7 +1831,7 @@ artificerId = artificer.id
 p "job #{artificer.name} created!"
 
 alchemist = Job.new(
-  :name         => "Alchemist",
+  :name         => "alchemist",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1841,7 +1841,7 @@ alchemistId = alchemist.id
 p "job #{alchemist.name} created!"
 
 inventor = Job.new(
-  :name         => "Inventor",
+  :name         => "inventor",
   :weaponized   => "false",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1852,7 +1852,7 @@ p "job #{inventor.name} created!"
 
 
 marchand = Job.new(
-  :name         => "Merchant",
+  :name         => "merchant",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1862,7 +1862,7 @@ marchandId = marchand.id
 p "job #{marchand.name} created!"
 
 infiermer = Job.new(
-  :name         => "Nurse",
+  :name         => "nurse",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1872,7 +1872,7 @@ infiermerId = infiermer.id
 p "job #{infiermer.name} created!"
 
 barman = Job.new(
-  :name         => "Barman",
+  :name         => "barman",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1902,7 +1902,7 @@ militaryCacId = military_cac.id
 p "job #{military_cac.name} created!"
 
 tavernier = Job.new(
-  :name         => "Tavernier",
+  :name         => "tavernier",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1934,7 +1934,7 @@ p "job #{weaponseller.name} created!"
 p "## Post-Apocalyptic Job loading..."
 
 ingenieur = Job.new(
-  :name         => "Ingénieur",
+  :name         => "ingénieur",
   :weaponized   => "true",
   :weapon_range => "mid",
   :universe_id  => postApocalypticId,
@@ -1944,7 +1944,7 @@ ingenieurId = ingenieur.id
 p "job #{ingenieur.name} created!"
 
 voleur = Job.new(
-  :name         => "Voleur",
+  :name         => "voleur",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => postApocalypticId,
@@ -1954,7 +1954,7 @@ voleurId = voleur.id
 p "job #{voleur.name} created!"
 
 espion = Job.new(
-  :name         => "Espion",
+  :name         => "espion",
   :weaponized   => "true",
   :weapon_range => "mid",
   :universe_id  => postApocalypticId,
@@ -1964,7 +1964,7 @@ espionId = espion.id
 p "job #{espion.name} created!"
 
 raider = Job.new(
-  :name         => "Pillard",
+  :name         => "pillard",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => postApocalypticId,
@@ -2004,7 +2004,7 @@ gangleaderId = gangleader.id
 p "job #{gangleader.name} created!"
 
 exorcist = Job.new(
-  :name         => "Exorciste",
+  :name         => "exorciste",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => postApocalypticId,

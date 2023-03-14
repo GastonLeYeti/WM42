@@ -1,13 +1,14 @@
 .pnj-card-container {
   margin-top: 10px;
   padding: 0;
-  background-color: $background-color-30;
+  background-color: $background-color;
 
 
 
   .pnj-card-content {
     padding: 0;
-    padding-left: 20px;
+    padding-left: 8px;
+    color: $background-color-30;
   }
   .card-image {
     padding: 0;
