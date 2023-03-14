@@ -14,6 +14,8 @@
             <%= f.input :name, placeholder: 'Nom de la partie', label: 'Nom de la partie', class: 'party_name' %>
           </div>
 
+          <%= f.input :party_size, placeholder: 'Durée de la partie', label: 'Durée de la partie', collection: ['Petite', 'Moyenne', 'Grande'], as: :radio_buttons  %>
+
           <%= f.association :universe,
             placeholder: "Univers",
             label: "Univers",
@@ -38,7 +40,6 @@
 
         <div class="first_section">
           <h2> Carte </h2>
-          <%= f.input :party_size, placeholder: 'Taille de la carte', label: 'Taille de la carte', collection: ['Petite', 'Moyenne', 'Grande'], as: :radio_buttons  %>
 
           <%= f.input :geography_1, label: 'Element géographique 1', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
           <%= f.input :geography_2, label: 'Element géographique 2', collection: ['Plaines', 'Désert', 'Forêt', 'Mer', 'Montagne'] %>
