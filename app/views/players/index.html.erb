@@ -20,6 +20,9 @@
       <%= link_to party_pnjs_path(@party) do %>
       <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
       <% end %>
+      <%= link_to party_creatures_path(@party) do %>
+      <span class="nav-creatures" id="nav-creatures"><i class="fa-regular fa-star nav-star"></i>Creatures</span>
+      <% end %>
 
     </div>
   </div>
@@ -34,7 +37,6 @@
       </div>
 
       <div class="row">
-
 
                 <% @party.players.each do |player| %>
                   <div class="col s3">

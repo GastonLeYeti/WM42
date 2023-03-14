@@ -19,6 +19,9 @@
         <%= link_to party_pnjs_path(@party) do %>
       <span class="nav-active" id="nav-pnj"><i class="fa-solid fa-star nav-star"></i>PNJ</span>
       <% end %>
+      <%= link_to party_creatures_path(@party) do %>
+      <span class="nav-creatures" id="nav-creatures"><i class="fa-regular fa-star nav-star"></i>Creatures</span>
+      <% end %>
     </div>
   </div>
 
@@ -38,8 +41,8 @@
 
         <div class="row" id="pnj-cards-container">
           <% @pnjs.sort_by{|pnj| pnj.lvl }.group_by(&:lvl).each do |level, pnjs| %>
-            <div class="col s12">
-              <h3>Level <%= level %></h3>
+            <div class="col s12 bible_title">
+              <h2>Level <%= level %></h2>
             </div>
             <% pnjs.each do |pnj| %>
               <div class="col s12 m6 l3" data-search-target="card">
@@ -52,16 +55,16 @@
                       <span class="pnj_name"><%= pnj.name %></span>
                     </div>
                     <div class="row pnj_status">
-                      <i class="fa-solid fa-up-long"></i> &nbsp; <%= pnj.lvl %>
+                      <i class="fa-solid fa-up-long"></i>  <%= pnj.lvl %>
                     </div>
                     <div class="row pnj_status">
-                      <i class="fa-solid fa-earth-asia"></i> &nbsp; <%= pnj.races.name %>
+                      <i class="fa-solid fa-earth-asia"></i> <%= pnj.races.name %>
                     </div>
                     <div class="row pnj_status">
-                      <i class="fa-solid fa-user-group"></i> &nbsp; <%= pnj.status %>
+                      <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
                     </div>
-                    <div class="row pnj_status">
-                      <i class="fa-solid fa-khanda"></i> &nbsp;
+                    <div class="row pnj_status pnj_job">
+                      <i class="fa-solid fa-khanda"></i>
                       <span class="job searchElement">
                         <%= pnj.job.name %>
                       </span>

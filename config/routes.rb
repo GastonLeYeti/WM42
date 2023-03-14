@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :maps, only: %i[index show]
     resources :pnjs, only: %i[index show]
     resources :weapons, only: %i[index show]
+    resources :creatures, only: %i[index]
 
 
   end
