@@ -39,12 +39,12 @@ class PartiesController < ApplicationController
   end
 
   def create_maps(size)
-    @party = Party.find(params[:id])
-    @map = Map.new
-    @map.size = size
-    @map.party_id = @party.id
-    @map.save!
-    @map.create_tiles
+    # @party = Party.find(params[:id])
+    # @map = Map.new
+    # @map.size = size
+    # @map.party_id = @party.id
+    # @map.save!
+    # @map.create_tiles
   end
 
   private
