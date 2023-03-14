@@ -78,11 +78,13 @@ class PartiesController < ApplicationController
     token = ENV['OPENAI_API_KEY']
     client = OpenAI::Client.new(access_token: token)
     p prompt = "
-    Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
+    C'est pour une partie de JDR, peux tu me créer une bible pour cette partie ?
+    Peux tu me décrire l'univers de cette partie qui s'appel #{party.name}?
+    Elle ce déroule dans un univers qui s'appel #{party.universe.name}
     Il est composer de #{party.races}
     La géographie est composé de #{party.geography_1} et #{party.geography_2}
 
-    De façon romancé, un compte pour adulte, avec de la description dans les paysages et les villes
+    Please write in humorous tone, narrative writing style, French language.
     "
 
     response = client.completions(
