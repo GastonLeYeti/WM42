@@ -21,6 +21,9 @@
       <%= link_to party_pnjs_path(@party) do %>
       <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
       <% end %>
+      <%= link_to party_creatures_path(@party) do %>
+      <span class="nav-creatures" id="nav-creatures"><i class="fa-regular fa-star nav-star"></i>Creatures</span>
+      <% end %>
     </div>
   </div>
 
@@ -45,6 +48,7 @@
             <% weapons.each do |weapon| %>
               <div class="col s12 m6 l4" data-search-target="card">
                 <div class="card horizontal object-card-container">
+
                   <div class="row">
                     <div class="card-image col s3">
                       <img src="https://img1.freepng.fr/20180325/lre/kisspng-middle-ages-knightly-sword-longsword-viking-sword-swords-5ab7a9c17dc6f0.6784556315219859855152.jpg">
