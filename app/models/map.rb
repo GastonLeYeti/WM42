@@ -4,5 +4,5 @@ class Map < ApplicationRecord
   has_many :cities, dependent: :destroy
   has_many :buildings, through: :architectures, dependent: :destroy
   validates :name, presence: true
-  validates :content, presence: true
+  # validates :content, presence: true
 end

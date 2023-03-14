@@ -1,5 +1,6 @@
 // Original JavaScript code by Chirp Internet: chirpinternet.eu
 // Please acknowledge use of this code by including this header.
+// import { MazeBuilder } from 'Maze_constructor'
 
 class FancyMazeBuilder extends MazeBuilder {
 
@@ -154,3 +155,5 @@ class FancyMazeBuilder extends MazeBuilder {
   }
 
 }
+
+// export { FancyMazeBuilder }
