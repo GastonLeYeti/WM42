@@ -21,6 +21,7 @@ class PartiesController < ApplicationController
     @party.name = party_params[:name]
     @party.user_id = current_user.id
     @universe = Universe.find_by_id(@party.universe_id)
+    create_maps(@party.party_size)
     # @party.universe_id = @universe.id
     # @party.universe_type = party_params[:universe_id]
     # @universe.id = @party.universe_idq
@@ -38,6 +39,15 @@ class PartiesController < ApplicationController
   def destroy
     @party = Party.find(params[:id])
     @party.destroy
+  end
+
+  def create_maps(size)
+    @party = Party.find(params[:id])
+    @map = Map.new
+    @map.size = size
+    @map.party_id = @party.id
+    @map.save!
+    @map.create_tiles
   end
 
   private
