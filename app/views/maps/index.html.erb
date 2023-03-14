@@ -74,17 +74,18 @@
   <div class="row row_bible row_map">
     <% @party.maps.each do |map| %>
       <% map.cities.each do |city| %>
-        <div class="col s6 bible">
-          <div class="row">
-            <div class="col s12 bible_title cities_title" id="<%= city.name.gsub(' ', '_') %>">
-              <h2><%= city.name %></h2>
-            </div>
+      <%#  <div class="col s6 bible">
+      <%#    <div class="row">
+      <%#      <div class="col s12 bible_title cities_title" id="<%= city.name.gsub(' ', '_') %>">
+      <%#        <h2><%= city.name %></h2>
+      <%#      </div>
 
-            <div class="col s12 map_content">
-              <%= city.content.html_safe %>
-            </div>
-          </div>
-        </div>
+<%#      <%#      <div class="col s12 map_content">
+      <%#        <%= city.content.html_safe %>
+      <%#      </div>
+      <%#    </div>
+      <%#  </div> %>
+      <%= city.content.html_safe %>
       <% end %>
     <% end %>
     </div>
