@@ -1,4 +1,5 @@
 class MapsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :update
 
   def index
     @party = Party.find(params[:party_id])
@@ -24,6 +25,23 @@ class MapsController < ApplicationController
       redirect_to party_map_path(@map), notice: 'Successfully created a map.'
     else
       render :new
+    end
+
+  end
+
+  def update
+    @map = Map.find(params[:id])
+
+    if @map.update(content: params[:content])
+      respond_to do |format|
+        format.html
+        format.json { render json: { success: true } }
+      end
+    else
+      respond_to do |format|
+        format.html
+        format.json { render json: { success: false } }
+      end
     end
   end
 
