@@ -20,7 +20,7 @@ class PartiesController < ApplicationController
     @party.user_id = current_user.id
     @universe = Universe.find_by_id(@party.universe_id)
 
-    create_maps(@party.party_size)
+    # create_maps(@party.party_size)
     # @party.universe_id = @universe.id
     # @party.universe_type = party_params[:universe_id]
     # @universe.id = @party.universe_idq
