@@ -9,6 +9,25 @@ class MapsController < ApplicationController
     @map = Map.find(params[:id])
   end
 
+  def new
+    @map = Map.new
+  end
+
+  def create
+    @map = Map.new(map_params)
+    @map.name = @party.name
+    @map.party_id = current_party.id
+    @map.universe_id = current_party.universe_id
+    @map.save!
+    @map.create_tiles
+    if @map.save!
+      redirect_to party_map_path(@map), notice: 'Successfully created a map.'
+    else
+      render :new
+    end
+  end
+
+
   private
 
   def map_params

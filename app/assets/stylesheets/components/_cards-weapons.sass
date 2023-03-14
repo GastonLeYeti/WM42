@@ -1,7 +1,6 @@
 .object-card-container
   background-color: $background-color
   color: #FFF
-  border: .4px solid $background-color-30
   margin: 20px 0
   .card-image
     padding: 0
@@ -12,18 +11,31 @@
   .object-card-content
     padding: 5px
     margin-left: 25px
-    height: 230px
     .row
       margin: 5px
+      &.weapon_logic_infos
+        div
+          padding: 0
+          margin: 0
+          text-align: center
       .weapon-lvl
         background-color: $gold-color
         border-radius: 5px
-        margin-right: 10px
+        margin-right: 0px
         margin-left: 10px
-        padding: 5px
+        padding: 2px 2px
+        text-align: center
       .weapon-rarity
         margin: 5px
         padding: 5px
+        i.commun
+          color: #AAA
+        i.rare
+          color: #ffb700
+        i.epique
+          color: #dc25dc
+        i.legendary
+          color: #73df20
       .object_name
         font-weight: 600
         margin-left: 10px
@@ -36,6 +48,12 @@
       .weapon-price
         color: $gold-color
 
+
 .object-card-container:hover
   box-shadow: 0 0 0 0.2rem $gold-color
   transition: box-shadow 0.5s
+
+.object_lootable
+  color: $gold-color
+  font-size: 12px
+  padding: 10px

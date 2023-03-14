@@ -1,0 +1,80 @@
+<%= render "composants/navbar" %>
+<div class="container">
+  <%= render "composants/header_parties" %>
+
+
+  <div class="row nav-dashboard" id="nav-dashboard">
+    <div class="col s12 nav-dashboard-tabs">
+
+      <%= link_to party_path(@party) do %>
+      <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
+      <% end %>
+      <%= link_to party_maps_path(@party) do %>
+      <span class="nav-maps" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+      <% end %>
+      <%= link_to party_players_path(@party) do %>
+      <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+      <% end %>
+      <%= link_to party_weapons_path(@party) do %>
+      <span class="nav-weapons" id="nav-weapons"><i class="fa-regular fa-star nav-star"></i>Weapons</span>
+      <% end %>
+      <%= link_to party_pnjs_path(@party) do %>
+      <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
+      <% end %>
+      <%= link_to party_creatures_path(@party) do %>
+      <span class="nav-active" id="nav-creatures"><i class="fa-solid fa-star nav-star"></i>Creatures</span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row row_bible" id="creature-card">
+    <div class="col s12 bible">
+    <div data-controller="search">
+        <div class="nav-wrapper search-bar col s5">
+          <form data-action="submit->search#submit">
+            <div class="input-field">
+              <input id="search" type="search" required data-search-target="input" data-action="keyup->search#submit">
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons" data-action="click->search#clear">close</i>
+            </div>
+          </form>
+        </div>
+
+  <div class="row" id="creature-cards-container">
+    <% meta_universe = Universe.find_by_name("Meta") %>
+    <% @creatures.where(universe_id: @party.universe.id).or(@creatures.where(universe_id: meta_universe)).sort_by{|creature| creature.lvl }.group_by(&:lvl).each do |lvl, creatures| %>
+    <div class="col s12 bible_title">
+      <h2>Level <%= lvl %></h2>
+          </div>
+              <% creatures.each do |creature| %>
+                <div class="col s12 m4" data-search-target="card">
+                  <div class="card horizontal object-card-container">
+                    <div class="card-image col s3">
+                      <img src="https://c8.alamy.com/compfr/g16bp5/la-mise-en-valeur-d-une-couleur-un-lengendary-harpy-creature-dans-les-versions-anterieures-de-la-mythologie-grecque-les-harpies-etaient-decrits-comme-de-belles-jeunes-filles-aile-plus-tard-ils-sont-devenus-des-monstres-ailes-avec-le-visage-d-une-vieille-femme-laide-et-equipe-d-azur-forte-serres-l-g16bp5.jpg">
+                    </div>
+                  <div class="card-content object-card-content col s9">
+                  <div class="row">
+                    <span class="creature_name valign-wrapper name searchElement"> <%= creature.name.capitalize %></span>
+                  </div>
+                  <div class="row creature-lvl">
+                    <div class="col s1">
+                      <%= creature.lvl %>
+                    </div>
+                  </div>
+                  <div class="row creature_description">
+                    <% if creature.description.length > 102 %>
+                    <span> <%= creature.description[0, 84] + "..." %></span>
+                    <% else %>
+                    <span> <%= creature.description %></span>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

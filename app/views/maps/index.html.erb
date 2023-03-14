@@ -7,9 +7,9 @@
       <%= link_to party_path(@party) do %>
         <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
       <% end %>
-
+      <%= link_to party_maps_path(@party) do %>
         <span class="nav-active" id="nav-map"><i class="fa-solid fa-star nav-star"></i>Map</span>
-
+      <% end %>
       <%= link_to party_players_path(@party) do %>
         <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
       <% end %>
@@ -18,6 +18,9 @@
       <% end %>
       <%= link_to party_pnjs_path(@party) do %>
         <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
+      <% end %>
+      <%= link_to party_creatures_path(@party) do %>
+      <span class="nav-creatures" id="nav-creatures"><i class="fa-regular fa-star nav-star"></i>Creatures</span>
       <% end %>
 
     </div>
