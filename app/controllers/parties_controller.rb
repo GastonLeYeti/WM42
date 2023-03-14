@@ -63,15 +63,23 @@ class PartiesController < ApplicationController
     token = ENV['OPENAI_API_KEY']
     client = OpenAI::Client.new(access_token: token)
     p prompt = "
-    Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel WORLD MAKER 42
-    Il est composer de Humains qui vivent dans la foret mais aussi de Nains qui vivent dans les plaines arides mais aussi d'une autre race
-    Le climats est humide et il y a des montagnes / La carte est grandes et comporte deux villes
-    La magie est autorisé dans ce monde
-    La croyance principal est le Dyfroc
-    Les races connues sont en paix
+    Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
+    Il est composer de #{party.races}
+    La géographie est composé de #{party.geography_1} et #{party.geography_2}
 
     De façon romancé, un compte pour adulte, avec de la description dans les paysages et les villes
     "
+
+    response = client.completions(
+      parameters: {
+        model: "text-davinci-003",
+        prompt: prompt,
+        max_tokens: 3500
+      })
+
+    p response.parsed_response["choices"][0]["text"]
+
+    party.bible = response.parsed_response["choices"][0]["text"]
 
   end
 
