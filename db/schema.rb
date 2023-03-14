@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_130419) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_154830) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -138,9 +138,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_130419) do
     t.string "player_9"
     t.string "player_10"
     t.integer "party_size"
-    t.string "race_1_name"
-    t.string "race_2_name"
-    t.string "race_3_name"
     t.string "geography_1"
     t.string "geography_2"
     t.string "city_1_name"
@@ -153,6 +150,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_130419) do
     t.string "city_2_building_2"
     t.string "mythical_creature_1_name"
     t.string "mythical_creature_2_name"
+    t.text "races", default: [], array: true
     t.index ["universe_id"], name: "index_parties_on_universe_id"
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
