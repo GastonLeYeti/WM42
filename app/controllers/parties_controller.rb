@@ -1,4 +1,7 @@
 class PartiesController < ApplicationController
+
+  require 'openai'
+
   def index
     @party = Party.all
   end
@@ -26,6 +29,9 @@ class PartiesController < ApplicationController
     @party.universe_id = @universe.id
     @party.universe_id = party_params[:universe_id]
     @universe.id = @party.universe_id
+
+    generate_bible(@party)
+
 
     if @party.save!
       redirect_to party_path(@party), notice: 'Successfully created a party.'
@@ -65,4 +71,32 @@ class PartiesController < ApplicationController
   def party_params
     params.require(:party).permit(:name, :bible, :universe_id, :user_id, :player_1, :player_2, :player_3, :player_4, :player_5, :player_6, :player_7, :player_8, :player_9, :player_10, :party_size, :geography_1, :geography_2, :city_1_name, :city_1_size, :city_1_building_1, :city_1_building_2, :city_2_name, :city_2_size, :city_2_building_1, :city_2_building_2 , :mythical_creature_1_name, :mythical_creature_2_name, races: [])
   end
+
+
+  def generate_bible(party)
+
+    token = ENV['OPENAI_API_KEY']
+    client = OpenAI::Client.new(access_token: token)
+    p prompt = "
+    Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
+    Il est composer de #{party.races}
+    La géographie est composé de #{party.geography_1} et #{party.geography_2}
+
+    De façon romancé, un compte pour adulte, avec de la description dans les paysages et les villes
+    "
+
+    response = client.completions(
+      parameters: {
+        model: "text-davinci-003",
+        prompt: prompt,
+        max_tokens: 3500
+      })
+
+    p response.parsed_response["choices"][0]["text"]
+
+    party.bible = response.parsed_response["choices"][0]["text"]
+
+  end
+
+
 end
