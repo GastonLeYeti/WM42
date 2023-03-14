@@ -1360,6 +1360,8 @@ p "#############################################"
 
 p "Creating armories..."
 
+p "## Meta Armory loading..."
+
 lame1 = Armory.new(
   :kind                => "Lame",
   :weapon_range        => "cac",
@@ -1368,6 +1370,17 @@ lame1 = Armory.new(
 lame1.save!
 lame1Id = lame1.id
 p "armory Lame created!"
+
+aap5 = Armory.new(
+  :kind                => "Arme à projectile",
+  :weapon_range        => "long",
+  :universe_id         => metaId,
+)
+aap5.save!
+aap5Id = aap5.id
+p "armory Arme à projectile created!"
+
+p "## PostApocalyptic Armory loading..."
 
 pistolet2 = Armory.new(
   :kind                => "Pistolet",
@@ -1395,15 +1408,6 @@ grenade4 = Armory.new(
 grenade4.save!
 grenade4Id = grenade4.id
 p "armory Grenade created!"
-
-aap5 = Armory.new(
-  :kind                => "Arme à projectile",
-  :weapon_range        => "long",
-  :universe_id         => metaId,
-)
-aap5.save!
-aap5Id = aap5.id
-p "armory Arme à projectile created!"
 
 lanceflamme6 = Armory.new(
   :kind                => "Lance-flamme",
@@ -1464,7 +1468,7 @@ p "Post-apocalyptic Weapon loading..."
 weapon1 = Weapon.new(
   :name                => "Arc de Scavenger",
   :level               => 3,
-  :rarity              => "Peu commun",
+  :rarity              => "Commun",
   :price               => 65,
   :armory_id           => aap5Id,
   :lootable            => true,
@@ -1520,7 +1524,7 @@ p "weapon: Sac à Dos - Lance-Flammes created!"
 weapon5 = Weapon.new(
   :name                => "Bombe à Clous",
   :level               => 5,
-  :rarity              => "Peu commun",
+  :rarity              => "Commun",
   :price               => 75,
   :armory_id           => grenade4Id,
   :lootable            => true,
@@ -1611,10 +1615,43 @@ p "#############################################"
 
 p "Creating job..."
 
+# Warrior -> Guerrier
+# Mage -> Mage
+# Rogue -> Voleur
+# Cleric -> Prêtre
+# Bard -> Barde
+# Druid -> Druide
+# Paladin -> Paladin
+# Ranger -> Rôdeur
+# Monk -> Moine
+# Warlock -> Démoniste
+# Barbarian -> Barbare
+# Sorcerer -> Sorcier
+# Fighter -> Combattant
+# Artificer -> Artificier
+# Alchemist -> Alchimiste
+# Archer -> Archer
+# Thief -> Voleur
+#  -> Marchand
+# Blacksmith -> Forgeron
+# Innkeeper -> Tavernier
+# Scout -> Éclaireur
+# Explorer -> Explorateur
+# Hunter -> Chasseur
+# Farmer -> Fermier
+# Doctor -> Médecin
+# Artisan -> Artisan
+# Scholar -> Érudit
+# Priest -> Prêtre
+# Breeder -> Éleveur
+# Pirate -> Pirate
+# Soldier -> Soldat
+# Noble -> Noble
+
 p "General Job loading..."
 
 marchand = Job.new(
-  :name         => "Marchand",
+  :name         => "Merchant",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1624,7 +1661,7 @@ marchandId = marchand.id
 p "job #{marchand.name} created!"
 
 infiermer = Job.new(
-  :name         => "Infirmier",
+  :name         => "Nurse",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1644,7 +1681,7 @@ barmanId = barman.id
 p "job #{barman.name} created!"
 
 military = Job.new(
-  :name         => "Militaire",
+  :name         => "military Mid",
   :weaponized   => "true",
   :weapon_range => "mid",
   :universe_id  => metaId,
@@ -1652,6 +1689,16 @@ military = Job.new(
 military.save!
 militaryId = military.id
 p "job #{military.name} created!"
+
+military_cac = Job.new(
+  :name         => "military Cac",
+  :weaponized   => "true",
+  :weapon_range => "cac",
+  :universe_id  => metaId,
+)
+military_cac.save!
+militaryCacId = military_cac.id
+p "job #{military_cac.name} created!"
 
 tavernier = Job.new(
   :name         => "Tavernier",
@@ -1664,7 +1711,7 @@ tavernierId = tavernier.id
 p "job #{tavernier.name} created!"
 
 prostituee = Job.new(
-  :name         => "Prostituée",
+  :name         => "prostitute",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1674,7 +1721,7 @@ prostitueeId = prostituee.id
 p "job #{prostituee.name} created!"
 
 weaponseller = Job.new(
-  :name         => "Vendeur d'armes",
+  :name         => "weapon seller",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
