@@ -22,9 +22,9 @@ Rails.application.routes.draw do
     resources :pnjs, only: %i[index show]
     resources :weapons, only: %i[index show]
     resources :creatures, only: %i[index]
-
-
   end
+
+  resources :maps, only: :update
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

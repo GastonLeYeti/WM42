@@ -2,7 +2,6 @@
 // Please acknowledge use of this code by including this header.
 
 class MazeBuilder {
-
   constructor(width, height) { // width and height are in cells
 
     this.width = width; // width in cells
@@ -276,4 +275,7 @@ class MazeBuilder {
     return true;
   }
 
+
 }
+
+export { MazeBuilder }
