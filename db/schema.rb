@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_154830) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_14_143341) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -148,9 +148,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_154830) do
     t.integer "city_2_size"
     t.string "city_2_building_1"
     t.string "city_2_building_2"
-    t.string "mythical_creature_1_name"
-    t.string "mythical_creature_2_name"
     t.text "races", default: [], array: true
+    t.text "creatures", default: [], array: true
     t.index ["universe_id"], name: "index_parties_on_universe_id"
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
