@@ -3,8 +3,9 @@
   color: $background-color-30;
 }
 .creature_name {
-  color: $gold-color;
+  color: $background-color-30;
   font-weight: bold;
+
 }
 .creature-universe {
   color: $background-color-30;
@@ -14,10 +15,10 @@
 .creature-lvl {
   background-color: $gold-color;
   border-radius: 5px;
-  margin-right: 0px;
-  padding: 2px 2px;
+  // padding: 2px 2px;
   text-align: center;
+
   color: $background-color;
-  max-width: 35px;
+  width: 25%;
 
 }

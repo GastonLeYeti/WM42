@@ -55,7 +55,15 @@
                     <div class="row recap-line">
                       <i class="material-icons white-text">face</i>
                       <span class="dashline"></span>
-                      <span class="univers-name"><%= @party.players.count %> players</span>
+                      <% players_array = [] %>
+                      <% (1..10).each do |i| %>
+                      <% if  @party.send("player_#{i}") != nil %>
+                        <% if  @party.send("player_#{i}") != '' %>
+                          <% players_array << @party.send("player_#{i}") %>
+                          <% end  %>
+                          <% end  %>
+                          <% end  %>
+                      <span class="univers-name"><%= players_array.length %> <%= 'Player'.pluralize(players_array.length) %> </span>
                     </div>
                     <% @party.maps.each do |map| %>
                       <div class="row recap-line">
@@ -84,13 +92,13 @@
           <div class="col s12">
             <div class="card blue-grey lighten-1 recap-univers">
               <div class="card-content white-text">
-                <span class="card-title">Players</span>
+                <span class="card-title"><%= 'Player'.pluralize(players_array.length) %></span>
                 <div class="players-content">
 
-                <% @party.players.each do |player| %>
+                <% players_array.each do | player |  %>
                   <div class="row player">
                     <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
-                    <span><%= player.username %></span>
+                    <span><%= player.capitalize %></span>
                   </div>
                 <% end %>
 
