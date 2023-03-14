@@ -48,7 +48,9 @@
               <div class="col s12 m6 l3" data-search-target="card">
                 <div class="card horizontal pnj-card-container">
                   <div class="card-image col s6">
-                    <%= image_tag ("pnj_cards/male_druid_outdoor.png"), class: "" %>
+                    <% sex_image_au_hasard = ["female","male"].sample %>
+                    <% where_image_au_hasard = ["indoor","outdoor"].sample %>
+                    <%= image_tag("pnj_cards/#{sex_image_au_hasard}_#{pnj.job.name}_#{where_image_au_hasard}.png") %>
                   </div>
                   <div class="card-content pnj-card-content col s6">
                     <div class="row">
@@ -58,7 +60,7 @@
                       <i class="fa-solid fa-up-long"></i>  <%= pnj.lvl %>
                     </div>
                     <div class="row pnj_status">
-                      <i class="fa-solid fa-earth-asia"></i> <%= pnj.races.name %>
+                      <i class="fa-solid fa-earth-asia"></i> <%= pnj.race.name %>
                     </div>
                     <div class="row pnj_status">
                       <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
@@ -66,7 +68,7 @@
                     <div class="row pnj_status pnj_job">
                       <i class="fa-solid fa-khanda"></i>
                       <span class="job searchElement">
-                        <%= pnj.job.name %>
+                        <%= pnj.job.name.capitalize %>
                       </span>
                     </div>
                   </div>

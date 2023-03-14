@@ -1,6 +1,6 @@
 .creature_description {
   font-size: 12px!important;
-  padding-top: 6vh;
+  color: $background-color-30;
 }
 .creature_name {
   color: $gold-color;
@@ -12,6 +12,12 @@
 }
 
 .creature-lvl {
-  color: $background-color-30;
-  padding-left: 5px;
+  background-color: $gold-color;
+  border-radius: 5px;
+  margin-right: 0px;
+  padding: 2px 2px;
+  text-align: center;
+  color: $background-color;
+  max-width: 35px;
+
 }
