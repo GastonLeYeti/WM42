@@ -65,10 +65,11 @@ class PartiesController < ApplicationController
     client = OpenAI::Client.new(access_token: token)
     p prompt = "
     Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
+    Les joureurs s'appels #{party.player_1}, #{party.player_2}, #{party.player_3}, #{party.player_4}, #{party.player_5}, #{party.player_6}, #{party.player_7}, #{party.player_8}, #{party.player_9}, #{party.player_10}
     Il est composer de #{party.races}
-    La géographie est composé de #{party.geography_1} et #{party.geography_2}
+    La géographie de la carte est composé de #{party.geography_1} et #{party.geography_2}
 
-    De façon romancé, un compte pour adulte, avec de la description dans les paysages et les villes
+    De façon romancé, une histoire pour adulte, avec de la description dans les paysages
     "
 
     response = client.completions(
@@ -78,10 +79,20 @@ class PartiesController < ApplicationController
         max_tokens: 3500
       })
 
-    p response.parsed_response["choices"][0]["text"]
+    reponse_full = response.parsed_response["choices"][0]["text"]
 
-    party.bible = response.parsed_response["choices"][0]["text"]
+    paragraphes = reponse_full.split("\n\n") # Sépare les paragraphes
 
+    nouveaux_paragraphes = [] # Crée un tableau vide
+    nouveaux_paragraphes << paragraphes.shift # Ajoute le premier paragraphe sans <br>
+
+    paragraphes.each do |paragraphe| # Pour chaque paragraphe
+      nouveaux_paragraphes << "<br><br>#{paragraphe}" # Ajoute les paragraphes avec <br>
+    end
+
+    nouvelle_reponse = nouveaux_paragraphes.join # Rejoint les paragraphes
+
+    party.bible = nouvelle_reponse
   end
 
 

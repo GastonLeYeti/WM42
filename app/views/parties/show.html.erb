@@ -57,12 +57,12 @@
                       <span class="dashline"></span>
                       <% players_array = [] %>
                       <% (1..10).each do |i| %>
-                      <% if  @party.send("player_#{i}") != nil %>
-                        <% if  @party.send("player_#{i}") != '' %>
-                          <% players_array << @party.send("player_#{i}") %>
+                        <% if  @party.send("player_#{i}") != nil %>
+                          <% if  @party.send("player_#{i}") != '' %>
+                            <% players_array << @party.send("player_#{i}") %>
                           <% end  %>
-                          <% end  %>
-                          <% end  %>
+                        <% end  %>
+                      <% end  %>
                       <span class="univers-name"><%= players_array.length %> <%= 'Player'.pluralize(players_array.length) %> </span>
                     </div>
                     <% @party.maps.each do |map| %>
