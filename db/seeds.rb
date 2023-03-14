@@ -1605,6 +1605,20 @@ weapon10.save!
 weapon10Id = weapon10.id
 p "weapon: Lance-grenades Improvisé created!"
 
+weapon11 = Weapon.new(
+  :name                => "Lance-couilles de Briagdeur",
+  :level               => 12,
+  :rarity              => "Légendaire",
+  :price               => 75,
+  :armory_id           => grenade4Id,
+  :lootable            => true,
+  :party_id            => party2Id,
+  :description         => "Un dispositif de type lance-pierre qui lance des couilles artisanales sur une courte distance. Il est souvent utilisé pour des tactiques de guérilla et des attaques surprises.",
+)
+weapon11.save!
+weapon11Id = weapon11.id
+p "weapon: Lance-couilles Improvisé created!"
+
 p "Finished! #{Weapon.count} weapons created!"
 
 p "#############################################"

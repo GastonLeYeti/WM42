@@ -41,7 +41,7 @@
         </div>
 
         <div class="row" id="weapon-cards-container">
-          <% @weapons.sort_by{|weapon| weapon.level }.group_by(&:level).each do |level, weapons| %>
+          <% @party.weapons.sort_by{|weapon| weapon.level }.group_by(&:level).each do |level, weapons| %>
             <div class="col s12 bible_title">
             </div>
             <% weapons.each do |weapon| %>
