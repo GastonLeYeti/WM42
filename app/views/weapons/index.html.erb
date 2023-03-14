@@ -36,7 +36,6 @@
             <div class="input-field">
               <input id="search" type="search" required data-search-target="input" data-action="keyup->search#submit">
               <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons" data-action="click->search#clear">close</i>
             </div>
           </form>
         </div>
@@ -85,11 +84,17 @@
                       <div class="row">
                         <span class="object_name valign-wrapper name searchElement"><%= weapon.name %></span>
                       </div>
+                      <div class="row">
+                      <span class="object_name">Lootable <%= weapon.lootable %></span>
+                      </div>
+                      <div class="row">
+                      <i class="fa-solid fa-coins"></i><span class="weapon-price"><%= weapon.price %></span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>

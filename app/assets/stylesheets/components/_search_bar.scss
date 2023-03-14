@@ -8,3 +8,7 @@
   background-color: $background-color-30;
   transition: 0.2s;
 }
+
+.input-field input[type=search]:focus:not(.browser-default) {
+  background-color: transparent !important;
+}
