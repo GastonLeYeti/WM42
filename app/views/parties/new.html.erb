@@ -29,7 +29,7 @@
             </div>
           <% end %>
 
-          <%= f.input :races, placeholder: "Ajoutez des races", collection: @races, as: :check_boxes %>
+          <%= f.input :races, placeholder: "Ajoutez des races", collection: @races, as: :check_boxes, include_hidden: false %>
 
           <%= f.input :mythical_creature_1_name, label: 'Ajoutez un type de créature mythique' %>
           <%= f.input :mythical_creature_2_name, label: 'Ajoutez un deuxième type de créature mythique' %>
