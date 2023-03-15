@@ -37,7 +37,17 @@
             <% end %>
           </div>
           <div class="card-content">
-            <span class="pils"><i class="material-icons">group</i> <%= party.players.count %></span>
+           <%# <%= if @party.send("player_1") != nil || @party.send("player_1") != '' %>
+              <% players_array = [] %>
+              <% (1..10).each do |i| %>
+                <% if  @party.send("player_#{i}") != nil %>
+                  <% if  @party.send("player_#{i}") != '' %>
+                    <% players_array << @party.send("player_#{i}") %>
+                  <% end  %>
+                <% end  %>
+              <% end  %>
+           <%# <% end %>
+            <span class="pils"><i class="material-icons">group</i> <%= players_array.length %></span>
             <span class="pils"><i class="material-icons">language</i> <%= party.universe.name %></span>
             <blockquote>
               <% party_bible = party.bible %>
