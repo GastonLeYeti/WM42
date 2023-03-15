@@ -26,8 +26,7 @@ class PartiesController < ApplicationController
     @party.name = party_params[:name]
     @party.user_id = current_user.id
     @universe = Universe.find_by_id(@party.universe_id)
-
-    # @party.universe_id = @universe.id
+    @party.universe_id = @universe.id
     @party.universe_id = party_params[:universe_id]
     @universe.id = @party.universe_id
 
@@ -46,6 +45,7 @@ class PartiesController < ApplicationController
     if @party.save!
       create_maps(@party)
       Weapon.generate_weapons(@party, party_generator_sized)
+      Pnj.generate_pnjs(@party, party_generator_sized)
       redirect_to party_path(@party), notice: 'Successfully created a party.'
     else
       render :new, status: :unprocessable_entity
@@ -86,6 +86,9 @@ class PartiesController < ApplicationController
 
 
   def generate_bible(party)
+
+    party.bible = "wlh téma la bibel"
+
     # token = ENV['OPENAI_API_KEY']
     # client = OpenAI::Client.new(access_token: token)
     # p prompt = "
@@ -118,6 +121,7 @@ class PartiesController < ApplicationController
     # nouvelle_reponse = nouveaux_paragraphes.join # Rejoint les paragraphes
 
     # party.bible = nouvelle_reponse
+
 
     party.bible = "wlh téma la bibel"
   end

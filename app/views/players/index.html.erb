@@ -38,32 +38,32 @@
 
       <div class="row">
 
-                <%# <% end %>
+        <%# <% end %>
 
-                <% (1..10).each do |i| %>
-                  <% if  @party.send("player_#{i}") != nil %>
-                    <% if  @party.send("player_#{i}") != '' %>
-                      <div class="col s3">
+        <% (1..10).each do |i| %>
+          <% if  @party.send("player_#{i}") != nil %>
+            <% if  @party.send("player_#{i}") != '' %>
+              <div class="col s3">
 
-                          <% sex_image_au_hasard = ["female","male"].sample %>
-                          <% metier_image_au_hasard = ["alchemist","artificer","bard","cleric","druid","mage","monk","paladin","rogue","sorcerer","warlock","warrior"].sample %>
-                          <% where_image_au_hasard = ["indoor","outdoor"].sample %>
+                  <% sex_image_au_hasard = ["female","male"].sample %>
+                  <% metier_image_au_hasard = ["alchemist","artificer","bard","cleric","druid","mage","monk","paladin","rogue","sorcerer","warlock","warrior"].sample %>
+                  <% where_image_au_hasard = ["indoor","outdoor"].sample %>
 
 
-                        <div class="card card-player">
-                          <div class="card-image">
-                            <%= image_tag("pnj_cards/#{sex_image_au_hasard}_#{metier_image_au_hasard}_#{where_image_au_hasard}.png") %>
-                          </div>
-                          <div class="card-content">
-                            <span class="card-title grey-text text-darken-4"><%=  @party.send("player_#{i}") %></span>
-                          </div>
+                <div class="card card-player">
+                  <div class="card-image" style="background-image: linear-gradient(165deg, #34383C, #<%= "%06x" % (rand * 0xffffff) %>);">
+                    <%= image_tag("pnj_cards/#{sex_image_au_hasard}_#{metier_image_au_hasard}_#{where_image_au_hasard}.png") %>
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title grey-text text-darken-4"><%=  @party.send("player_#{i}") %></span>
+                  </div>
 
-                        </div>
+                </div>
 
-                      </div>
-                    <% end %>
-                  <% end %>
-                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
 
 
       </div>

@@ -33,7 +33,7 @@
         <div class="nav-wrapper search-bar col s5">
           <form data-action="submit->search#submit">
             <div class="input-field">
-              <input id="search" type="search" required data-search-target="input" data-action="keyup->search#submit">
+              <input id="search" type="search" required data-search-target="input" data-action="keyup->search#submit" placeholder="Rechercher un nom d'arme">
               <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             </div>
           </form>
@@ -42,6 +42,7 @@
         <div class="row" id="weapon-cards-container">
           <% @party.weapons.sort_by{|weapon| weapon.level }.group_by(&:level).each do |level, weapons| %>
             <div class="col s12 bible_title">
+              <h2>Level <%= level %></h2>
             </div>
             <% weapons.each do |weapon| %>
               <div class="col s12 m6 l4" data-search-target="card">
@@ -53,9 +54,6 @@
                     </div>
                     <div class="card-content object-card-content col s9">
                       <div class="row weapon_logic_infos">
-                        <div class="weapon-lvl col s3">
-                          <%= weapon.level %>
-                        </div>
                         <div class="weapon-rarity col s3 truncate">
                           <% if weapon.rarity == "Commun" %>
                             <i class="material-icons commun">lens</i>
