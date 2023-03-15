@@ -57,7 +57,7 @@
                     <% if Rails.application.assets.find_asset(image_path).present? %>
                       <%= image_tag(image_path) %>
                     <% else %>
-                      <% random_image_path = "pnj_cards/#{sex_image_au_hasard}_#{where_image_au_hasard}_random.png" %>
+                      <% random_image_path = "pnj_cards/#{"male"}_#{"monk"}_#{"outdoor"}.png" %>
                       <% if Rails.application.assets.find_asset(random_image_path).present? %>
                         <%= image_tag(random_image_path) %>
                       <% end %>
@@ -73,10 +73,10 @@
                     <div class="row pnj_status truncate">
                       <i class="fa-solid fa-earth-asia "></i> <%= pnj.race.name %>
                     </div>
-                    <div class="row pnj_status">
+                    <div class="row pnj_status ">
                       <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
                     </div>
-                    <div class="row pnj_status pnj_job">
+                    <div class="row pnj_status pnj_job truncate ">
                       <i class="fa-solid fa-khanda"></i>
                       <span class="job searchElement">
                         <%= pnj.job.name.capitalize %>
