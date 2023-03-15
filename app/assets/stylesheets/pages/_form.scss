@@ -1,3 +1,7 @@
+.form-submit {
+  // color: red;
+}
+
 // On enleve les cadres dégeux
 fieldset {
   border:none;
@@ -23,7 +27,7 @@ legend {
   cursor: pointer;
   display: inline-block;
   font-size: 0.7rem;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 0.1rem 0.5rem;
   width:100px;
   height:100px;
@@ -82,7 +86,7 @@ label[for=party_races_humain]:after {
 }
 
 label[for=party_races_elfes]:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/race_elf.svg');
 }
 
 label[for=party_races_nains]:after {
@@ -90,7 +94,7 @@ label[for=party_races_nains]:after {
 }
 
 label[for=party_races_orcs]:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/race_orc.svg');
 }
 
 label[for=party_races_cyborgs]:after {
@@ -102,7 +106,7 @@ label[for=party_races_aliens]:after {
 }
 
 label[for=party_races_zergs]:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/race_zerg.svg');
 }
 
 label[for=party_races_vikings]:after {
@@ -122,27 +126,27 @@ label[for=party_races_loups-garous]:after {
 }
 
 label[for=party_races_goules]:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/race_goule.svg');
 }
 
 label[for=party_races_humains_mutants]:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/race_humain_mutant.svg');
 }
 
 label[for=party_races_clones_défectueux]:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/race_clone_defectueux.svg');
 }
 
 label[for=party_races_survivants_génétiquement_modifiés]:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/race_humain_genetiquement_mod.svg');
 }
 
 label[for=party_races_humain_manifestant]:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/race_humain_manifestant.svg');
 }
 
 label[for=party_races_humain_politicien]:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/race_politicien.svg');
 }
 
 
@@ -226,22 +230,94 @@ label[for=party_city_2_size_grande]:after {
   transition:.3s;
 }
 
-label[for=party_universe_id_111]:after {
+label[for=party_universe_id_116]:after {
+  background-image: image-url('form-icons/universes_meta.svg');
+}
+
+label[for=party_universe_id_117]:after {
   background-image: image-url('form-icons/universes_scifi.svg');
 }
 
-label[for=party_universe_id_112]:after {
+label[for=party_universe_id_118]:after {
   background-image: image-url('form-icons/universes_fantasy.svg');
 }
 
-label[for=party_universe_id_113]:after {
+label[for=party_universe_id_119]:after {
   background-image: image-url('form-icons/universes_modern.svg');
 }
 
-label[for=party_universe_id_114]:after {
-  background-image: image-url('form-icons/universes_historical.svg');
+label[for=party_universe_id_120]:after {
+  background-image: image-url('form-icons/universes_historic.svg');
 }
 
-label[for=party_universe_id_114]:after {
+label[for=party_universe_id_121]:after {
   background-image: image-url('form-icons/universes_postapo.svg');
+}
+
+/* #############################################################################
+############################ GEOGRAPHIC ELEMENTS ###############################
+############################################################################# */
+
+.form-geography label:after {
+  content:'';
+  position:absolute;
+  display: block;
+  left:24px;
+  top:15px;
+  width:48px;
+  height:48px;
+  opacity:.3;
+  transition:.3s;
+}
+
+label[for=party_geography_plaines]:after {
+  background-image: image-url('form-icons/geo_plaines.svg');
+}
+
+label[for=party_geography_désert]:after {
+  background-image: image-url('form-icons/geo_desert.svg');
+}
+
+label[for=party_geography_forêt]:after {
+  background-image: image-url('form-icons/geo_foret.svg');
+}
+
+label[for=party_geography_montagne]:after {
+  background-image: image-url('form-icons/geo_montagne.svg');
+}
+
+/* #############################################################################
+############################# MYTHICAL CREATURES ###############################
+############################################################################# */
+
+.form-myth-creatures label:after {
+  content:'';
+  position:absolute;
+  display: block;
+  left:24px;
+  top:15px;
+  width:48px;
+  height:48px;
+  opacity:.3;
+  transition:.3s;
+}
+
+label[for=party_creatures_le_chien_de_niko]:after {
+  background-image: image-url('form-icons/myth_chien.svg');
+}
+
+label[for=party_creatures_le_sphynx_de_max]:after {
+  background-image: image-url('form-icons/myth_sphynx.svg');
+}
+
+label[for=party_creatures_la_chouette_de_gaëtan]:after {
+  background-image: image-url('form-icons/myth_chouette.svg');
+}
+
+label[for=party_creatures_la_baleine_de_louise]:after {
+  background-image: image-url('form-icons/myth_baleine.svg');
+}
+
+label[for=party_creatures_la_loutre_harmoniciste_de_jj]:after {
+  background-image: image-url('form-icons/myth_loutre.svg');
 }

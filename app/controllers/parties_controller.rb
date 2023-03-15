@@ -81,30 +81,24 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:name, :bible, :universe_id, :user_id, :player_1, :player_2, :player_3, :player_4, :player_5, :player_6, :player_7, :player_8, :player_9, :player_10, :party_size, :geography_1, :geography_2, :city_1_name, :city_1_size, :city_1_building_1, :city_1_building_2, :city_2_name, :city_2_size, :city_2_building_1, :city_2_building_2 , creatures: [], races: [])
+    params.require(:party).permit(:name, :bible, :universe_id, :user_id, :player_1, :player_2, :player_3, :player_4, :player_5, :player_6, :player_7, :player_8, :player_9, :player_10, :party_size, :city_1_name, :city_1_size, :city_1_building_1, :city_1_building_2, :city_2_name, :city_2_size, :city_2_building_1, :city_2_building_2, geography: [], creatures: [], races: [])
   end
 
 
   def generate_bible(party)
+
     party.bible = "wlh téma la bibel"
-    # token = ENV['OPENAI_API_KEY']
-    # client = OpenAI::Client.new(access_token: token)
-    # p prompt = "
-    # C'est pour une partie de JDR, peux tu me créer une bible pour cette partie ?
-    # Peux tu me décrire l'univers de cette partie qui s'appel #{party.name}?
-    # Elle ce déroule dans un univers qui s'appel #{party.universe.name}
-    # Il est composer de #{party.races}
-    # La géographie est composé de #{party.geography_1} et #{party.geography_2}
+
     # token = ENV['OPENAI_API_KEY']
     # client = OpenAI::Client.new(access_token: token)
     # p prompt = "
     # Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
     # Il est composer de #{party.races}
-    # La géographie de la carte est composé de #{party.geography_1} et #{party.geography_2}
+    # La géographie de la carte est composé de #{party.geography[0]} et #{party.geography[1]}
 
-    # De façon romancé, une histoire pour adulte, avec de la description dans les paysages
+    # Please write in humorous tone, narrative writing style, French language.
     # "
-    # Les joureurs s'appels #{party.player_1}, #{party.player_2}, #{party.player_3}, #{party.player_4}, #{party.player_5}, #{party.player_6}, #{party.player_7}, #{party.player_8}, #{party.player_9}, #{party.player_10}
+    # # Les joureurs s'appels #{party.player_1}, #{party.player_2}, #{party.player_3}, #{party.player_4}, #{party.player_5}, #{party.player_6}, #{party.player_7}, #{party.player_8}, #{party.player_9}, #{party.player_10}
 
     # response = client.completions(
     #   parameters: {
@@ -128,11 +122,7 @@ class PartiesController < ApplicationController
 
     # party.bible = nouvelle_reponse
 
-     party.bible = "wlh téma la bibel"
 
-    # party.bible = nouvelle_reponse
-    # p response.parsed_response["choices"][0]["text"]
-    # party.bible = response.parsed_response["choices"][0]["text"]
-
+    party.bible = "wlh téma la bibel"
   end
 end
