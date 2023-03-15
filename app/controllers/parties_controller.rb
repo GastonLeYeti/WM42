@@ -26,8 +26,7 @@ class PartiesController < ApplicationController
     @party.name = party_params[:name]
     @party.user_id = current_user.id
     @universe = Universe.find_by_id(@party.universe_id)
-
-    # @party.universe_id = @universe.id
+    @party.universe_id = @universe.id
     @party.universe_id = party_params[:universe_id]
     @universe.id = @party.universe_id
 
@@ -46,7 +45,6 @@ class PartiesController < ApplicationController
     if @party.save!
       create_maps(@party)
       Weapon.generate_weapons(@party, party_generator_sized)
-      PNJ.generate_pnjs(@party)
       redirect_to party_path(@party), notice: 'Successfully created a party.'
     else
       render :new, status: :unprocessable_entity
