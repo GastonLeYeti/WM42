@@ -1,6 +1,6 @@
 class PartiesController < ApplicationController
 
-  require 'openai'
+  # require 'openai'
 
   def index
     @party = Party.all
@@ -49,7 +49,7 @@ class PartiesController < ApplicationController
       PNJ.generate_pnjs(@party)
       redirect_to party_path(@party), notice: 'Successfully created a party.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -96,9 +96,16 @@ class PartiesController < ApplicationController
     # Elle ce déroule dans un univers qui s'appel #{party.universe.name}
     # Il est composer de #{party.races}
     # La géographie est composé de #{party.geography_1} et #{party.geography_2}
+    # token = ENV['OPENAI_API_KEY']
+    # client = OpenAI::Client.new(access_token: token)
+    # p prompt = "
+    # Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
+    # Il est composer de #{party.races}
+    # La géographie de la carte est composé de #{party.geography_1} et #{party.geography_2}
 
-    # Please write in humorous tone, narrative writing style, French language.
+    # De façon romancé, une histoire pour adulte, avec de la description dans les paysages
     # "
+    # Les joureurs s'appels #{party.player_1}, #{party.player_2}, #{party.player_3}, #{party.player_4}, #{party.player_5}, #{party.player_6}, #{party.player_7}, #{party.player_8}, #{party.player_9}, #{party.player_10}
 
     # response = client.completions(
     #   parameters: {
@@ -107,7 +114,23 @@ class PartiesController < ApplicationController
     #     max_tokens: 3500
     #   })
 
+    # reponse_full = response.parsed_response["choices"][0]["text"]
+
+    # paragraphes = reponse_full.split("\n\n") # Sépare les paragraphes
+
+    # nouveaux_paragraphes = [] # Crée un tableau vide
+    # nouveaux_paragraphes << paragraphes.shift # Ajoute le premier paragraphe sans <br>
+
+    # paragraphes.each do |paragraphe| # Pour chaque paragraphe
+    #   nouveaux_paragraphes << "<br><br>#{paragraphe}" # Ajoute les paragraphes avec <br>
+    # end
+
+    # nouvelle_reponse = nouveaux_paragraphes.join # Rejoint les paragraphes
+
+    # party.bible = nouvelle_reponse
+
     # p response.parsed_response["choices"][0]["text"]
     # party.bible = response.parsed_response["choices"][0]["text"]
+
   end
 end

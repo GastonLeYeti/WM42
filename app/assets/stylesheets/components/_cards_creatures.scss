@@ -11,7 +11,11 @@
   color: $background-color-30;
   font-weight: bold;
 }
-
+#creature-cards-container{
+  .object-card-content{
+    min-height: 150px;
+  }
+}
 .creature-lvl {
   background-color: $gold-color;
   border-radius: 5px;
