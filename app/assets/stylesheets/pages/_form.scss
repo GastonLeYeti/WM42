@@ -2,6 +2,11 @@
   // color: red;
 }
 
+.form-section-1 {
+  // display: flex;
+  // align-items: flex-start;
+}
+
 // On enleve les cadres dégeux
 fieldset {
   border:none;
@@ -230,27 +235,27 @@ label[for=party_city_2_size_grande]:after {
   transition:.3s;
 }
 
-label[for=party_universe_id_116]:after {
+label[for=party_universe_id_122]:after {
   background-image: image-url('form-icons/universes_meta.svg');
 }
 
-label[for=party_universe_id_117]:after {
+label[for=party_universe_id_123]:after {
   background-image: image-url('form-icons/universes_scifi.svg');
 }
 
-label[for=party_universe_id_118]:after {
+label[for=party_universe_id_124]:after {
   background-image: image-url('form-icons/universes_fantasy.svg');
 }
 
-label[for=party_universe_id_119]:after {
+label[for=party_universe_id_125]:after {
   background-image: image-url('form-icons/universes_modern.svg');
 }
 
-label[for=party_universe_id_120]:after {
+label[for=party_universe_id_126]:after {
   background-image: image-url('form-icons/universes_historic.svg');
 }
 
-label[for=party_universe_id_121]:after {
+label[for=party_universe_id_127]:after {
   background-image: image-url('form-icons/universes_postapo.svg');
 }
 
