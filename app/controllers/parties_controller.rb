@@ -74,26 +74,26 @@ class PartiesController < ApplicationController
 
 
   def generate_bible(party)
-    # party.bible = "wlh téma la bibel"
-    token = ENV['OPENAI_API_KEY']
-    client = OpenAI::Client.new(access_token: token)
-    p prompt = "
-    Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
-    Il est composer de #{party.races}
-    La géographie est composé de #{party.geography_1} et #{party.geography_2}
+    party.bible = "wlh téma la bibel"
+    # token = ENV['OPENAI_API_KEY']
+    # client = OpenAI::Client.new(access_token: token)
+    # p prompt = "
+    # Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
+    # Il est composer de #{party.races}
+    # La géographie est composé de #{party.geography_1} et #{party.geography_2}
 
-    De façon romancé, un compte pour adulte, avec de la description dans les paysages et les villes
-    "
+    # De façon romancé, un compte pour adulte, avec de la description dans les paysages et les villes
+    # "
 
-    response = client.completions(
-      parameters: {
-        model: "text-davinci-003",
-        prompt: prompt,
-        max_tokens: 3500
-      })
+    # response = client.completions(
+    #   parameters: {
+    #     model: "text-davinci-003",
+    #     prompt: prompt,
+    #     max_tokens: 3500
+    #   })
 
-    p response.parsed_response["choices"][0]["text"]
+    # p response.parsed_response["choices"][0]["text"]
 
-    party.bible = response.parsed_response["choices"][0]["text"]
+    # party.bible = response.parsed_response["choices"][0]["text"]
   end
 end
