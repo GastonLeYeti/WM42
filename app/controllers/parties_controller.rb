@@ -45,7 +45,7 @@ class PartiesController < ApplicationController
     if @party.save!
       create_maps(@party)
       Weapon.generate_weapons(@party, party_generator_sized)
-      Pnj.generate_pnjs(@party, 50)
+      Pnj.generate_pnjs(@party, party_generator_sized)
       redirect_to party_path(@party), notice: 'Successfully created a party.'
     else
       render :new, status: :unprocessable_entity

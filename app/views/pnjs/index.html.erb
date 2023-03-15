@@ -51,19 +51,27 @@
               <div class="col s12 m6 l3" data-search-target="card">
                 <div class="card horizontal pnj-card-container">
                   <div class="card-image col s6">
-                    <% sex_image_au_hasard = ["female","male"].sample %>
-                    <% where_image_au_hasard = ["indoor","outdoor"].sample %>
-                    <%= image_tag("pnj_cards/#{sex_image_au_hasard}_#{pnj.job.name}_#{where_image_au_hasard}.png") %>
+                    <% sex_image_au_hasard = ["female", "male"].sample %>
+                    <% where_image_au_hasard = ["indoor", "outdoor"].sample %>
+                    <% image_path = "pnj_cards/#{sex_image_au_hasard}_#{pnj.job.name}_#{where_image_au_hasard}.png" %>
+                    <% if Rails.application.assets.find_asset(image_path).present? %>
+                      <%= image_tag(image_path) %>
+                    <% else %>
+                      <% random_image_path = "pnj_cards/#{sex_image_au_hasard}_#{where_image_au_hasard}_random.png" %>
+                      <% if Rails.application.assets.find_asset(random_image_path).present? %>
+                        <%= image_tag(random_image_path) %>
+                      <% end %>
+                    <% end %>
                   </div>
                   <div class="card-content pnj-card-content col s6">
                     <div class="row">
-                      <span class="pnj_name"><%= pnj.name %></span>
+                      <span class="pnj_name truncate"><%= pnj.name %></span>
                     </div>
                     <div class="row pnj_status creature-lvl">
                         <%= pnj.lvl %>
                     </div>
-                    <div class="row pnj_status">
-                      <i class="fa-solid fa-earth-asia"></i> <%= pnj.race.name %>
+                    <div class="row pnj_status truncate">
+                      <i class="fa-solid fa-earth-asia "></i> <%= pnj.race.name %>
                     </div>
                     <div class="row pnj_status">
                       <i class="fa-solid fa-user-group"></i> <%= pnj.status %>
