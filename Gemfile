@@ -44,6 +44,8 @@ gem 'material_icons'
 
 gem "ruby-openai"
 
+gem "faker"
+
 gem "cloudinary"
 
 
