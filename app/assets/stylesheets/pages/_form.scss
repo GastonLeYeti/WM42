@@ -23,7 +23,7 @@ legend {
   cursor: pointer;
   display: inline-block;
   font-size: 0.7rem;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 0.1rem 0.5rem;
   width:100px;
   height:100px;
@@ -244,4 +244,68 @@ label[for=party_universe_id_114]:after {
 
 label[for=party_universe_id_114]:after {
   background-image: image-url('form-icons/universes_postapo.svg');
+}
+
+/* #############################################################################
+############################ GEOGRAPHIC ELEMENTS ###############################
+############################################################################# */
+
+.form-geography label:after {
+  content:'';
+  position:absolute;
+  display: block;
+  left:24px;
+  top:15px;
+  width:48px;
+  height:48px;
+  opacity:.3;
+  transition:.3s;
+}
+
+label[for=party_geography_plaines]:after {
+  background-image: image-url('form-icons/geo_dunes.svg');
+}
+
+label[for=party_geography_désert]:after {
+  background-image: image-url('form-icons/geo_desert.svg');
+}
+
+label[for=party_geography_forêt]:after {
+  background-image: image-url('form-icons/geo_foret.svg');
+}
+
+label[for=party_geography_montagne]:after {
+  background-image: image-url('form-icons/geo_montagne.svg');
+}
+
+/* #############################################################################
+############################# MYTHICAL CREATURES ###############################
+############################################################################# */
+
+.form-myth-creatures label:after {
+  content:'';
+  position:absolute;
+  display: block;
+  left:24px;
+  top:15px;
+  width:48px;
+  height:48px;
+  opacity:.3;
+  transition:.3s;
+}
+
+label[for=party_creatures_le_chien_de_niko]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_creatures_le_sphynx_de_max]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_creatures_la_chouette_de_gaëtan]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_creatures_la_baleine_de_louise]:after {
+  background-image: image-url('form-icons/race_humain.svg');
 }

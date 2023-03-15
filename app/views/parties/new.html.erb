@@ -69,28 +69,46 @@
             <h5> Choisissez deux créatures mythiques de votre univers </h5>
           </div>
 
-          <%= f.input :creatures,
-                      placeholder: "Ajoutez deux créatures mythiques",
-                      collection: @myth_creatures,
-                      as: :check_boxes,
-                      include_hidden: false,
-                      input_html: { class: "tag-selector" },
-                      item_wrapper_class: 'tag-item' %>
+          <div class="form-myth-creatures">
+            <%= f.input :creatures,
+                        placeholder: "Ajoutez deux créatures mythiques",
+                        collection: @myth_creatures,
+                        as: :check_boxes,
+                        include_hidden: false,
+                        input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+          </div>
         </div>
 
         <div class="first_section">
           <h2> Carte </h2>
 
           <div class="col s12">
-            <h6> Elements géographiques </h6>
+            <h6> Eléments géographiques </h6>
           </div>
 
-          <div class="col s6">
-            <%= f.input :geography_1, label: 'Element géographique 1', collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'] %>
+          <div class="col s12">
+            <div class="form-geography">
+              <%= f.input :geography,
+              label: 'Eléments géographiques',
+              collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'],
+              as: :check_boxes,
+              include_hidden: false,
+              input_html: { class: "tag-selector" },
+              item_wrapper_class: 'tag-item' %>
+            </div>
           </div>
-          <div class="col s6">
-            <%= f.input :geography_2, label: 'Element géographique 2', collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'] %>
-          </div>
+
+          <%# <div class="col s6">
+            <h6> Elément géographique 2 </h6>
+              <%= f.input :geography_2,
+              label: 'Element géographique 2',
+              collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'],
+              as: :check_boxes,
+              include_hidden: false,
+              input_html: { class: "tag-selector" },
+              item_wrapper_class: 'tag-item' %>
+          <%# </div> %>
 
           <div class="col s12">
             <h6> Crééz des villes </h6>
