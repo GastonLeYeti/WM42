@@ -40,9 +40,9 @@
            <%# <%= if @party.send("player_1") != nil || @party.send("player_1") != '' %>
               <% players_array = [] %>
               <% (1..10).each do |i| %>
-                <% if  @party.send("player_#{i}") != nil %>
-                  <% if  @party.send("player_#{i}") != '' %>
-                    <% players_array << @party.send("player_#{i}") %>
+                <% if  party.send("player_#{i}") != nil %>
+                  <% if  party.send("player_#{i}") != '' %>
+                    <% players_array << party.send("player_#{i}") %>
                   <% end  %>
                 <% end  %>
               <% end  %>
