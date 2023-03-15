@@ -22,14 +22,14 @@ export default class extends Controller {
 
         let rows, cols;
         if (size === 'Petite') {
-          rows = 10;
+          rows = 12;
           cols = 10;
         } else if (size === 'Moyenne') {
-          rows = 20;
-          cols = 20;
+          rows = 15;
+          cols = 13;
         } else if (size === 'Grande') {
-          rows = 30;
-          cols = 30;
+          rows = 20;
+          cols = 18;
         }
 
         const Maze = new MazeBuilder(rows, cols)
@@ -64,7 +64,7 @@ export default class extends Controller {
 
         console.log('city id : ' + city.id)
 
-        const Maze = new MazeBuilder(20, 16)
+        const Maze = new MazeBuilder(10, 8)
         Maze.placeKey()
         console.log(index)
         Maze.display(`maze_container_${index + 1}`)
