@@ -9,8 +9,9 @@ class PartiesController < ApplicationController
   def show
     @party = Party.find(params[:id])
 
-    @needs_maze_generation = !@party.maps.all? { |map| map.content.present? }
+    @needs_maze_generation = !@party.maps.all? { |map| map.content.present? } && !@party.cities.all? { |city| city.content.present? }
     @map_ids = @party.maps
+    @city_ids = @party.cities
   end
 
   def new
@@ -26,7 +27,6 @@ class PartiesController < ApplicationController
     @party.user_id = current_user.id
     @universe = Universe.find_by_id(@party.universe_id)
 
-    create_maps(@party)
     @party.universe_id = @universe.id
     @party.universe_id = party_params[:universe_id]
     @universe.id = @party.universe_id
@@ -34,6 +34,7 @@ class PartiesController < ApplicationController
     generate_bible(@party)
 
     if @party.save!
+      create_maps(@party)
       redirect_to party_path(@party), notice: 'Successfully created a party.'
     else
       render :new
@@ -48,19 +49,19 @@ class PartiesController < ApplicationController
   def create_maps(party)
     @city_map = Map.new
     @city_map.party = party
-    @city_map.name = "Carte du monde"
+    @city_map.name = party.name
     @city_map.save!
 
     if party.city_1_name.present? && party.city_1_size.present?
-      @city_map_1 = Map.new
-      @city_map_1.party = party
+      @city_map_1 = City.new
+      @city_map_1.map = @city_map
       @city_map_1.name = party.city_1_name
       @city_map_1.save!
     end
 
     if party.city_2_name.present? && party.city_2_size.present?
-      @city_map_2 = Map.new
-      @city_map_2.party = party
+      @city_map_2 = City.new
+      @city_map_2.map = @city_map
       @city_map_2.name = party.city_2_name
       @city_map_2.save!
     end
@@ -74,6 +75,7 @@ class PartiesController < ApplicationController
 
 
   def generate_bible(party)
+<<<<<<< HEAD
     party.bible = "wlh téma la bibel"
     # token = ENV['OPENAI_API_KEY']
     # client = OpenAI::Client.new(access_token: token)
@@ -94,6 +96,31 @@ class PartiesController < ApplicationController
 
     # p response.parsed_response["choices"][0]["text"]
 
+=======
+
+    party.bible = "wlh téma la bibel"
+    # token = ENV['OPENAI_API_KEY']
+    # client = OpenAI::Client.new(access_token: token)
+    # p prompt = "
+    # C'est pour une partie de JDR, peux tu me créer une bible pour cette partie ?
+    # Peux tu me décrire l'univers de cette partie qui s'appel #{party.name}?
+    # Elle ce déroule dans un univers qui s'appel #{party.universe.name}
+    # Il est composer de #{party.races}
+    # La géographie est composé de #{party.geography_1} et #{party.geography_2}
+
+    # Please write in humorous tone, narrative writing style, French language.
+    # "
+
+    # response = client.completions(
+    #   parameters: {
+    #     model: "text-davinci-003",
+    #     prompt: prompt,
+    #     max_tokens: 3500
+    #   })
+
+    # p response.parsed_response["choices"][0]["text"]
+
+>>>>>>> 2e323e7c6e746e8a0dadd64ef5e68a0a968a9f9b
     # party.bible = response.parsed_response["choices"][0]["text"]
   end
 end

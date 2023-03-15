@@ -51,11 +51,11 @@
 
 
                         <div class="card card-player">
-                          <div class="card-image waves-effect waves-block waves-dark">
+                          <div class="card-image">
                             <%= image_tag("pnj_cards/#{sex_image_au_hasard}_#{metier_image_au_hasard}_#{where_image_au_hasard}.png") %>
                           </div>
                           <div class="card-content">
-                            <span class="card-title activator grey-text text-darken-4"><%=  @party.send("player_#{i}") %></span>
+                            <span class="card-title grey-text text-darken-4"><%=  @party.send("player_#{i}") %></span>
                           </div>
 
                         </div>

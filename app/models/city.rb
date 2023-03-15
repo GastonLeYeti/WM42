@@ -4,5 +4,5 @@ class City < ApplicationRecord
   has_many :buildings, through: :architectures, dependent: :destroy
   has_many :pnjs, through: :architectures, dependent: :destroy
   validates :name, presence: true
-  validates :content, presence: true
+  # validates :content, presence: true
 end
