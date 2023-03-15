@@ -120,3 +120,7 @@
   flex: 3;
   text-align: right;
 }
+
+.d-none-maze {
+  /* display: none; */
+}
