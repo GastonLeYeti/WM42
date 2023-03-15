@@ -26,5 +26,5 @@ class Pnj < ApplicationRecord
       )
       p "pnj created"
     end
-
+  end
 end
