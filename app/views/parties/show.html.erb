@@ -44,11 +44,6 @@
     <div class="row row_bible">
       <div class="col s8 bible" id="bible">
         <div class="row">
-          <div class="col s12 bible_title">
-            <h2>Ma bible</h2>
-          </div>
-        </div>
-        <div class="row">
           <div class="col s12">
             <p class="bible_text"><%= @party.bible.gsub(/\/n/, "<br><br>").html_safe %></p>
           </div>
@@ -65,7 +60,7 @@
                     <div class="row recap-line">
                       <i class="material-icons white-text">language</i>
                       <span class="dashline"></span>
-                      <span class="univers-name"><%= @party.universe.name %></span>
+                      <span class="univers-name"><strong><%= @party.universe.name %></strong></span>
                     </div>
                     <div class="row recap-line">
                       <i class="material-icons white-text">face</i>
@@ -78,26 +73,26 @@
                           <% end  %>
                         <% end  %>
                       <% end  %>
-                      <span class="univers-name"><%= players_array.length %> <%= 'Player'.pluralize(players_array.length) %> </span>
+                      <span class="univers-name"><strong><%= players_array.length %> <%= 'Player'.pluralize(players_array.length) %> </strong></span>
                     </div>
                     <% @party.maps.each do |map| %>
                       <div class="row recap-line">
                         <i class="material-icons white-text">directions</i>
                         <span class="dashline"></span>
                         <span class="univers-name">
-                            <%= map.name %>
+                            <strong><%= map.name %></strong>
                         </span>
                       </div>
                     <% end %>
                     <div class="row recap-line">
                       <i class="material-icons white-text">multiline_chart</i>
                       <span class="dashline"></span>
-                      <span class="univers-name"><%= @party.universe_id %></span>
+                      <span class="univers-name"><strong><%= @party.universe_id %></strong></span>
                     </div>
                     <div class="row recap-line">
                       <i class="material-icons white-text">details</i>
                       <span class="dashline"></span>
-                      <span class="univers-name">Nope</span>
+                      <span class="univers-name"><strong>Nope</strong></span>
                     </div>
                   </div>
                 </div>
@@ -111,9 +106,9 @@
                 <div class="players-content">
 
                 <% players_array.each do | player |  %>
-                  <div class="row player">
+                  <div class="player">
                     <img src="https://directemployers.org/wp-content/uploads/2018/08/avatar-JohnDoe.jpg" class="avatar" alt="Contact Person">
-                    <span><%= player.capitalize %></span>
+                    <span><strong><%= player.capitalize %></strong></span>
                   </div>
                 <% end %>
 

@@ -1,12 +1,16 @@
 .search-bar {
   background-color: $background-color-50;
   color: $background-color-30;
-  border: .3px solid $gold-color;
   border-radius: 5px;
 }
 .search-bar:hover {
   background-color: $background-color-30;
   transition: 0.2s;
+}
+
+
+#search::placeholder {
+  color:$background-color-70;
 }
 
 .input-field input[type=search]:focus:not(.browser-default) {
