@@ -35,7 +35,7 @@ export default class extends Controller {
       })
 
       // MEME PRINCIPE POUR CITIES
-      this.mapsValue.forEach((city, index) => {
+      this.citiesValue.forEach((city, index) => {
         // Générer le maze
         // Faire une requête AJAX au serveur (fetch) pour updater la map
 
@@ -43,6 +43,7 @@ export default class extends Controller {
 
         let Maze = new MazeBuilder(20, 16)
         Maze.placeKey()
+        console.log(index)
         Maze.display(`maze_container_${index + 1}`)
 
         const html = document.getElementById(`maze_container_${index + 1}`).innerHTML
@@ -53,10 +54,11 @@ export default class extends Controller {
 
         const formData = new FormData()
         formData.append("content", html)
-
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').content
+        console.log(formData)
         fetch('/cities/' + city.id, {
           method: "PATCH",
-          headers: { "Accept": "application/json" },
+          headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken },
           body: formData
         })
       })

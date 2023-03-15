@@ -29,10 +29,9 @@ class CitiesController < ApplicationController
   end
 
   def update
-    @city = City.find(params[:id])
-
-    if @city.update(content: params[:content])
-      respond_to do |format|
+      @city = City.find(params[:id])
+      if @city.update(content: params[:content])
+        respond_to do |format|
         format.html
         format.json { render json: { success: true } }
       end

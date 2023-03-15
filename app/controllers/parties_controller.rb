@@ -1,6 +1,6 @@
 class PartiesController < ApplicationController
 
-  require 'openai'
+  # require 'openai'
 
   def index
     @party = Party.all
@@ -27,17 +27,28 @@ class PartiesController < ApplicationController
     @party.user_id = current_user.id
     @universe = Universe.find_by_id(@party.universe_id)
 
-    @party.universe_id = @universe.id
+    # @party.universe_id = @universe.id
     @party.universe_id = party_params[:universe_id]
     @universe.id = @party.universe_id
 
     generate_bible(@party)
 
+    if @party.party_size == "petite"
+      party_generator_sized = 10
+    elsif @party.party_size == "moyenne"
+      party_generator_sized = 30
+    elsif @party.party_size == "grande"
+      party_generator_sized = 50
+    else
+      party_generator_sized = 50
+    end
+
     if @party.save!
       create_maps(@party)
+      Weapon.generate_weapons(@party, party_generator_sized)
       redirect_to party_path(@party), notice: 'Successfully created a party.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -76,7 +87,6 @@ class PartiesController < ApplicationController
 
   def generate_bible(party)
 
-    # party.bible = "wlh téma la bibel"
 
     token = ENV['OPENAI_API_KEY']
     client = OpenAI::Client.new(access_token: token)
