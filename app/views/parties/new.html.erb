@@ -19,13 +19,13 @@
           </div>
 
           <div class="form-sizes">
-          <%= f.input :party_size,
-          placeholder: 'Durée de la partie',
-          label: 'Durée de la partie',
-          collection: ['Petite', 'Moyenne', 'Grande'],
-          as: :radio_buttons,
-          input_html: { class: "tag-selector" },
-          item_wrapper_class: 'tag-item' %>
+            <%= f.input :party_size,
+            placeholder: 'Durée de la partie',
+            label: 'Durée de la partie',
+            collection: ['Petite', 'Moyenne', 'Grande'],
+            as: :radio_buttons,
+            input_html: { class: "tag-selector" },
+            item_wrapper_class: 'tag-item' %>
           </div>
 
           <div class="col s12">
@@ -99,17 +99,6 @@
             </div>
           </div>
 
-          <%# <div class="col s6">
-            <h6> Elément géographique 2 </h6>
-              <%= f.input :geography_2,
-              label: 'Element géographique 2',
-              collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'],
-              as: :check_boxes,
-              include_hidden: false,
-              input_html: { class: "tag-selector" },
-              item_wrapper_class: 'tag-item' %>
-          <%# </div> %>
-
           <div class="col s12">
             <h6> Crééz des villes </h6>
           </div>
@@ -141,9 +130,12 @@
               <%= f.input :city_2_building_2, placeholder: "Ajoutez un deuxième bâtiment à la ville 2", label: 'Ajoutez un 2ème bâtiment à la ville 2', label: false %>
             </div>
           </div>
-
+          <div>
           <%= f.input :bible, :as => :hidden, :input_html => { :value => '' } %>
-          <%= f.button :submit %>
+          <div class="form-submit">
+            <%= f.button :submit %>
+          </div>
+          </div>
         </div>
       <% end %>
     </div>
