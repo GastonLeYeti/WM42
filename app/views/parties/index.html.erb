@@ -2,38 +2,26 @@
 <%= render "composants/navbar" %>
 <div class="container">
   <div class="row title">
-    <div class="col s12">
+    <div class="col s12 header_add">
       <h1><%= 'Partie'.pluralize(current_user.parties.count) %> en cours</h1>
+      <%= link_to new_party_path, class: "btn-large waves-effect waves-light primary_bg hoverable" do %>
+        Créer un nouvel univers <i class="material-icons">add_circle</i>
+      <% end %>
     </div>
   </div>
 
   <div class="row">
-
-    <div class="col s12 m4">
-      <div class="card card_party new hoverable">
-        <div class="card-image">
-          <%= image_tag "party_cards/Univers_new.png" %>
-          <span class="card-title">Nouveau Monde</span>
-          <%= link_to new_party_path, class: "btn-floating btn-large halfway-fab waves-effect waves-light primary_bg hoverable" do %>
-            <i class="material-icons">add_circle</i>
-          <% end %>
-        </div>
-        <div class="card-content">
-          <p>
-            <blockquote>
-              Venez créer votre propre univers et vos propres règles !
-            </blockquote>
-          </p>
-        </div>
-      </div>
-    </div>
 
     <% current_user.parties.each do |party| %>
       <div class="col s12 m4">
           <div class="card card_party hoverable">
         <%= link_to party_path(party.id) do %>
             <div class="card-image">
-              <%= image_tag "party_cards/Univers_PostApocalyptic.png" %>
+              <% if party.universe.name == "Post Apocalyptic"  %>
+                <%= image_tag "party_cards/Univers_PostApocalyptic.png" %>
+              <% else  %>
+              <%= image_tag "party_cards/Univers_#{party.universe.name}.png" %>
+              <% end %>
             </div>
             <div class="card-content">
             <%# <%= if @party.send("player_1") != nil || @party.send("player_1") != '' %>
@@ -64,5 +52,14 @@
           </div>
       </div>
     <% end %>
+
+<% until current_user.parties.any? %>
+  Encore pas de partie mon loulou ? <br>
+  <%= link_to new_party_path, class: "btn-large waves-effect waves-light primary_bg hoverable" do %>
+    Créer un nouvel univers <i class="material-icons">add_circle</i>
+
+    <% end %>
+
+<% end %>
 
   </div>

@@ -8,9 +8,21 @@
           <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
         </div>
         <div class="row center">
-        <%= link_to new_party_path do %>
-          <span class="btn-large waves-effect waves-light">Get Started</span>
-        <% end %>
+
+          <% if user_signed_in? %>
+            <% if current_user.parties.any? %>
+              <%= link_to "Continue your parties", parties_path, class: "btn-large waves-effect waves-light" %>
+            <% else %>
+              <%= link_to new_party_path, class: "btn-large waves-effect waves-light" do %>
+                Get Started
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= link_to new_party_path, class: "btn-large waves-effect waves-light" do %>
+              Get Started
+            <% end %>
+          <% end %>
+
         </div>
         <br><br>
         </div>

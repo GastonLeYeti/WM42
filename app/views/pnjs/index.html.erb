@@ -4,24 +4,27 @@
 
   <div class="row nav-dashboard" id="nav-dashboard">
     <div class="col s12 nav-dashboard-tabs">
+
       <%= link_to party_path(@party) do %>
-        <span class="nav-bible" id="nav-bible"><i class="fa-regular fa-star nav-star"></i>Bible</span>
+        <span class="nav-bible" id="nav-bible"><i class="material-icons white-text">language</i>Bible</span>
       <% end %>
       <%= link_to party_maps_path(@party) do %>
-        <span class="nav-maps" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+        <span class="nav-maps" id="nav-map"><i class="material-icons white-text">directions</i>Map</span>
       <% end %>
       <%= link_to party_players_path(@party) do %>
-        <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+        <span class="nav-players" id="nav-players"><i class="material-icons white-text">face</i>Players</span>
       <% end %>
       <%= link_to party_weapons_path(@party) do %>
-        <span class="nav-weapons" id="nav-weapons"><i class="fa-regular fa-star nav-star"></i>Weapons</span>
+        <span class="nav-weapons" id="nav-weapons"><i class="material-icons white-text">shopping_cart</i>Weapons</span>
       <% end %>
-        <%= link_to party_pnjs_path(@party) do %>
-      <span class="nav-active" id="nav-pnj"><i class="fa-solid fa-star nav-star"></i>PNJ</span>
+      <%= link_to party_pnjs_path(@party) do %>
+        <span class="nav-active" id="nav-pnj"><i class="material-icons white-text">group</i>PNJ</span>
       <% end %>
       <%= link_to party_creatures_path(@party) do %>
-      <span class="nav-creatures" id="nav-creatures"><i class="fa-regular fa-star nav-star"></i>Creatures</span>
+      <span class="nav-creatures" id="nav-creatures"><i class="material-icons white-text">pets</i>Creatures</span>
       <% end %>
+
+
     </div>
   </div>
 
@@ -51,26 +54,31 @@
               <div class="col s12 m6 l3" data-search-target="card">
                 <div class="card horizontal pnj-card-container">
                   <div class="card-image col s6">
+
+
                     <% sex_image_au_hasard = ["female", "male"].sample %>
                     <% where_image_au_hasard = ["indoor", "outdoor"].sample %>
-                    <% image_path = "pnj_cards/#{sex_image_au_hasard}_#{pnj.job.name}_#{where_image_au_hasard}.png" %>
-                    <% if Rails.application.assets.find_asset(image_path).present? %>
-                      <%= image_tag(image_path) %>
+                    <% image_name = "#{sex_image_au_hasard}_#{pnj.job.name}_#{where_image_au_hasard}.png" %>
+                    <% image_path = Rails.root.join("app", "assets", "images", "pnj_cards", image_name) %>
+                    <% if File.exist?(image_path) %>
+                      <%= image_tag("pnj_cards/#{image_name}") %>
                     <% else %>
-                      <% random_image_path = "pnj_cards/#{"male"}_#{"monk"}_#{"outdoor"}.png" %>
-                      <% if Rails.application.assets.find_asset(random_image_path).present? %>
-                        <%= image_tag(random_image_path) %>
+                      <% random_image_name = "#{sex_image_au_hasard}_monk_#{where_image_au_hasard}.png" %>
+                      <% random_image_path = Rails.root.join("app", "assets", "images", "pnj_cards", random_image_name) %>
+                      <% if File.exist?(random_image_path) %>
+                        <%= image_tag("pnj_cards/#{random_image_name}") %>
+                      <% else %>
+                        <%= image_tag("pnj_cards/random_1.png") %>
                       <% end %>
                     <% end %>
+
+
                   </div>
                   <div class="card-content pnj-card-content col s6">
                     <div class="row">
                       <span class="pnj_name truncate"><%= pnj.name %></span>
                     </div>
-                    <div class="row pnj_status creature-lvl">
-                        <%= pnj.lvl %>
-                    </div>
-                    <div class="row pnj_status truncate">
+                    <div class="row pnj_status">
                       <i class="fa-solid fa-earth-asia "></i> <%= pnj.race.name %>
                     </div>
                     <div class="row pnj_status ">
