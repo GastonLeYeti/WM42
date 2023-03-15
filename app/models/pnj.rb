@@ -1,11 +1,11 @@
 class Pnj < ApplicationRecord
-  belongs_to :job
+  belongs_to :job, optional: true
 
-  belongs_to :race, dependent: :destroy
+  belongs_to :race, dependent: :destroy, optional: true
 
-  belongs_to :architecture
+  belongs_to :architecture, optional: true
   belongs_to :party
-  has_one :weapon
+  has_one :weapon, optional: true
   validates :name, presence: true
   validates :lvl, presence: true
   validates :status, presence: true
@@ -18,13 +18,11 @@ class Pnj < ApplicationRecord
       PNJ.create!(
       name: Faker::Games::DnD.name,
       lvl: rand(1..10),
-      race_id: universe_pnjs.sample.id,
       description: Faker::Games::WarhammerFantasy.quote,
-      job_id: universe_pnjs.sample.id,
       party_id: party.id,
-      weapon_id: universe_pnjs.sample.id
       )
       p "pnj created"
     end
+  end
 
 end
