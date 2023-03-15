@@ -27,14 +27,25 @@ class PartiesController < ApplicationController
     @party.user_id = current_user.id
     @universe = Universe.find_by_id(@party.universe_id)
 
-    @party.universe_id = @universe.id
+    # @party.universe_id = @universe.id
     @party.universe_id = party_params[:universe_id]
     @universe.id = @party.universe_id
 
     generate_bible(@party)
 
+    if @party.party_size == "petite"
+      party_generator_sized = 10
+    elsif @party.party_size == "moyenne"
+      party_generator_sized = 30
+    elsif @party.party_size == "grande"
+      party_generator_sized = 50
+    else
+      party_generator_sized = 50
+    end
+
     if @party.save!
       create_maps(@party)
+      Weapon.generate_weapons(@party, party_generator_sized)
       redirect_to party_path(@party), notice: 'Successfully created a party.'
     else
       render :new
@@ -75,29 +86,6 @@ class PartiesController < ApplicationController
 
 
   def generate_bible(party)
-<<<<<<< HEAD
-    party.bible = "wlh téma la bibel"
-    # token = ENV['OPENAI_API_KEY']
-    # client = OpenAI::Client.new(access_token: token)
-    # p prompt = "
-    # Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
-    # Il est composer de #{party.races}
-    # La géographie est composé de #{party.geography_1} et #{party.geography_2}
-
-    # De façon romancé, un compte pour adulte, avec de la description dans les paysages et les villes
-    # "
-
-    # response = client.completions(
-    #   parameters: {
-    #     model: "text-davinci-003",
-    #     prompt: prompt,
-    #     max_tokens: 3500
-    #   })
-
-    # p response.parsed_response["choices"][0]["text"]
-
-=======
-
     party.bible = "wlh téma la bibel"
     # token = ENV['OPENAI_API_KEY']
     # client = OpenAI::Client.new(access_token: token)
@@ -119,8 +107,6 @@ class PartiesController < ApplicationController
     #   })
 
     # p response.parsed_response["choices"][0]["text"]
-
->>>>>>> 2e323e7c6e746e8a0dadd64ef5e68a0a968a9f9b
     # party.bible = response.parsed_response["choices"][0]["text"]
   end
 end
