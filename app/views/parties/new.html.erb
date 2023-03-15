@@ -1,10 +1,10 @@
 <%= render "composants/navbar" %>
 <div class="container">
-  <div class="row title">
+  <%# <div class="row title">
     <div class="col s12">
       <h1>Créer une partie</h1>
     </div>
-  </div>
+  </div> %>
   <div class="row" data-controller="form">
     <div class="col s12">
       <%= simple_form_for @party do |f| %>
@@ -12,135 +12,156 @@
 
         <div class="form-section-1" data-form-target="section1">
           <div class="first_section">
-            <h2> Informations générales </h2>
-            <div class="input-field col s12">
-              <%= f.input :name, placeholder: 'Nom de la partie', label: 'Nom de la partie', class: 'party_name' %>
+            <h2> Création d'une partie : </h2>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.input :name, placeholder: 'Nom de la partie', label: 'Nom de la partie', class: 'party_name' %>
+              </div>
             </div>
 
-            <div class="first-column col 6">
-              <h5> Durée de la partie </h5>
-                <div class="form-sizes">
-                  <%= f.input :party_size,
-                  placeholder: 'Durée de la partie',
-                  label: 'Durée de la partie',
-                  collection: Party::SIZE_OF_PARTIES,
+            <div class="row">
+              <div class="first-column col s6">
+                <h5> Durée de la partie </h5>
+                  <div class="form-sizes">
+                    <%= f.input :party_size,
+                    placeholder: 'Durée de la partie',
+                    label: 'Durée de la partie',
+                    collection: Party::SIZE_OF_PARTIES,
+                    as: :radio_buttons,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item' %>
+                  </div>
+
+                <h5> Choisissez un univers </h5>
+                <div class="form-universes">
+                  <%= f.association :universe,
+                  placeholder: "Univers",
+                  label: "Univers",
                   as: :radio_buttons,
                   input_html: { class: "tag-selector" },
                   item_wrapper_class: 'tag-item' %>
                 </div>
+              </div>
 
-              <h5> Choisissez un univers </h5>
-              <div class="form-universes">
-                <%= f.association :universe,
-                placeholder: "Univers",
-                label: "Univers",
-                as: :radio_buttons,
-                input_html: { class: "tag-selector" },
-                item_wrapper_class: 'tag-item' %>
+              <div class="second-column col s6">
+                <h5> Indiquez le nom des joueurs (hors MJ) </h5>
+                  <% (1..6).each do |i| %>
+                    <div class="input-field col s6">
+                      <%= f.input "player_#{i}", label: "Joueur #{i}", placeholder: "Joueur #{i}" %>
+                    </div>
+                  <% end %>
               </div>
             </div>
-
-            <div class="second-column col 6">
-              <h5> Indiquez le nom des joueurs (hors MJ) </h5>
-                <% (1..6).each do |i| %>
-                  <div class="input-field col s4">
-                    <%= f.input "player_#{i}", label: "Joueur #{i}", placeholder: "Joueur #{i}" %>
-                  </div>
-                <% end %>
+            <div class="row">
+              <div class="col s12 center">
                 <div class="btn" data-form-target="formBtn1" data-action="click->form#hideSection1">Suivant</div>
+              </div>
             </div>
-          </div>
+        </div>
         </div>
 
         <%# Partie 2 %>
         <div class="form-section-2 d-none" data-form-target="section2">
-          <div class="col s12">
-            <h5> Sélectionnez les races peuplant votre univers </h5>
+            <h2> Le peuple de votre partie : </h2>
+          <div class="row">
+            <div class="col s12">
+              <h5> Sélectionnez les races peuplant votre univers </h5>
+            </div>
+            <div class="col s12">
+              <div class="form-races">
+                <%= f.input :races,
+                            placeholder: "Ajoutez des races",
+                            collection: @races,
+                            as: :check_boxes,
+                            include_hidden: false,
+                            input_html: { class: "tag-selector" },
+                            item_wrapper_class: 'tag-item' %>
+              </div>
+            </div>
           </div>
-
-          <div class="form-races">
-            <%= f.input :races,
-                        placeholder: "Ajoutez des races",
-                        collection: @races,
-                        as: :check_boxes,
-                        include_hidden: false,
-                        input_html: { class: "tag-selector" },
-                        item_wrapper_class: 'tag-item' %>
+          <div class="row">
+            <div class="col s12">
+              <h5> Choisissez deux créatures mythiques de votre univers </h5>
+            </div>
+            <div class="form-myth-creatures">
+              <%= f.input :creatures,
+                          placeholder: "Ajoutez deux créatures mythiques",
+                          collection: @myth_creatures,
+                          as: :check_boxes,
+                          include_hidden: false,
+                          input_html: { class: "tag-selector" },
+                          item_wrapper_class: 'tag-item' %>
+            </div>
           </div>
-
-          <div class="col s12">
-            <h5> Choisissez deux créatures mythiques de votre univers </h5>
+          <div class="row">
+            <div class="col s12 center">
+              <div class="btn" data-form-target="formBtn2" data-action="click->form#hideSection2">Suivant</div>
+            </div>
           </div>
-
-          <div class="form-myth-creatures">
-            <%= f.input :creatures,
-                        placeholder: "Ajoutez deux créatures mythiques",
-                        collection: @myth_creatures,
-                        as: :check_boxes,
-                        include_hidden: false,
-                        input_html: { class: "tag-selector" },
-                        item_wrapper_class: 'tag-item' %>
-          </div>
-          <div class="btn" data-form-target="formBtn2" data-action="click->form#hideSection2">Suivant</div>
         </div>
 
         <%# Partie 3 %>
         <div class="form-section-3 d-none" data-form-target="section3">
           <div class="first_section">
-            <h2> Carte </h2>
-
-            <div class="col s12">
-              <h6> Eléments géographiques </h6>
-            </div>
-
-            <div class="col s12">
-              <div class="form-geography">
-                <%= f.input :geography,
-                label: 'Eléments géographiques',
-                collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'],
-                as: :check_boxes,
-                include_hidden: false,
-                input_html: { class: "tag-selector" },
-                item_wrapper_class: 'tag-item' %>
+            <h2> Options de la Carte :</h2>
+            <div class="row">
+              <div class="col s12">
+                <h6> Eléments géographiques </h6>
               </div>
             </div>
-
-            <div class="col s12">
-              <h6> Crééz des villes </h6>
-            </div>
-
-            <div class="col s6">
-              <div class="form-city-sizes">
-                <%= f.input :city_1_name, placeholder: "Nom de la ville 1", label: 'Nom de la ville 1', label: false %>
-                <%= f.input :city_1_size,
-                            label: 'Taille de la ville 1',
-                            collection: ['Petite', 'Moyenne', 'Grande'],
-                            as: :radio_buttons,
-                            input_html: { class: "tag-selector" },
-                            item_wrapper_class: 'tag-item' %>
-                <%= f.input :city_1_building_1, placeholder: "Ajoutez un bâtiment à la ville 1", label: 'Ajoutez un bâtiment à la ville 1', label: false %>
-                <%= f.input :city_1_building_2, placeholder: "Ajoutez un deuxième bâtiment à la ville 1", label: 'Ajoutez un 2ème bâtiment à la ville 1', label: false %>
+            <div class="row">
+              <div class="col s12">
+                <div class="form-geography">
+                  <%= f.input :geography,
+                  label: 'Eléments géographiques',
+                  collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'],
+                  as: :check_boxes,
+                  include_hidden: false,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+                </div>
               </div>
             </div>
-
-            <div class="col s6">
-              <div class="form-city-sizes">
-                <%= f.input :city_2_name, placeholder: "Nom de la ville 2", label: 'Nom de la ville 2', label: false %>
-                <%= f.input :city_2_size,
-                            label: 'Taille de la ville 2',
-                            collection: ['Petite', 'Moyenne', 'Grande'],
-                            as: :radio_buttons,
-                            input_html: { class: "tag-selector" },
-                            item_wrapper_class: 'tag-item' %>
-                <%= f.input :city_2_building_1, placeholder: "Ajoutez un bâtiment à la ville 2", label: 'Ajoutez un bâtiment à la ville 2', label: false %>
-                <%= f.input :city_2_building_2, placeholder: "Ajoutez un deuxième bâtiment à la ville 2", label: 'Ajoutez un 2ème bâtiment à la ville 2', label: false %>
+            <div class="row">
+              <div class="col s12">
+                <h6> Crééz des villes </h6>
               </div>
             </div>
-            <div>
-            <%= f.input :bible, :as => :hidden, :input_html => { :value => '' } %>
-            <div class="form-submit">
-              <%= f.button :submit %>
+            <div class="row">
+              <div class="col s6">
+                <div class="form-city-sizes">
+                  <%= f.input :city_1_name, placeholder: "Nom de la ville 1", label: 'Nom de la ville 1', label: false %>
+                  <%= f.input :city_1_size,
+                              label: 'Taille de la ville 1',
+                              collection: ['Petite', 'Moyenne', 'Grande'],
+                              as: :radio_buttons,
+                              input_html: { class: "tag-selector" },
+                              item_wrapper_class: 'tag-item' %>
+                  <%= f.input :city_1_building_1, placeholder: "Ajoutez un bâtiment à la ville 1", label: 'Ajoutez un bâtiment à la ville 1', label: false %>
+                  <%= f.input :city_1_building_2, placeholder: "Ajoutez un deuxième bâtiment à la ville 1", label: 'Ajoutez un 2ème bâtiment à la ville 1', label: false %>
+                </div>
+              </div>
+              <div class="col s6">
+                <div class="form-city-sizes">
+                  <%= f.input :city_2_name, placeholder: "Nom de la ville 2", label: 'Nom de la ville 2', label: false %>
+                  <%= f.input :city_2_size,
+                              label: 'Taille de la ville 2',
+                              collection: ['Petite', 'Moyenne', 'Grande'],
+                              as: :radio_buttons,
+                              input_html: { class: "tag-selector" },
+                              item_wrapper_class: 'tag-item' %>
+                  <%= f.input :city_2_building_1, placeholder: "Ajoutez un bâtiment à la ville 2", label: 'Ajoutez un bâtiment à la ville 2', label: false %>
+                  <%= f.input :city_2_building_2, placeholder: "Ajoutez un deuxième bâtiment à la ville 2", label: 'Ajoutez un 2ème bâtiment à la ville 2', label: false %>
+                </div>
+              </div>
             </div>
+            <div class="row center">
+              <div class="col s12">
+                <%= f.input :bible, :as => :hidden, :input_html => { :value => '' } %>
+                <div class="form-submit">
+                  <%= f.button :submit %>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
