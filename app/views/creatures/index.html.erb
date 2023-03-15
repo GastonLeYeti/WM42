@@ -62,8 +62,8 @@
                     </div>
                   </div>
                   <div class="row creature_description">
-                    <% if creature.description.length > 102 %>
-                    <span> <%= creature.description[0, 84] + "..." %></span>
+                    <% if creature.description.length > 80 %>
+                    <span> <%= creature.description[0, 81] + "..." %></span>
                     <% else %>
                     <span> <%= creature.description %></span>
                     <% end %>
