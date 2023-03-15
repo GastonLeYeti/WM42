@@ -11,15 +11,15 @@
 
           <% if user_signed_in? %>
             <% if current_user.parties.any? %>
-              <%= link_to "Continue your parties", parties_path, class: "btn-large waves-effect waves-light" %>
+              <%= link_to "Continuez vos parties", parties_path, class: "btn-large waves-effect waves-light" %>
             <% else %>
               <%= link_to new_party_path, class: "btn-large waves-effect waves-light" do %>
-                Get Started
+               Lancez vous !
               <% end %>
             <% end %>
           <% else %>
             <%= link_to new_party_path, class: "btn-large waves-effect waves-light" do %>
-              Get Started
+              Lancez vous !
             <% end %>
           <% end %>
 
