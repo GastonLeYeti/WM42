@@ -1,0 +1,247 @@
+// On enleve les cadres dégeux
+fieldset {
+  border:none;
+  padding:0;
+}
+
+legend {
+  display: none;
+}
+
+.tag-item {
+  display: inline-block;
+}
+
+// On masque la checkbox
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+// On stylise l'état de base
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 20px;
+  padding: 0.1rem 0.5rem;
+  width:100px;
+  height:100px;
+  color: $background-color-50;
+  border: 1px solid $background-color-50;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  display:flex;
+  align-items: flex-end;
+  padding:12px;
+  justify-content: center;
+  font-size:13px;
+  position: relative;
+  transition:.3s;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// On stylise l'état checké
+.tag-selector:checked + label {
+  background-color: $primary-color;
+  color: $white-color;
+  border-color: $dark-primary-color;
+  transition:.3s;
+}
+
+.tag-selector:checked + label:after {
+  opacity:1;
+  transition:.3s;
+}
+
+// On ajoute les images
+/* label[for=party_races_humain] {
+  background-image: image-url('form-icons/human.png');
+} */
+
+/* #############################################################################
+################################### RACES ######################################
+############################################################################# */
+
+.form-races label:after {
+  content:'';
+  position:absolute;
+  display: block;
+  left:24px;
+  top:15px;
+  width:48px;
+  height:48px;
+  opacity:.3;
+  transition:.3s;
+}
+
+label[for=party_races_humain]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_races_elfes]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_races_nains]:after {
+  background-image: image-url('form-icons/race_nain.svg');
+}
+
+label[for=party_races_orcs]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_races_cyborgs]:after {
+  background-image: image-url('form-icons/race_cyborg.svg');
+}
+
+label[for=party_races_aliens]:after {
+  background-image: image-url('form-icons/race_extraterrestre.svg');
+}
+
+label[for=party_races_zergs]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_races_vikings]:after {
+  background-image: image-url('form-icons/race_viking.svg');
+}
+
+label[for=party_races_aztèques]:after {
+  background-image: image-url('form-icons/race_azteque.svg');
+}
+
+label[for=party_races_vampires]:after {
+  background-image: image-url('form-icons/race_vampire.svg');
+}
+
+label[for=party_races_loups-garous]:after {
+  background-image: image-url('form-icons/race_loup-garou.svg');
+}
+
+label[for=party_races_goules]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_races_humains_mutants]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_races_clones_défectueux]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_races_survivants_génétiquement_modifiés]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_races_humain_manifestant]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+label[for=party_races_humain_politicien]:after {
+  background-image: image-url('form-icons/race_humain.svg');
+}
+
+
+/* #############################################################################
+################################### SIZES ######################################
+############################################################################# */
+
+.form-sizes label:after {
+  content:'';
+  position:absolute;
+  display: block;
+  left:24px;
+  top:15px;
+  width:48px;
+  height:48px;
+  opacity:.3;
+  transition:.3s;
+}
+
+label[for=party_party_size_petite]:after {
+  background-image: image-url('form-icons/size_small.svg');
+}
+
+label[for=party_party_size_moyenne]:after {
+  background-image: image-url('form-icons/size_large.svg');
+}
+
+label[for=party_party_size_grande]:after {
+  background-image: image-url('form-icons/size_medium.svg');
+}
+
+.form-city-sizes label:after {
+  content:'';
+  position:absolute;
+  display: block;
+  left:24px;
+  top:15px;
+  width:48px;
+  height:48px;
+  opacity:.3;
+  transition:.3s;
+}
+
+label[for=party_city_1_size_petite]:after {
+  background-image: image-url('form-icons/size_small.svg');
+}
+
+label[for=party_city_1_size_moyenne]:after {
+  background-image: image-url('form-icons/size_large.svg');
+}
+
+label[for=party_city_1_size_grande]:after {
+  background-image: image-url('form-icons/size_medium.svg');
+}
+
+label[for=party_city_2_size_petite]:after {
+  background-image: image-url('form-icons/size_small.svg');
+}
+
+label[for=party_city_2_size_moyenne]:after {
+  background-image: image-url('form-icons/size_large.svg');
+}
+
+label[for=party_city_2_size_grande]:after {
+  background-image: image-url('form-icons/size_medium.svg');
+}
+
+/* #############################################################################
+################################# UNIVERSES ####################################
+############################################################################# */
+
+.form-universes label:after {
+  content:'';
+  position:absolute;
+  display: block;
+  left:24px;
+  top:15px;
+  width:48px;
+  height:48px;
+  opacity:.3;
+  transition:.3s;
+}
+
+label[for=party_universe_id_111]:after {
+  background-image: image-url('form-icons/universes_scifi.svg');
+}
+
+label[for=party_universe_id_112]:after {
+  background-image: image-url('form-icons/universes_fantasy.svg');
+}
+
+label[for=party_universe_id_113]:after {
+  background-image: image-url('form-icons/universes_modern.svg');
+}
+
+label[for=party_universe_id_114]:after {
+  background-image: image-url('form-icons/universes_historical.svg');
+}
+
+label[for=party_universe_id_114]:after {
+  background-image: image-url('form-icons/universes_postapo.svg');
+}

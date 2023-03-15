@@ -37,7 +37,7 @@ class PartiesController < ApplicationController
       create_maps(@party)
       redirect_to party_path(@party), notice: 'Successfully created a party.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

@@ -17,23 +17,34 @@
           <div class="col s12">
             <h5> Durée de la partie </h5>
           </div>
-          <%= f.input :party_size, placeholder: 'Durée de la partie', label: 'Durée de la partie', collection: ['Petite', 'Moyenne', 'Grande'], as: :radio_buttons %>
+
+          <div class="form-sizes">
+          <%= f.input :party_size,
+          placeholder: 'Durée de la partie',
+          label: 'Durée de la partie',
+          collection: ['Petite', 'Moyenne', 'Grande'],
+          as: :radio_buttons,
+          input_html: { class: "tag-selector" },
+          item_wrapper_class: 'tag-item' %>
+          </div>
 
           <div class="col s12">
             <h5> Choisissez un univers </h5>
           </div>
-          <%= f.association :universe,
+
+          <div class="form-universes">
+            <%= f.association :universe,
             placeholder: "Univers",
             label: "Univers",
             as: :radio_buttons,
-            input_html: { class: 'universe_id' },
-            item_label_class: 'universe_id',
-            item_wrapper_class: 'universe_id'
-          %>
+            input_html: { class: "tag-selector" },
+            item_wrapper_class: 'tag-item' %>
+          </div>
 
           <div class="col s12">
             <h5> Indiquez le nom des joueurs (hors MJ) </h5>
           </div>
+
           <% (1..6).each do |i| %>
             <div class="input-field col s4">
               <%= f.input "player_#{i}", label: "Joueur #{i}", placeholder: "Joueur #{i}" %>
@@ -43,29 +54,42 @@
           <div class="col s12">
             <h5> Sélectionnez les races peuplant votre univers </h5>
           </div>
-          <%= f.input :races, placeholder: "Ajoutez des races", collection: @races, as: :check_boxes, include_hidden: false %>
+
+          <div class="form-races">
+            <%= f.input :races,
+                        placeholder: "Ajoutez des races",
+                        collection: @races,
+                        as: :check_boxes,
+                        include_hidden: false,
+                        input_html: { class: "tag-selector" },
+                        item_wrapper_class: 'tag-item' %>
+          </div>
 
           <div class="col s12">
             <h5> Choisissez deux créatures mythiques de votre univers </h5>
           </div>
-          <%= f.input :creatures, placeholder: "Ajoutez deux créatures mythiques", collection: @myth_creatures, as: :check_boxes, include_hidden: false %>
 
+          <%= f.input :creatures,
+                      placeholder: "Ajoutez deux créatures mythiques",
+                      collection: @myth_creatures,
+                      as: :check_boxes,
+                      include_hidden: false,
+                      input_html: { class: "tag-selector" },
+                      item_wrapper_class: 'tag-item' %>
         </div>
 
         <div class="first_section">
           <h2> Carte </h2>
-
-
 
           <div class="col s12">
             <h6> Elements géographiques </h6>
           </div>
 
           <div class="col s6">
-          <%= f.input :geography_1, label: 'Element géographique 1', collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'] %>
+            <%= f.input :geography_1, label: 'Element géographique 1', collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'] %>
           </div>
           <div class="col s6">
-          <%= f.input :geography_2, label: 'Element géographique 2', collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'] %>
+            <%= f.input :geography_2, label: 'Element géographique 2', collection: ['Plaines', 'Désert', 'Forêt', 'Montagne'] %>
           </div>
 
           <div class="col s12">
@@ -73,23 +97,38 @@
           </div>
 
           <div class="col s6">
-          <%= f.input :city_1_name, placeholder: "Nom de la ville 1", label: 'Nom de la ville 1', label: false %>
-          <%= f.input :city_1_size, label: 'Taille de la ville 1', collection: ['Petite', 'Moyenne', 'Grande'] %>
-          <%= f.input :city_1_building_1, placeholder: "Ajoutez un bâtiment à la ville 1", label: 'Ajoutez un bâtiment à la ville 1', label: false %>
-          <%= f.input :city_1_building_2, placeholder: "Ajoutez un deuxième bâtiment à la ville 1", label: 'Ajoutez un 2ème bâtiment à la ville 1', label: false %>
+            <div class="form-city-sizes">
+              <%= f.input :city_1_name, placeholder: "Nom de la ville 1", label: 'Nom de la ville 1', label: false %>
+              <%= f.input :city_1_size,
+                          label: 'Taille de la ville 1',
+                          collection: ['Petite', 'Moyenne', 'Grande'],
+                          as: :radio_buttons,
+                          input_html: { class: "tag-selector" },
+                          item_wrapper_class: 'tag-item' %>
+              <%= f.input :city_1_building_1, placeholder: "Ajoutez un bâtiment à la ville 1", label: 'Ajoutez un bâtiment à la ville 1', label: false %>
+              <%= f.input :city_1_building_2, placeholder: "Ajoutez un deuxième bâtiment à la ville 1", label: 'Ajoutez un 2ème bâtiment à la ville 1', label: false %>
+            </div>
           </div>
 
           <div class="col s6">
-          <%= f.input :city_2_name, placeholder: "Nom de la ville 2", label: 'Nom de la ville 2', label: false %>
-          <%= f.input :city_2_size, label: 'Taille de la ville 2', collection: ['Petite', 'Moyenne', 'Grande'] %>
-          <%= f.input :city_2_building_1, placeholder: "Ajoutez un bâtiment à la ville 2", label: 'Ajoutez un bâtiment à la ville 2', label: false %>
-          <%= f.input :city_2_building_2, placeholder: "Ajoutez un deuxième bâtiment à la ville 2", label: 'Ajoutez un 2ème bâtiment à la ville 2', label: false %>
+            <div class="form-city-sizes">
+              <%= f.input :city_2_name, placeholder: "Nom de la ville 2", label: 'Nom de la ville 2', label: false %>
+              <%= f.input :city_2_size,
+                          label: 'Taille de la ville 2',
+                          collection: ['Petite', 'Moyenne', 'Grande'],
+                          as: :radio_buttons,
+                          input_html: { class: "tag-selector" },
+                          item_wrapper_class: 'tag-item' %>
+              <%= f.input :city_2_building_1, placeholder: "Ajoutez un bâtiment à la ville 2", label: 'Ajoutez un bâtiment à la ville 2', label: false %>
+              <%= f.input :city_2_building_2, placeholder: "Ajoutez un deuxième bâtiment à la ville 2", label: 'Ajoutez un 2ème bâtiment à la ville 2', label: false %>
+            </div>
           </div>
 
           <%= f.input :bible, :as => :hidden, :input_html => { :value => '' } %>
           <%= f.button :submit %>
         </div>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
