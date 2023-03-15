@@ -17,19 +17,19 @@
               <%= f.input :name, placeholder: 'Nom de la partie', label: 'Nom de la partie', class: 'party_name' %>
             </div>
 
-          <div class="first-column col 6">
-            <h5> Durée de la partie </h5>
-              <div class="form-sizes">
-                <%= f.input :party_size,
-                placeholder: 'Durée de la partie',
-                label: 'Durée de la partie',
-                collection: Party::SIZE_OF_PARTIES,
-                as: :radio_buttons,
-                input_html: { class: "tag-selector" },
-                item_wrapper_class: 'tag-item' %>
-              </div>
+            <div class="first-column col 6">
+              <h5> Durée de la partie </h5>
+                <div class="form-sizes">
+                  <%= f.input :party_size,
+                  placeholder: 'Durée de la partie',
+                  label: 'Durée de la partie',
+                  collection: Party::SIZE_OF_PARTIES,
+                  as: :radio_buttons,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+                </div>
 
-            <h5> Choisissez un univers </h5>
+              <h5> Choisissez un univers </h5>
               <div class="form-universes">
                 <%= f.association :universe,
                 placeholder: "Univers",
@@ -38,24 +38,19 @@
                 input_html: { class: "tag-selector" },
                 item_wrapper_class: 'tag-item' %>
               </div>
+            </div>
+
+            <div class="second-column col 6">
+              <h5> Indiquez le nom des joueurs (hors MJ) </h5>
+                <% (1..6).each do |i| %>
+                  <div class="input-field col s4">
+                    <%= f.input "player_#{i}", label: "Joueur #{i}", placeholder: "Joueur #{i}" %>
+                  </div>
+                <% end %>
+                <div class="btn" data-form-target="formBtn1" data-action="click->form#hideSection1">Suivant</div>
+            </div>
           </div>
-
-<div class="second-column col 6">
-  <h5> Indiquez le nom des joueurs (hors MJ) </h5>
-
-    <% (1..6).each do |i| %>
-      <div class="input-field col s4">
-        <%= f.input "player_#{i}", label: "Joueur #{i}", placeholder: "Joueur #{i}" %>
-      </div>
-    <% end %>
-      <div class="btn" data-form-target="formBtn1" data-action="click->form#hideSection1">Suivant</div>
-</div>
-
-
-
-
-
-
+        </div>
 
         <%# Partie 2 %>
         <div class="form-section-2 d-none" data-form-target="section2">
