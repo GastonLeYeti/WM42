@@ -6,23 +6,46 @@ export default class extends Controller {
   static values = {
     generate: Boolean,
     maps: Array,
-    cities: Array
+    cities: Array,
+    size: String,
   }
 
   connect() {
     if (this.generateValue) {
+      const size = this.element.dataset.partySize
       this.mapsValue.forEach((map, index) => {
         // Générer le maze
         // Faire une requête AJAX au serveur (fetch) pour updater la map
 
-        console.log('map id : ' + map.id)
+        // console.log('map id : ' + map.id)
+        console.log(size)
 
-        let Maze = new MazeBuilder(20, 16)
+        let rows, cols;
+        if (size === 'Petite') {
+          rows = 10;
+          cols = 10;
+        } else if (size === 'Moyenne') {
+          rows = 20;
+          cols = 20;
+        } else if (size === 'Grande') {
+          rows = 30;
+          cols = 30;
+        }
+
+        const Maze = new MazeBuilder(rows, cols)
         Maze.placeKey()
+        // console.log(index)
         Maze.display(`maze_container_0`)
 
         const html = document.getElementById(`maze_container_0`).innerHTML
-        console.log(html)
+        // console.log(html)
+
+        // const Maze = new MazeBuilder(20, 16)
+        // Maze.placeKey()
+        // Maze.display(`maze_container_0`)
+
+        // const html = document.getElementById(`maze_container_0`).innerHTML
+        // // console.log(html)
 
         const formData = new FormData()
         formData.append("content", html)
@@ -41,7 +64,7 @@ export default class extends Controller {
 
         console.log('city id : ' + city.id)
 
-        let Maze = new MazeBuilder(20, 16)
+        const Maze = new MazeBuilder(20, 16)
         Maze.placeKey()
         console.log(index)
         Maze.display(`maze_container_${index + 1}`)

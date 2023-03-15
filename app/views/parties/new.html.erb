@@ -22,7 +22,7 @@
           <%= f.input :party_size,
           placeholder: 'Durée de la partie',
           label: 'Durée de la partie',
-          collection: ['Petite', 'Moyenne', 'Grande'],
+          collection: Party::SIZE_OF_PARTIES,
           as: :radio_buttons,
           input_html: { class: "tag-selector" },
           item_wrapper_class: 'tag-item' %>

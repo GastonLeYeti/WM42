@@ -4,7 +4,7 @@
 }
 #maze {
   position: relative;
-  background-color: #a7c53f;
+  background-color: #C0A27E;
   background-image: radial-gradient(circle at 0% 0%, transparent 50%, rgba(0,0,0,0.1) 50%), radial-gradient(circle at center, rgba(0,0,0,0.1) 50%, transparent 50%), radial-gradient(circle at 100% 100%, transparent 50%, rgba(0,0,0,0.1) 50%), radial-gradient(circle at 0% 100%, transparent 50%, rgba(0,0,0,0.1) 50%), radial-gradient(circle at 100% 0%, transparent 50%, rgba(0,0,0,0.1) 50%);
   background-size: 8em 8em;
 }
@@ -50,7 +50,7 @@
   transform: scale(-1, 1);
 }
 #maze div div.wall, #maze div div.nubbin.wall, #maze div div.door.exit {
-  background-color: #454545;
+  background-color: #231e2b;
   background-image: linear-gradient(45deg, rgba(0,0,0,0.2) 45%, transparent 55%), linear-gradient(to bottom, rgba(0,0,0,0.2) 45%, transparent 55%);
   background-size: 0.5em 0.5em;
 }

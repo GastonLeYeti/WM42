@@ -127,6 +127,10 @@ class PartiesController < ApplicationController
     # nouvelle_reponse = nouveaux_paragraphes.join # Rejoint les paragraphes
 
     # party.bible = nouvelle_reponse
+
+     party.bible = "wlh téma la bibel"
+
+    # party.bible = nouvelle_reponse
     # p response.parsed_response["choices"][0]["text"]
     # party.bible = response.parsed_response["choices"][0]["text"]
 

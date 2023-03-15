@@ -1,5 +1,16 @@
 .header_parties {
-  // display: flex;
+
+  .col {
+    display: flex;
+    gap:24px;
+    align-items: flex-end;
+
+    h6 {
+      font-size:14.5px;
+      color:$white-color;
+      opacity: .5;
+    }
+  }
 
   .icon_container {
     display: flex;
@@ -15,6 +26,8 @@
     }
   h1 {
     font-size: 64px!important;
+    margin:0;
+    letter-spacing: 1px;
   }
   h6 {
     color: $shiny-shine-color;

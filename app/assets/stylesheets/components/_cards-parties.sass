@@ -9,19 +9,33 @@
   // border: 0.1rem solid $shine-color
   background-image: $gradiant-primary-color
   border-radius: 5px
-  .pils
-    background-color: #C09B2F
-    border-radius: 5px
-    margin-right: 0px
-    margin-left: 5px
-    padding: 5px
-    font-size: 14px
-    i
+  transition: .3s all
+  border: 1px solid rgba(255, 255, 255, 0.05)
+  &:hover
+    border: 1px solid rgba(255, 255, 255, 0.15)
+    transition: .3s all
+    transform: scale(1.01)
+  .pils_content
+    display: flex
+    gap: 12px
+    .pils
+      gap: 4px
+      display: flex
+      background-color: #C09B2F
+      border-radius: 5px
+      margin-right: 0px
+      margin-left: 5px
+      padding: 5px
+      font-size: 14px
+      align-items: center
+      width: fit-content
       color: $background-color-70
-      font-size: 12px
+      &:first-child
+        margin-left: 0px
+      i
+        color: $background-color-70
+        font-size: 12px
   .card-image
-    .card-title
-      text-shadow: 0 0 4px #333,  0 0 6px #223, 0 0 8px #003
     .btn-floating
       &.primary_bg
         background-color: $primary-color !important
@@ -29,5 +43,13 @@
           color: $shine-color !important
           font-size: 2rem
   .card-content
+    .card-title
+      // text-shadow: 0 0 4px #333,  0 0 6px #223, 0 0 8px #003
+      font-family: 'Tilt Warp', cursive
+      color: $shine-color
     blockquote
       color: $shiny-shine-color
+      opacity: .6
+
+.txt_xs
+  font-size: 12px

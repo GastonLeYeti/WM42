@@ -1,4 +1,5 @@
 class Party < ApplicationRecord
+  SIZE_OF_PARTIES = %w[Petite Moyenne Grande].freeze
   has_one :user
   belongs_to :universe
   has_many :players
