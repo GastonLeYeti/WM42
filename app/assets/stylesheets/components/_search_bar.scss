@@ -13,6 +13,10 @@
   color:$background-color-70;
 }
 
+#search::active {
+  color:$background-color-70;
+}
+
 .input-field input[type=search]:focus:not(.browser-default) {
   background-color: transparent !important;
 }
