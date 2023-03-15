@@ -18,7 +18,7 @@ class Weapon < ApplicationRecord
 
     (1..nmb_mix).each do |armory|
       Weapon.create!(
-      name: Faker::Games::DnD.ranged_weapon,
+      name: Faker::Games::DnD.ranged_weapon + " de " + Faker::Games::DnD.alignment,
       level: rand(1..10),
       rarity: %w(Commun Rare Épique Légendaire).sample,
       price: rand(1..100),
@@ -32,7 +32,7 @@ class Weapon < ApplicationRecord
 
     (1..nmb_mix).each do |armory|
       Weapon.create!(
-      name: Faker::Games::DnD.melee_weapon,
+      name: Faker::Games::DnD.melee_weapon + " de " + Faker::Games::DnD.alignment,
       level: rand(1..10),
       rarity: %w(Commun Rare Épique Légendaire).sample,
       price: rand(1..100),

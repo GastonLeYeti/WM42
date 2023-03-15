@@ -2,7 +2,9 @@
 <%= render "composants/navbar" %>
 <div class="container">
   <div class="row title">
-    <h1><%= 'Livre'.pluralize(current_user.parties.count) %> des aventures</h1>
+    <div class="col s12">
+      <h1><%= 'Partie'.pluralize(current_user.parties.count) %> en cours</h1>
+    </div>
   </div>
 
   <div class="row">
@@ -28,37 +30,38 @@
 
     <% current_user.parties.each do |party| %>
       <div class="col s12 m4">
-        <div class="card card_party hoverable">
-          <div class="card-image">
-            <%= image_tag "party_cards/Univers_PostApocalyptic.png" %>
-            <span class="card-title"><%= party.name %></span>
-            <%= link_to party_path(party.id), class: "btn-floating btn-large halfway-fab waves-effect waves-light primary_bg hoverable" do %>
-              <i class="material-icons">visibility</i>
-            <% end %>
-          </div>
-          <div class="card-content">
-           <%# <%= if @party.send("player_1") != nil || @party.send("player_1") != '' %>
-              <% players_array = [] %>
-              <% (1..10).each do |i| %>
-                <% if  party.send("player_#{i}") != nil %>
-                  <% if  party.send("player_#{i}") != '' %>
-                    <% players_array << party.send("player_#{i}") %>
+          <div class="card card_party hoverable">
+        <%= link_to party_path(party.id) do %>
+            <div class="card-image">
+              <%= image_tag "party_cards/Univers_PostApocalyptic.png" %>
+            </div>
+            <div class="card-content">
+            <%# <%= if @party.send("player_1") != nil || @party.send("player_1") != '' %>
+                <% players_array = [] %>
+                <% (1..10).each do |i| %>
+                  <% if  party.send("player_#{i}") != nil %>
+                    <% if  party.send("player_#{i}") != '' %>
+                      <% players_array << party.send("player_#{i}") %>
+                    <% end  %>
                   <% end  %>
                 <% end  %>
-              <% end  %>
-           <%# <% end %>
-            <span class="pils"><i class="material-icons">group</i> <%= players_array.length %></span>
-            <span class="pils"><i class="material-icons">language</i> <%= party.universe.name %></span>
-            <blockquote>
-              <% party_bible = party.bible %>
-              <% if party_bible.length > 102 %>
-                <%= party_bible[0, 84] + "..." %>
-              <% else %>
-                <%= party_bible %>
-              <% end %>
-            </blockquote>
+            <%# <% end %>
+              <span class="card-title"><%= party.name %></span>
+              <div class="pils_content">
+                <span class="pils"><i class="material-icons">group</i> <%= players_array.length %></span>
+                <span class="pils"><i class="material-icons">language</i> <%= party.universe.name %></span>
+              </div>
+              <blockquote class="txt_xs">
+                <% party_bible = party.bible %>
+                <% if party_bible.length > 102 %>
+                  <%= party_bible[0, 84] + "..." %>
+                <% else %>
+                  <%= party_bible %>
+                <% end %>
+              </blockquote>
+            </div>
+        <% end %>
           </div>
-        </div>
       </div>
     <% end %>
 
