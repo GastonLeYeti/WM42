@@ -47,11 +47,11 @@
 
 
           <% @party.pnjs.sort_by{|pnj| pnj.lvl }.group_by(&:lvl).each do |level, pnjs| %>
-            <div class="col s12 bible_title">
+            <div class="col s12 bible_title mt-4">
               <h2>Level <%= level %></h2>
             </div>
             <% pnjs.each do |pnj| %>
-              <div class="col s12 m6 l3" data-search-target="card">
+              <div class="col s12 m6 l4" data-search-target="card">
                 <div class="card horizontal pnj-card-container">
                   <div class="card-image col s6">
 
