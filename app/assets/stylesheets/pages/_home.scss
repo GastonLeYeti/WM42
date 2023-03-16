@@ -6,7 +6,7 @@ h4,
 h5,
 h6,
 p {
-  color: $white-color;
+  color: $white-color!important;
 }
 .shine_text-light h1,
 .shine_text-light h2,
@@ -24,7 +24,7 @@ i.material-icons {
 }
 
 .parallax img {
-  filter: brightness(70%);
+  filter: brightness(25%);
   top: -50%;
 }
 
@@ -92,10 +92,10 @@ i.material-icons {
   scale: 1.05;
   transition: 0.3s;
 }
-.random-landing-section3 {
-  opacity: 0.3!important;
-  transform: translate3d(-50%, 259.54px, 0px);
-}
+// .random-landing-section3 {
+//   opacity: 0.3!important;
+//   transform: translate3d(-50%, 259.54px, 0px);
+// }
 
 .header-subtitle {
   text-align: center;
@@ -122,4 +122,9 @@ i.material-icons {
 
 .container-landing-1 {
   margin-top: 4vh;
+
+}
+
+.home_head_titles {
+  color: $shiny-shine-color!important;
 }
