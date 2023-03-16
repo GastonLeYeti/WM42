@@ -6,6 +6,16 @@
     </div>
   </div> %>
   <div data-controller="form">
+    <div class="loader-wrapper d-none" data-form-target="loader">
+      <div class="content">
+        <div class="wrapper" data-form-target="loaderContent">
+          <span class="loader-sentence">✅ génération des évenements</span>
+          <span class="loader-sentence">💀 monstres et compagnie</span>
+          <span class="loader-sentence">🗓 pirouette</span>
+          <span class="loader-sentence">👇 cacaouhete</span>
+        </div>
+      </div>
+    </div>
     <div class="row progress-row">
       <div class="steps">
         <span class="active" data-form-target="stepper1">First</span>
@@ -152,6 +162,7 @@
                     <%= f.input :bible, :as => :hidden, :input_html => { :value => '' }, class:'w-full' %>
                     <div class="form-submit mt-2">
                       <%= f.button :submit, class: "modal-trigger"%>
+                      <%= f.button :submit, "data-action" => "click->form#submitForm" %>
                     </div>
                   </div>
                 </div>
