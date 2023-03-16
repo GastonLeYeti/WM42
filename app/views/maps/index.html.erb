@@ -27,11 +27,14 @@
   </div>
 
   <div class="row row_bible row_map">
-    <div class="col s8 bible text-center">
+    <div class="col s12 m8 bible text-center">
       <% @party.maps.each do |map| %>
-        <h2><%= map.name %></h2>
+        <h2>Carte de la partie</h2>
         <div class="map_content">
-          <%= map.content.html_safe %>
+          <%= if map.content %>
+            <%= map.content.html_safe %>
+          <% end %>
+
         </div>
       <% end %>
     </div>

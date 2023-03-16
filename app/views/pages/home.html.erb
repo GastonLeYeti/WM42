@@ -35,30 +35,29 @@
 
 
 
-  <div class="container">
+  <div class="container py-10">
     <div class="section">
 
       <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
+      <div class="row grid-3-cols">
+        <div class="cards-landing">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">OpenIA</h5>
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2><h5 class="center ">OpenIA</h5>
 
             <p class="light">Nous utilisons l'API d'OpenAI pour générer du contenu de qualité, tel que des scénarios, des personnages et des descriptions détaillées, pour rendre chaque partie de JDR aussi intéressante que possible.</p>
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="cards-landing">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">pie_chart</i></h2>
-            <h5 class="center">MidJournee</h5>
+            <h5 class="center">MidJourney</h5>
 
-            <p class="light">Nous avons également intégré l'IA de MidJourney pour générer des images uniques, afin d'ajouter une touche supplémentaire d'immersion à nos jeux. Ces images créées sur mesure permettent aux joueurs de se plonger encore plus profondément dans l'univers du jeu et d'interagir avec lui de manière plus réaliste.</p>
+            <p class="light">Nous avons également intégré l'IA de MidJourney pour générer des images uniques, afin d'ajouter une touche supplémentaire d'immersion à nos jeux. Ces images sont créées sur mesure ! </p>
           </div>
         </div>
 
-        <div class="col s12 m4">
+        <div class="cards-landing">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
             <h5 class="center">42</h5>
@@ -72,18 +71,19 @@
   </div>
 
 
-  <div class="parallax-container valign-wrapper">
+  <div class="parallax-container">
     <div class="section">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">“Le JDR, c’est le seul endroit où vous pouvez dire
-          <strong>‘je fais une roulade arrière’</strong>
-          sans que les gens vous regardent bizarrement.”</h5>
+
+          <h5 class="header col s12 light header-subtitle"><i class="fa-solid fa-quote-left"></i>Le JDR, c’est le seul endroit où vous pouvez dire
+          <strong><br>'je fais une roulade arrière'</strong><br>
+          sans que les gens vous regardent bizarrement.” <br> <em class="quote-sign">Gaston</em></h5>
         </div>
       </div>
     </div>
     <div class="parallax">
-      <%= image_tag ("pages/img_#{rand(1..5)}_s2.png"), class: "", style: "opacity: 1; transform: translate3d(-50%, 259.54px, 0px);" %>
+      <%= image_tag ("pages/img_#{rand(1..5)}_s2.png"), class: "random-landing-section3" %>
     </div>
   </div>
 
