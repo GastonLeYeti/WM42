@@ -86,42 +86,42 @@ class PartiesController < ApplicationController
 
   def generate_bible(party)
 
-    party.bible = "wlh téma la bibel"
+    # party.bible = "wlh téma la bibel"
 
-    # token = ENV['OPENAI_API_KEY']
-    # client = OpenAI::Client.new(access_token: token)
-    # p prompt = "
-    # Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
-    # Il est composer de #{party.races}
-    # La géographie de la carte est composé de #{party.geography[0]} et #{party.geography[1]}
+    token = ENV['OPENAI_API_KEY']
+    client = OpenAI::Client.new(access_token: token)
+    p prompt = "
+    Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
+    Il est composer de #{party.races}
+    La géographie de la carte est composé de #{party.geography[0]} et #{party.geography[1]}
 
-    # Please write in humorous tone, narrative writing style, French language.
-    # "
-    # # Les joureurs s'appels #{party.player_1}, #{party.player_2}, #{party.player_3}, #{party.player_4}, #{party.player_5}, #{party.player_6}, #{party.player_7}, #{party.player_8}, #{party.player_9}, #{party.player_10}
+    Please write in humorous tone, narrative writing style, French language.
+    "
+    # Les joureurs s'appels #{party.player_1}, #{party.player_2}, #{party.player_3}, #{party.player_4}, #{party.player_5}, #{party.player_6}, #{party.player_7}, #{party.player_8}, #{party.player_9}, #{party.player_10}
 
-    # response = client.completions(
-    #   parameters: {
-    #     model: "text-davinci-003",
-    #     prompt: prompt,
-    #     max_tokens: 3500
-    #   })
+    response = client.completions(
+      parameters: {
+        model: "text-davinci-003",
+        prompt: prompt,
+        max_tokens: 3500
+      })
 
-    # reponse_full = response.parsed_response["choices"][0]["text"]
+    reponse_full = response.parsed_response["choices"][0]["text"]
 
-    # paragraphes = reponse_full.split("\n\n") # Sépare les paragraphes
+    paragraphes = reponse_full.split("\n\n") # Sépare les paragraphes
 
-    # nouveaux_paragraphes = [] # Crée un tableau vide
-    # nouveaux_paragraphes << paragraphes.shift # Ajoute le premier paragraphe sans <br>
+    nouveaux_paragraphes = [] # Crée un tableau vide
+    nouveaux_paragraphes << paragraphes.shift # Ajoute le premier paragraphe sans <br>
 
-    # paragraphes.each do |paragraphe| # Pour chaque paragraphe
-    #   nouveaux_paragraphes << "<br><br>#{paragraphe}" # Ajoute les paragraphes avec <br>
-    # end
+    paragraphes.each do |paragraphe| # Pour chaque paragraphe
+      nouveaux_paragraphes << "<br><br>#{paragraphe}" # Ajoute les paragraphes avec <br>
+    end
 
-    # nouvelle_reponse = nouveaux_paragraphes.join # Rejoint les paragraphes
+    nouvelle_reponse = nouveaux_paragraphes.join # Rejoint les paragraphes
 
-    # party.bible = nouvelle_reponse
+    party.bible = nouvelle_reponse
 
 
-    party.bible = "wlh téma la bibel"
+    # party.bible = "wlh téma la bibel"
   end
 end

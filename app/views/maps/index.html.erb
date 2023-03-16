@@ -29,7 +29,7 @@
   <div class="row row_bible row_map">
     <div class="col s8 bible text-center">
       <% @party.maps.each do |map| %>
-        <h2><%= map.name %></h2>
+        <h2>Carte de la partie</h2>
         <div class="map_content">
           <%= map.content.html_safe %>
         </div>
@@ -60,7 +60,7 @@
         </div>
       </div>
 
-    
+
   <div class="row row_bible row_map">
     <% @party.maps.each do |map| %>
       <% map.cities.each do |city| %>
@@ -75,7 +75,7 @@
         </div>
       <% end %>
     <% end %>
-    
+
             <div class="col s12 map_content">
 
           </div>
