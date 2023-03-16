@@ -216,27 +216,27 @@ form#new_party [type="radio"]:not(:checked), form#new_party [type="radio"]:check
 /* icons for universes */
 /* META */
 .universe-label:nth-child(3) label:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/universes_meta.svg');
 }
 /* SCIFI */
 .universe-label:nth-child(4) label:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/universes_scifi.svg');
 }
 /* FANTASY */
 .universe-label:nth-child(5) label:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/universes_fantasy.svg');
 }
 /* MODERN */
 .universe-label:nth-child(6) label:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/universes_modern.svg');
 }
 /* HISTORICAL */
 .universe-label:nth-child(7) label:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/universes_historic.svg');
 }
 /* POSTAPO */
 .universe-label:nth-child(8) label:after {
-  background-image: image-url('form-icons/race_humain.svg');
+  background-image: image-url('form-icons/universes_postapo.svg');
 }
 
 label[for=party_races_humain]:after {
