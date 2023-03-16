@@ -42,9 +42,50 @@ i.material-icons {
         }
       }
   }
+
+
+
 }
 
 .img_section{
   width: 100%;
   height: auto;
+}
+
+
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+  margin-bottom:0;
+}
+
+.py-10 {
+  padding: 80px 0;
+}
+.cards-landing {
+  background-color: $background-color-70;
+  border: 2px solid $background-color;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  .icon-block {
+
+  }
+  h5 {
+    font-family: 'Tilt Warp', cursive;
+    margin:0;
+  }
+  .light {
+    padding:16px !important;
+    padding-top:0 !important;
+    margin-top:12px;
+  }
+}
+
+.cards-landing:hover {
+  scale: 1.1;
+  transition: 0.3s;
 }
