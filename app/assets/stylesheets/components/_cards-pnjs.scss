@@ -29,9 +29,15 @@
 }
 
 
+.pnj-card-container {
+  transition: 0.4s;
+}
+
 .pnj-card-container:hover {
   box-shadow: 0 0 0 0.2rem $gold-color;
-  transition: box-shadow 0.5s;
+  transition: 0.8s;
+  cursor: default;
+  scale: 1.1;
 
 }
 
