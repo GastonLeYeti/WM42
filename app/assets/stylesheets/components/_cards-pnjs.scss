@@ -3,8 +3,6 @@
   padding: 0;
   background-color: $background-color;
 
-
-
   .pnj-card-content {
     padding: 0;
     padding-left: 8px;
@@ -14,25 +12,20 @@
     padding: 0;
     object-fit: fill;
     white-space: nowrap;
-
   }
 
   .row {
     margin: .4rem;
   }
 
-
-
   .pnj_name {
     font-weight: bold;
   }
 }
 
-
 .pnj-card-container:hover {
   box-shadow: 0 0 0 0.2rem $gold-color;
   transition: box-shadow 0.5s;
-
 }
 
 .search-bar {
