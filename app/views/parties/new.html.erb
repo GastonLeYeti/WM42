@@ -24,7 +24,7 @@
       </div>
       <div class="progress">
         <div class="determinate" style="width: 10%" data-form-target="stepperBar"></div>
-      </div>      
+      </div>
     </div>
     <div class="row" >
       <div class="col s12">
@@ -71,7 +71,7 @@
                   </div>
                 <% end %>
                 <div class="btn mt-2 w-90" data-form-target="formBtn1" data-action="click->form#hideSection1">Suivant</div>
-              </div>                
+              </div>
             </div>
           </div>
         </div>
@@ -111,13 +111,13 @@
           <div class="form-section-3 d-none" data-form-target="section3">
             <div class="first_section">
               <div class="row">
-                
+
 
                 <div class="col s5">
                   <div class="d-flex">
                     <h5> Créer une ville </h5>
                     <div class="btn mt-2" data-form-target="formBtn2" data-action="click->form#addCity">Ajouter une ville</div>
-                  </div>                
+                  </div>
                   <div class="form-city-sizes">
                     <%= f.input :city_1_name, placeholder: "Nom de la ville 1", label: 'Nom de la ville 1', label: false %>
                     <%= f.input :city_1_size,
@@ -129,7 +129,7 @@
                     <%= f.input :city_1_building_1, placeholder: "Bâtiment 1", label: 'Ajoutez un bâtiment à la ville 1', label: false %>
                     <%= f.input :city_1_building_2, placeholder: "Bâtiment 2", label: 'Ajoutez un 2ème bâtiment à la ville 1', label: false %>
                   </div>
-              
+
                   <div class="form-city-sizes d-none mt-4" data-form-target="secondCity">
                     <%= f.input :city_2_name, placeholder: "Nom de la ville 2", label: 'Nom de la ville 2', label: false %>
                     <%= f.input :city_2_size,
@@ -161,6 +161,7 @@
                   <div class="col s12">
                     <%= f.input :bible, :as => :hidden, :input_html => { :value => '' }, class:'w-full' %>
                     <div class="form-submit mt-2">
+                      <%= f.button :submit, class: "modal-trigger"%>
                       <%= f.button :submit, "data-action" => "click->form#submitForm" %>
                     </div>
                   </div>
@@ -168,7 +169,7 @@
 
 
               <div class="row center">
-                
+
               </div>
             </div>
           <% end %>
