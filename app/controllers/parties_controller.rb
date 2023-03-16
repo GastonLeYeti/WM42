@@ -8,7 +8,6 @@ class PartiesController < ApplicationController
 
   def show
     @party = Party.find(params[:id])
-
     @needs_maze_generation = !@party.maps.all? { |map| map.content.present? } && !@party.cities.all? { |city| city.content.present? }
     @map_ids = @party.maps
     @city_ids = @party.cities

@@ -4,7 +4,7 @@
   data-hello-generate-value="<%= @needs_maze_generation %>"
   data-hello-maps-value="<%= @map_ids.to_json %>"
   data-hello-cities-value="<%= @city_ids.to_json %>"
-  data-party-size="<%= @party.party_size %>" 
+  data-party-size="<%= @party.party_size %>"
 >
 
   <div id="maze_container_0"></div>
@@ -20,23 +20,24 @@
     <div class="col s12 nav-dashboard-tabs">
 
       <%= link_to party_path(@party) do %>
-        <span class="nav-active" id="nav-bible"><i class="fa-solid fa-star nav-star"></i>Bible</span>
+        <span class="nav-active" id="nav-bible"><i class="material-icons white-text">language</i>Bible</span>
       <% end %>
       <%= link_to party_maps_path(@party) do %>
-        <span class="nav-maps" id="nav-map"><i class="fa-regular fa-star nav-star"></i>Map</span>
+        <span class="nav-maps" id="nav-map"><i class="material-icons white-text">directions</i>Map</span>
       <% end %>
       <%= link_to party_players_path(@party) do %>
-        <span class="nav-players" id="nav-players"><i class="fa-regular fa-star nav-star"></i>Players</span>
+        <span class="nav-players" id="nav-players"><i class="material-icons white-text">face</i>Players</span>
       <% end %>
       <%= link_to party_weapons_path(@party) do %>
-        <span class="nav-weapons" id="nav-weapons"><i class="fa-regular fa-star nav-star"></i>Weapons</span>
+        <span class="nav-weapons" id="nav-weapons"><i class="material-icons white-text">shopping_cart</i>Weapons</span>
       <% end %>
       <%= link_to party_pnjs_path(@party) do %>
-        <span class="nav-pnj" id="nav-pnj"><i class="fa-regular fa-star nav-star"></i>PNJ</span>
+        <span class="nav-pnj" id="nav-pnj"><i class="material-icons white-text">group</i>PNJ</span>
       <% end %>
       <%= link_to party_creatures_path(@party) do %>
-      <span class="nav-creatures" id="nav-creatures"><i class="fa-regular fa-star nav-star"></i>Creatures</span>
+      <span class="nav-creatures" id="nav-creatures"><i class="material-icons white-text">pets</i>Creatures</span>
       <% end %>
+
     </div>
   </div>
 

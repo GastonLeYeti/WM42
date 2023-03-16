@@ -3,20 +3,33 @@
     <div class="section no-pad-bot">
       <div class="container shine_bg-light">
         <br><br>
-        <h1 class="header center tertiary_text-dark">Parallax Template</h1>
+        <h1 class="header center tertiary_text-dark">WORLD MAKER</h1>
+        <h3 class="center tertiary_text-dark"> Une solution 42 </h3>
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light">Découvrez - créez - profitez</h5>
         </div>
         <div class="row center">
-        <%= link_to new_party_path do %>
-          <span class="btn-large waves-effect waves-light">Get Started</span>
-        <% end %>
+
+          <% if user_signed_in? %>
+            <% if current_user.parties.any? %>
+              <%= link_to "Continuez vos parties", parties_path, class: "btn-large waves-effect waves-light hoverable" %>
+            <% else %>
+              <%= link_to new_party_path, class: "btn-large waves-effect waves-light hoverable" do %>
+              Lancez vous !
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= link_to new_party_path, class: "btn-large waves-effect waves-light hoverable" do %>
+              Lancez vous !
+            <% end %>
+          <% end %>
+
         </div>
         <br><br>
         </div>
     </div>
     <div class="parallax">
-      <%= image_tag ("pages/background1-1.png"), class: "" %>
+      <%= image_tag ("pages/img_#{rand(1..5)}_s1.png"), class: "" %>
     </div>
   </div>
 
@@ -30,27 +43,27 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h5 class="center">OpenIA</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+            <p class="light">Nous utilisons l'API d'OpenAI pour générer du contenu de qualité, tel que des scénarios, des personnages et des descriptions détaillées, pour rendre chaque partie de JDR aussi intéressante que possible.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h2 class="center brown-text"><i class="material-icons">pie_chart</i></h2>
+            <h5 class="center">MidJournee</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+            <p class="light">Nous avons également intégré l'IA de MidJourney pour générer des images uniques, afin d'ajouter une touche supplémentaire d'immersion à nos jeux. Ces images créées sur mesure permettent aux joueurs de se plonger encore plus profondément dans l'univers du jeu et d'interagir avec lui de manière plus réaliste.</p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h5 class="center">42</h5>
 
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+            <p class="light">Enfin, nous avons développé notre propre technologie de création de contenu, appelée "42", qui nous permet de créer et d'assembler des éléments de l'univers de jeu de manière à offrir une expérience cohérente et de qualité aux maîtres du jeu. </p>
           </div>
         </div>
       </div>
@@ -59,17 +72,39 @@
   </div>
 
 
-  <div class="container primary_bg shine_text-light">
+  <div class="parallax-container valign-wrapper">
+    <div class="section">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">“Le JDR, c’est le seul endroit où vous pouvez dire
+          <strong>‘je fais une roulade arrière’</strong>
+          sans que les gens vous regardent bizarrement.”</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+      <%= image_tag ("pages/img_#{rand(1..5)}_s2.png"), class: "", style: "opacity: 1; transform: translate3d(-50%, 259.54px, 0px);" %>
+    </div>
+  </div>
+
+
+
+
+  <div class="container shine_text-light">
     <div class="section">
       <div class="row">
-        <div class="col s5 center">
-          <br>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-          <br>
-        </div>
-        <div class="col s7 center">
-          <%= image_tag ("pages/section-1.png"), class: "img_section" %>
+        <div class="col s12 center">
+          <h4>Bienvenue dans l'univers incroyablement bizarre et chaotique<br>du jeu de rôle !</h4>
+          <div class="row">
+            <div class="col s10 offset-s1 center">
+              <p class="light">Ici, les aventures sont toujours pleines de surprises et les règles sont aussi floues que le brouillard matinal sur une lande écossaise. Les dés volent à travers la pièce, les personnages étranges se battent contre des monstres encore plus étranges, et les joueurs se grattent la tête en se demandant ce qu'ils doivent faire ensuite.</p>
+              <p class="light">Dans cet univers, vous pouvez être tout ce que vous voulez - un mage mystique, un guerrier sauvage, un voleur sournois ou même un panda géant. Tout est possible, tant que vous avez l'imagination nécessaire pour le faire.</p>
+              <p class="light">Les quêtes sont variées et parfois absurdes - trouver une baguette magique dans une boulangerie française, sauver une princesse en danger d'être kidnappée par une bande de licornes rebelles, ou même aider un groupe de zombies à organiser leur propre fête d'Halloween. Les limites sont infinies !</p>
+              <p class="light">Les règles sont un autre sujet. Elles sont parfois aussi claires qu'un pot de confiture de marmelade, mais plus souvent qu'autrement, elles sont aussi confuses qu'un message codé en morse envoyé par un singe ivre. Les joueurs doivent improviser et utiliser leur bon sens pour décider de ce qui est possible et de ce qui ne l'est pas.</p>
+              <p class="light">Les dés sont également un élément clé de ce monde étrange. Ils peuvent déterminer l'issue d'un combat, la réussite ou l'échec d'une action ou même la météo du jour. Les joueurs peuvent passer des heures à essayer de comprendre comment fonctionnent les différents types de dés et quelle combinaison est la plus susceptible de leur donner le résultat souhaité.</p>
+              <p class="light">En fin de compte, l'univers du jeu de rôle est un endroit où tout est possible, où l'imagination est reine et où les règles sont faites pour être brisées. Alors, préparez-vous à vivre des aventures incroyables et à vous émerveiller devant l'imprévisibilité de ce monde étrange et merveilleux.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -78,18 +113,22 @@
   <div class="container">
     <div class="section">
       <div class="row">
-        <div class="col s12 center">
+        <div class="col s9 center">
           <br>
-          <h4>Contact Us</h4>
-          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p class="left-align light">Dans un monde rempli de créatures étranges et de sorts magiques, des héros prétentieux se dressent pour défendre leur terre... ou plutôt pour gagner des points d'expérience et des trésors. Armés de leur équipement fantastique et de leur ego surdimensionné, ils partent à l'aventure pour affronter des ennemis terrifiants tels que des dragons, des démons et des sorciers - tous prêts à leur faire mordre la poussière.</p>
           <br>
+        </div>
+        <div class="col s3">
+
+            <%= image_tag ("pages/img_#{rand(1..3)}_deco1.png"), class: "materialboxed", style: "width=100%;"%>
+
         </div>
       </div>
     </div>
   </div>
 
 
-  <div class="container primary_bg shine_text-light">
+  <div class="container shine_text-light">
     <div class="section">
       <div class="row">
         <div class="col s12 center">
@@ -118,9 +157,10 @@
             <div class="input-field d iv">
               <textarea id="message" class="materialize-textarea"></textarea>
               <label for="message">Message</label>
-              <a class="waves-effect waves-light btn-large">Button</a>
+              <a class="waves-effect waves-light btn-large" onclick="M.toast({html: 'Ha bah non ...'})">Button</a>
             </div>
           </div>
         </form>
       </div>
     </div>
+  </div>
