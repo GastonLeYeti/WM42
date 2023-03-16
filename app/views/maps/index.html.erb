@@ -31,7 +31,7 @@
       <% @party.maps.each do |map| %>
         <h2>Carte de la partie</h2>
         <div class="map_content">
-          <%= if map.content %>
+          <% if map.content %>
             <%= map.content.html_safe %>
           <% end %>
 
