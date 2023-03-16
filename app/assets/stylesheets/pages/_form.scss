@@ -26,7 +26,7 @@ form#new_party h2 {
       color:$gold-color;
     }
   }
-  
+
   .progress {
     background-color: $white-color;
     opacity: .3;
@@ -35,7 +35,7 @@ form#new_party h2 {
     }
   }
 }
-// Style div like cards 
+// Style div like cards
 .rounded-section {
   background-color: #34383C;
   border-radius: 5px;
@@ -43,7 +43,7 @@ form#new_party h2 {
   padding: 24px;
 }
 
-/* Style form like h2 */ 
+/* Style form like h2 */
 .first_section .input-field input {
   font-size: 32px;
   font-family: 'Tilt Warp', cursive !important;
@@ -141,7 +141,7 @@ legend {
 }
 
 .tag-item {
-  
+
 }
 
 // On masque la checkbox
@@ -485,8 +485,10 @@ label[for=party_creatures_la_loutre_harmoniciste_de_jj]:after {
 .loader-wrapper {
   width:100vw;
   height:100vh;
-  background:white;
+  background: rgba($background-color, .95);
   position: fixed;
+  font-size: 1.6rem;
+  color: $shiny-shine-color;
   top:0;
   left:0;
   z-index: 999;
@@ -495,13 +497,14 @@ label[for=party_creatures_la_loutre_harmoniciste_de_jj]:after {
   justify-content: center;
 
   .content {
-    height: 32px;
+    height: 75px;
     overflow: hidden;
   }
   .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 75px;
     transition: 1s;
+    text-align: center;
   }
 }

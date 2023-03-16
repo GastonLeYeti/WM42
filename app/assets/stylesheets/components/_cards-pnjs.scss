@@ -1,30 +1,26 @@
 .pnj-card-container {
-  margin-top: 10px;
   padding: 0;
   background-color: $background-color;
 
-
-
   .pnj-card-content {
-    padding: 0;
+    padding: 20px;
     padding-left: 8px;
     color: $background-color-30;
+
   }
   .card-image {
     padding: 0;
     object-fit: fill;
     white-space: nowrap;
-
   }
 
   .row {
     margin: .4rem;
   }
 
-
-
   .pnj_name {
     font-weight: bold;
+    padding-bottom: 15px!important;
   }
 }
 
@@ -38,7 +34,6 @@
   transition: 0.8s;
   cursor: default;
   scale: 1.1;
-
 }
 
 .search-bar {

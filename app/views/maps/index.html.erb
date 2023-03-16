@@ -31,29 +31,34 @@
       <% @party.maps.each do |map| %>
         <h2>Carte de la partie</h2>
         <div class="map_content">
-          <%= until map.content == "" || map.content == nil  %>
+          <%= if map.content %>
             <%= map.content.html_safe %>
           <% end %>
 
         </div>
       <% end %>
     </div>
-    <div class="col s12 m4">
-      <div class="row row_bible row_map">
-        <% @party.maps.each do |map| %>
-          <% map.cities.each do |city| %>
-            <div class="col s12 bible">
-              <%#<div class="col s12 bible_title cities_title" id="<%= city.name.gsub(' ', '_')" %>
-              <h2><i class="material-icons white-text">business</i> <%= city.name%></h2>
-              <% if city.content %>
-                <%= city.content.html_safe %>
-              <% else  %>
-                <%= "Sorry but your city is empty" %>
-              <% end  %>
-            </div>
-          <% end %>
-        <% end %>
+
+    <div class="col s4">
+  <div class="row row_bible row_map-city">
+    <% @party.maps.each do |map| %>
+      <% map.cities.each do |city| %>
+        <div class="col s12 bible">
+          <%#<div class="col s12 bible_title cities_title" id="<%= city.name.gsub(' ', '_')" %>
+          <h2><i class="material-icons">business</i> <%= city.name%></h2>
+          <% if city.content %>
+            <%= city.content.html_safe %>
+          <% else  %>
+            <%= "Sorry but your city is empty" %>
+          <% end  %>
+        </div>
+      <% end %>
+    <% end %>
+            <div class="col s12 map_content">
+          </div>
+        </div>
+  </div>
       </div>
     </div>
-  </div>
+    </div>
 </div>

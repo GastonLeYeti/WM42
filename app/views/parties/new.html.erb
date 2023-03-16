@@ -8,11 +8,27 @@
   <div data-controller="form">
     <div class="loader-wrapper d-none" data-form-target="loader">
       <div class="content">
-        <div class="wrapper" data-form-target="loaderContent">
-          <span class="loader-sentence">✅ génération des évenements</span>
-          <span class="loader-sentence">💀 monstres et compagnie</span>
-          <span class="loader-sentence">🗓 pirouette</span>
-          <span class="loader-sentence">👇 cacaouhete</span>
+        <div class="col s8">
+          <div class="wrapper" data-form-target="loaderContent">
+            <span class="loader-sentence"> “🤔 Le JDR, c’est comme la vie, sauf que vous êtes un héros.”</span>
+            <span class="loader-sentence"> “🤗 Pourquoi avoir des amis dans la vie réelle quand on peut en avoir en papier ?”</span>
+            <span class="loader-sentence"> “😈 Le JDR, c’est comme la vie, sauf que c’est mieux parce que tout est sous contrôle du MJ.”</span>
+            <span class="loader-sentence"> “🤠 Si j’avais autant d’or que j’ai dépensé en dés, je serais un millionnaire.”</span>
+            <span class="loader-sentence"> “🤪 Un bon joueur sait quand faire des choix judicieux, un mauvais joueur sait juste comment lancer des dés.”</span>
+            <span class="loader-sentence"> “🤡 Le JDR, c’est l’endroit où vous pouvez être qui vous voulez, sauf vous-même.”</span>
+            <span class="loader-sentence"> “🤖 Le JDR, c’est comme un jeu vidéo, sauf que la vraie IA est le MJ.”</span>
+            <span class="loader-sentence"> "🥸 Dans un JDR, tout peut arriver... sauf la victoire facile et rapide."</span>
+            <span class="loader-sentence"> "😸 Un groupe de joueurs de JDR est comme une bande de chatons : mignons à regarder, mais ça peut rapidement dégénérer en chaos total."</span>
+            <span class="loader-sentence"> "💀 Dans un JDR, la mort est une simple formalité pour les personnages... jusqu'à ce qu'elle ne le soit plus."</span>
+            <span class="loader-sentence"> "🤲 La seule chose pire que de perdre son personnage dans un JDR, c'est de perdre son personnage avant qu'il n'ait pu vraiment briller."</span>
+            <span class="loader-sentence"> "🧙 Jouer un mage dans un JDR, c'est comme jouer à la roulette russe avec des sorts magiques."</span>
+            <span class="loader-sentence"> "😴 Les seuls moments où les joueurs de JDR ne se disputent pas, c'est quand ils dorment."</span>
+            <span class="loader-sentence"> "🤫 Un bon MJ ne ment jamais à ses joueurs... il leur cache simplement la vérité avec subtilité."</span>
+            <span class="loader-sentence"> "🤑 Dans un JDR, l'argent est la racine de tout le mal... et des potions de soin, des armes magiques, des armures, des sorts..."</span>
+            <span class="loader-sentence"> "🧔‍♀️ Les joueurs de JDR ne vieillissent jamais, ils passent juste de niveau en niveau."</span>
+            <span class="loader-sentence"> "😇 Un bon personnage dans un JDR est comme une plante : il a besoin d'attention, de soins et de beaucoup de chance pour ne pas se faire tuer."</span>
+            <span class="loader-sentence"> "🤓 Dans un JDR, il n'y a pas de mauvaises idées... seulement des idées qui peuvent vous mener à votre mort."</span>
+          </div>
         </div>
       </div>
     </div>
@@ -161,7 +177,6 @@
                   <div class="col s12">
                     <%= f.input :bible, :as => :hidden, :input_html => { :value => '' }, class:'w-full' %>
                     <div class="form-submit mt-2">
-                      <%= f.button :submit, class: "modal-trigger"%>
                       <%= f.button :submit, "data-action" => "click->form#submitForm" %>
                     </div>
                   </div>
