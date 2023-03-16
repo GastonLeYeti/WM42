@@ -47,7 +47,7 @@
 
 
           <% @party.pnjs.sort_by{|pnj| pnj.lvl }.group_by(&:lvl).each do |level, pnjs| %>
-            <div class="col s12 bible_title mt-4">
+            <div class="col s12 bible_title">
               <h2>Level <%= level %></h2>
             </div>
             <% pnjs.each do |pnj| %>
