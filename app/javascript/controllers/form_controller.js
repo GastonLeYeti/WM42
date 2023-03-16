@@ -36,15 +36,75 @@ export default class extends Controller {
   submitForm(e) {
     this.loaderTarget.classList.remove('d-none')
     setTimeout(() => {
-      this.loaderContentTarget.style.marginTop = "-50px"
+      this.loaderContentTarget.style.marginTop = "-85px"
     }, 5000)
 
     setTimeout(() => {
-      this.loaderContentTarget.style.marginTop = "-100px"
+      this.loaderContentTarget.style.marginTop = "-198px"
     }, 10000)
 
     setTimeout(() => {
-      this.loaderContentTarget.style.marginTop = "-150px"
+      this.loaderContentTarget.style.marginTop = "-306px"
     }, 15000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-416px"
+    }, 20000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-529px"
+    }, 25000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-639px"
+    }, 30000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-748px"
+    }, 35000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-861px"
+    }, 40000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-861px"
+    }, 45000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-972px"
+    }, 50000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-1081px"
+    }, 55000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-1194px"
+    }, 60000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-1305px"
+    }, 65000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-1415px"
+    }, 70000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-1530px"
+    }, 75000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-1636px"
+    }, 80000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-1748px"
+    }, 85000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-1856px"
+    }, 90000)
   }
 }
