@@ -1,16 +1,139 @@
-.form-submit {
-  // color: red;
+input:not([type]), input[type="text"]:not(.browser-default), input[type="password"]:not(.browser-default), input[type="email"]:not(.browser-default), input[type="url"]:not(.browser-default), input[type="time"]:not(.browser-default), input[type="date"]:not(.browser-default), input[type="datetime"]:not(.browser-default), input[type="datetime-local"]:not(.browser-default), input[type="tel"]:not(.browser-default), input[type="number"]:not(.browser-default), input[type="search"]:not(.browser-default), textarea.materialize-textarea {
+  color:white;
 }
 
-.form-section-1 {
-  // display: flex;
-  // align-items: flex-start;
+form#new_party h1, form#new_party h2, form#new_party h3, form#new_party h4, form#new_party h5, form#new_party h6 {
+  color:$white-color
+}
+form#new_party h2 {
+  margin-top: 24px;
 }
 
+
+.progress-row {
+  margin-bottom: 0px;
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    color:$white-color;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size:11px;
+    padding:40px 10% 8px 10%;
+    color:$background-color-50;
+
+    .active {
+      color:$gold-color;
+    }
+  }
+  
+  .progress {
+    background-color: $white-color;
+    opacity: .3;
+    .determinate {
+      background-color:$gold-color;
+    }
+  }
+}
+// Style div like cards 
+.rounded-section {
+  background-color: #34383C;
+  border-radius: 5px;
+  border: 1px solid #5C6064;
+  padding: 24px;
+}
+
+/* Style form like h2 */ 
+.first_section .input-field input {
+  font-size: 32px;
+  font-family: 'Tilt Warp', cursive !important;
+  padding-bottom: 20px;
+  color:$white-color !important;
+}
+
+/* Utilitarian classes */
+.row-m-0 {
+  .row {
+    margin-bottom: 0px;
+  }
+}
+
+.d-flex {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .grow {
+    flex:1;
+  }
+}
+.gap-10 {
+  gap:80px;
+}
+
+.mt-0 {
+  margin-top:0px;
+}
+
+.mt-2 {
+  margin-top:16px;
+}
+
+.mt-4 {
+  margin-top:32px;
+}
+
+.w-90 {
+  width:90%;
+}
+
+.w-full {
+  width:100%;
+}
+
+/* Remove padding to players fields */
+.second-column .input-field {
+  padding-left:0;
+  .form-control {
+    width:90%;
+    color: white;
+  }
+}
+
+form#new_party h5 {
+  color:$shine-color;
+  font-family: 'Tilt Warp', cursive;
+}
 // On enleve les cadres dégeux
 fieldset {
   border:none;
   padding:0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:24px;
+  width: fit-content;
+  height: fit-content;
+  margin-top:16px;
+}
+
+.grid-4-cols fieldset {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-cols-2 fieldset {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* Section 2 & 3 titles */
+.form-section-2 h5, .form-section-3 h5  {
+  margin: 0;
+  color:$shine-color !important;
+  font-family: 'Tilt Warp', cursive !important;
+}
+
+/* Step 3 */
+.form-city-sizes fieldset .string {
+
 }
 
 legend {
@@ -18,13 +141,17 @@ legend {
 }
 
 .tag-item {
-  display: inline-block;
+  
 }
 
 // On masque la checkbox
 .tag-selector {
   position: absolute;
   transform: scale(0);
+}
+
+form#new_party [type="radio"]:not(:checked), form#new_party [type="radio"]:checked {
+  display:none;
 }
 
 // On stylise l'état de base
@@ -38,8 +165,6 @@ legend {
   height:100px;
   color: $background-color-50;
   border: 1px solid $background-color-50;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
   display:flex;
   align-items: flex-end;
   padding:12px;
@@ -50,6 +175,8 @@ legend {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-align: center;
+  line-height: 1.1;
 }
 
 // On stylise l'état checké
