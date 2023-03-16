@@ -31,7 +31,10 @@
       <% @party.maps.each do |map| %>
         <h2>Carte de la partie</h2>
         <div class="map_content">
-          <%= map.content.html_safe %>
+          <%= until map.content == "" || map.content == nil  %>
+            <%= map.content.html_safe %>
+          <% end %>
+
         </div>
       <% end %>
     </div>
