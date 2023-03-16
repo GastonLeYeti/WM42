@@ -479,3 +479,29 @@ label[for=party_creatures_la_baleine_de_louise]:after {
 label[for=party_creatures_la_loutre_harmoniciste_de_jj]:after {
   background-image: image-url('form-icons/myth_loutre.svg');
 }
+
+
+/* LOADER */
+.loader-wrapper {
+  width:100vw;
+  height:100vh;
+  background:white;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content {
+    height: 32px;
+    overflow: hidden;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    transition: 1s;
+  }
+}
