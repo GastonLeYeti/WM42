@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="form"
 export default class extends Controller {
-  static targets = ["section1", "section2", "section3", "formBtn1", "formBtn2", "stepper1", "stepper2", "stepper3", "stepperBar", "secondCity"]
+  static targets = ["section1", "section2", "section3", "formBtn1", "formBtn2", "stepper1", "stepper2", "stepper3", "stepperBar", "secondCity", "loader", "loaderContent"]
   connect() {
     // console.log('eeyeyey')
   }
@@ -31,5 +31,20 @@ export default class extends Controller {
 
   addCity() {
     this.secondCityTarget.classList.remove('d-none')
+  }
+
+  submitForm(e) {
+    this.loaderTarget.classList.remove('d-none')
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-50px"
+    }, 5000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-100px"
+    }, 10000)
+
+    setTimeout(() => {
+      this.loaderContentTarget.style.marginTop = "-150px"
+    }, 15000)
   }
 }
