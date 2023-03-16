@@ -27,7 +27,7 @@
   </div>
 
   <div class="row row_bible row_map">
-    <div class="col s8 bible text-center">
+    <div class="col s12 m8 bible text-center">
       <% @party.maps.each do |map| %>
         <h2>Carte de la partie</h2>
         <div class="map_content">
@@ -35,56 +35,22 @@
         </div>
       <% end %>
     </div>
-    <div class="col s4">
-      <div class="row">
-        <div class="col s12">
-          <div class="card blue-grey lighten-1 recap-univers">
-            <div class="card-content white-text">
-              <span class="card-title">Cities</span>
-              <div class="players-content">
-
-              <% @party.maps.each do |map| %>
-                <% map.cities.each do |city| %>
-                  <div class="row player">
-                    <i class="material-icons white-text">business</i>
-
-                      <span><%= city.name %></span>
-
-                  </div>
-                <% end %>
-
-              <% end %>
-              </div>
+    <div class="col s12 m4">
+      <div class="row row_bible row_map">
+        <% @party.maps.each do |map| %>
+          <% map.cities.each do |city| %>
+            <div class="col s12 bible">
+              <%#<div class="col s12 bible_title cities_title" id="<%= city.name.gsub(' ', '_')" %>
+              <h2><i class="material-icons white-text">business</i> <%= city.name%></h2>
+              <% if city.content %>
+                <%= city.content.html_safe %>
+              <% else  %>
+                <%= "Sorry but your city is empty" %>
+              <% end  %>
             </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       </div>
-
-
-  <div class="row row_bible row_map">
-    <% @party.maps.each do |map| %>
-      <% map.cities.each do |city| %>
-        <div class="col s12 bible">
-          <%#<div class="col s12 bible_title cities_title" id="<%= city.name.gsub(' ', '_')" %>
-          <h2><i class="material-icons">business</i> <%= city.name%></h2>
-          <% if city.content %>
-            <%= city.content.html_safe %>
-          <% else  %>
-            <%= "Sorry but your city is empty" %>
-          <% end  %>
-        </div>
-      <% end %>
-    <% end %>
-
-            <div class="col s12 map_content">
-
-          </div>
-        </div>
+    </div>
   </div>
-      </div>
-    </div>
-
-
-    </div>
-
 </div>
