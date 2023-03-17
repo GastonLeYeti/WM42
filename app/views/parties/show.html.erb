@@ -25,9 +25,6 @@
       <%= link_to party_maps_path(@party) do %>
         <span class="nav-maps" id="nav-map"><i class="material-icons white-text">directions</i>Map</span>
       <% end %>
-      <%= link_to party_players_path(@party) do %>
-        <span class="nav-players" id="nav-players"><i class="material-icons white-text">face</i>Players</span>
-      <% end %>
       <%= link_to party_pnjs_path(@party) do %>
         <span class="nav-pnj" id="nav-pnj"><i class="material-icons white-text">group</i>PNJ</span>
       <% end %>
@@ -36,6 +33,9 @@
       <% end %>
       <%= link_to party_weapons_path(@party) do %>
         <span class="nav-weapons" id="nav-weapons"><i class="material-icons white-text">shopping_cart</i>Weapons</span>
+      <% end %>
+      <%= link_to party_players_path(@party) do %>
+        <span class="nav-players" id="nav-players"><i class="material-icons white-text">face</i>Players</span>
       <% end %>
 
 
