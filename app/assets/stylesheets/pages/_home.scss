@@ -56,8 +56,11 @@ i.material-icons {
 .grid-3-cols {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 40px;
   margin-bottom:0;
+}
+
+.gap-large {
+  grid-column-gap: 40px;
 }
 
 .py-10 {
@@ -86,7 +89,7 @@ i.material-icons {
 }
 
 .cards-landing:hover {
-  scale: 1.1;
+  scale: 1.05;
   transition: 0.3s;
 }
 .random-landing-section3 {
