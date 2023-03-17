@@ -2,11 +2,11 @@
   background-color: $background-color
   color: #FFF
   .card-image
-    padding: 0
+    padding-right: 0
     img
       height: 100%
       width: 100%
-      object-fit: cover
+      // object-fit: cover
   .object-card-content
     padding: 5px
     margin-left: 25px
@@ -39,6 +39,11 @@
         font-weight: 600
         margin-left: 10px
         color: $background-color-30
+        white-space: nowrap
+        text-overflow: ellipsis
+        display: block
+        overflow: hidden
+        width: 90%
       .fa-coins
         margin: 0 5px 0 0
         padding: 0 5px 0 0
@@ -52,3 +57,10 @@
   color: $gold-color
   font-size: 12px
   padding: 10px
+
+.weapon-image
+  padding: 0
+  height: 100%
+
+.weapon-row
+  margin-bottom: 0px!important
