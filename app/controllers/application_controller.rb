@@ -17,4 +17,4 @@ class ApplicationController < ActionController::Base
       new_party_path
     end
   end
-end
+end 
