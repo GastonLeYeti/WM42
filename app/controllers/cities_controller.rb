@@ -19,9 +19,8 @@ class CitiesController < ApplicationController
     @city.name = @party.name
     @city.party_id = current_party.id
     @city.map_id = current_party.map_id
-    @city.save!
-    @city.create_tiles
     if @city.save!
+      @city.create_tiles
       redirect_to party_city_path(@city), notice: 'Successfully created a city.'
     else
       render :new
