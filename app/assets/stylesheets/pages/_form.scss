@@ -9,7 +9,6 @@ form#new_party h2 {
   margin-top: 24px;
 }
 
-
 .progress-row {
   margin-bottom: 0px;
   .steps {
@@ -35,7 +34,9 @@ form#new_party h2 {
     }
   }
 }
+
 // Style div like cards
+
 .rounded-section {
   background-color: #34383C;
   border-radius: 5px;
@@ -44,6 +45,7 @@ form#new_party h2 {
 }
 
 /* Style form like h2 */
+
 .first_section .input-field input {
   font-size: 32px;
   font-family: 'Tilt Warp', cursive !important;
@@ -52,12 +54,12 @@ form#new_party h2 {
 }
 
 /* Utilitarian classes */
+
 .row-m-0 {
   .row {
     margin-bottom: 0px;
   }
 }
-
 .d-flex {
   display:flex;
   align-items: center;
@@ -70,28 +72,24 @@ form#new_party h2 {
 .gap-10 {
   gap:80px;
 }
-
 .mt-0 {
   margin-top:0px;
 }
-
 .mt-2 {
   margin-top:16px;
 }
-
 .mt-4 {
   margin-top:32px;
 }
-
 .w-90 {
   width:90%;
 }
-
 .w-full {
   width:100%;
 }
 
 /* Remove padding to players fields */
+
 .second-column .input-field {
   padding-left:0;
   .form-control {
@@ -104,7 +102,9 @@ form#new_party h5 {
   color:$shine-color;
   font-family: 'Tilt Warp', cursive;
 }
+
 // On enleve les cadres dégeux
+
 fieldset {
   border:none;
   padding:0;
@@ -123,8 +123,8 @@ fieldset {
   grid-template-columns: repeat(2, 1fr);
 }
 
-
 /* Section 2 & 3 titles */
+
 .form-section-2 h5, .form-section-3 h5  {
   margin: 0;
   color:$shine-color !important;
@@ -132,6 +132,7 @@ fieldset {
 }
 
 /* Step 3 */
+
 .form-city-sizes fieldset .string {
 
 }
@@ -145,6 +146,7 @@ legend {
 }
 
 // On masque la checkbox
+
 .tag-selector {
   position: absolute;
   transform: scale(0);
@@ -155,6 +157,7 @@ form#new_party [type="radio"]:not(:checked), form#new_party [type="radio"]:check
 }
 
 // On stylise l'état de base
+
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
@@ -180,6 +183,7 @@ form#new_party [type="radio"]:not(:checked), form#new_party [type="radio"]:check
 }
 
 // On stylise l'état checké
+
 .tag-selector:checked + label {
   background-color: $primary-color;
   color: $white-color;
@@ -193,13 +197,8 @@ form#new_party [type="radio"]:not(:checked), form#new_party [type="radio"]:check
 }
 
 // On ajoute les images
-/* label[for=party_races_humain] {
-  background-image: image-url('form-icons/human.png');
-} */
 
-/* #############################################################################
-################################### RACES ######################################
-############################################################################# */
+// RACES
 
 .form-races label:after {
   content:'';
@@ -213,104 +212,92 @@ form#new_party [type="radio"]:not(:checked), form#new_party [type="radio"]:check
   transition:.3s;
 }
 
-/* icons for universes */
-/* META */
-.universe-label:nth-child(3) label:after {
-  background-image: image-url('form-icons/universes_meta.svg');
-}
-/* SCIFI */
-.universe-label:nth-child(4) label:after {
-  background-image: image-url('form-icons/universes_scifi.svg');
-}
-/* FANTASY */
-.universe-label:nth-child(5) label:after {
-  background-image: image-url('form-icons/universes_fantasy.svg');
-}
-/* MODERN */
-.universe-label:nth-child(6) label:after {
-  background-image: image-url('form-icons/universes_modern.svg');
-}
-/* HISTORICAL */
-.universe-label:nth-child(7) label:after {
-  background-image: image-url('form-icons/universes_historic.svg');
-}
-/* POSTAPO */
-.universe-label:nth-child(8) label:after {
-  background-image: image-url('form-icons/universes_postapo.svg');
-}
-
 label[for=party_races_humain]:after {
   background-image: image-url('form-icons/race_humain.svg');
 }
-
 label[for=party_races_elfes]:after {
   background-image: image-url('form-icons/race_elf.svg');
 }
-
 label[for=party_races_nains]:after {
   background-image: image-url('form-icons/race_nain.svg');
 }
-
 label[for=party_races_orcs]:after {
   background-image: image-url('form-icons/race_orc.svg');
 }
-
 label[for=party_races_cyborgs]:after {
   background-image: image-url('form-icons/race_cyborg.svg');
 }
-
 label[for=party_races_aliens]:after {
   background-image: image-url('form-icons/race_extraterrestre.svg');
 }
-
 label[for=party_races_zergs]:after {
   background-image: image-url('form-icons/race_zerg.svg');
 }
-
 label[for=party_races_vikings]:after {
   background-image: image-url('form-icons/race_viking.svg');
 }
-
 label[for=party_races_aztèques]:after {
   background-image: image-url('form-icons/race_azteque.svg');
 }
-
 label[for=party_races_vampires]:after {
   background-image: image-url('form-icons/race_vampire.svg');
 }
-
 label[for=party_races_loups-garous]:after {
   background-image: image-url('form-icons/race_loup-garou.svg');
 }
-
 label[for=party_races_goules]:after {
   background-image: image-url('form-icons/race_goule.svg');
 }
-
 label[for=party_races_humains_mutants]:after {
   background-image: image-url('form-icons/race_humain_mutant.svg');
 }
-
 label[for=party_races_clones_défectueux]:after {
   background-image: image-url('form-icons/race_clone_defectueux.svg');
 }
-
 label[for=party_races_survivants_génétiquement_modifiés]:after {
   background-image: image-url('form-icons/race_humain_genetiquement_mod.svg');
 }
-
 label[for=party_races_humain_manifestant]:after {
   background-image: image-url('form-icons/race_humain_manifestant.svg');
 }
-
 label[for=party_races_humain_politicien]:after {
   background-image: image-url('form-icons/race_politicien.svg');
 }
 
+// UNIVERSES
 
-/* #############################################################################
-################################### SIZES ######################################
-############################################################################# */
+.form-universes label:after {
+  content:'';
+  position:absolute;
+  display: block;
+  left:24px;
+  top:15px;
+  width:48px;
+  height:48px;
+  opacity:.3;
+  transition:.3s;
+}
+
+.universe-label:nth-child(3) label:after {
+  background-image: image-url('form-icons/universes_meta.svg');
+}
+.universe-label:nth-child(4) label:after {
+  background-image: image-url('form-icons/universes_scifi.svg');
+}
+.universe-label:nth-child(5) label:after {
+  background-image: image-url('form-icons/universes_fantasy.svg');
+}
+.universe-label:nth-child(6) label:after {
+  background-image: image-url('form-icons/universes_modern.svg');
+}
+.universe-label:nth-child(7) label:after {
+  background-image: image-url('form-icons/universes_historic.svg');
+}
+.universe-label:nth-child(8) label:after {
+  background-image: image-url('form-icons/universes_postapo.svg');
+}
+
+// GAME SIZE
 
 .form-sizes label:after {
   content:'';
@@ -327,14 +314,14 @@ label[for=party_races_humain_politicien]:after {
 label[for=party_party_size_petite]:after {
   background-image: image-url('form-icons/size_small.svg');
 }
-
 label[for=party_party_size_moyenne]:after {
   background-image: image-url('form-icons/size_large.svg');
 }
-
 label[for=party_party_size_grande]:after {
   background-image: image-url('form-icons/size_medium.svg');
 }
+
+// CITY SIZE
 
 .form-city-sizes label:after {
   content:'';
@@ -351,70 +338,23 @@ label[for=party_party_size_grande]:after {
 label[for=party_city_1_size_petite]:after {
   background-image: image-url('form-icons/size_small.svg');
 }
-
 label[for=party_city_1_size_moyenne]:after {
   background-image: image-url('form-icons/size_large.svg');
 }
-
 label[for=party_city_1_size_grande]:after {
   background-image: image-url('form-icons/size_medium.svg');
 }
-
 label[for=party_city_2_size_petite]:after {
   background-image: image-url('form-icons/size_small.svg');
 }
-
 label[for=party_city_2_size_moyenne]:after {
   background-image: image-url('form-icons/size_large.svg');
 }
-
 label[for=party_city_2_size_grande]:after {
   background-image: image-url('form-icons/size_medium.svg');
 }
 
-/* #############################################################################
-################################# UNIVERSES ####################################
-############################################################################# */
-
-.form-universes label:after {
-  content:'';
-  position:absolute;
-  display: block;
-  left:24px;
-  top:15px;
-  width:48px;
-  height:48px;
-  opacity:.3;
-  transition:.3s;
-}
-
-label[for=party_universe_id_122]:after {
-  background-image: image-url('form-icons/universes_meta.svg');
-}
-
-label[for=party_universe_id_123]:after {
-  background-image: image-url('form-icons/universes_scifi.svg');
-}
-
-label[for=party_universe_id_124]:after {
-  background-image: image-url('form-icons/universes_fantasy.svg');
-}
-
-label[for=party_universe_id_125]:after {
-  background-image: image-url('form-icons/universes_modern.svg');
-}
-
-label[for=party_universe_id_126]:after {
-  background-image: image-url('form-icons/universes_historic.svg');
-}
-
-label[for=party_universe_id_127]:after {
-  background-image: image-url('form-icons/universes_postapo.svg');
-}
-
-/* #############################################################################
-############################ GEOGRAPHIC ELEMENTS ###############################
-############################################################################# */
+// GEOGRAPHIC ELEMENTS
 
 .form-geography label:after {
   content:'';
@@ -431,22 +371,17 @@ label[for=party_universe_id_127]:after {
 label[for=party_geography_plaines]:after {
   background-image: image-url('form-icons/geo_plaines.svg');
 }
-
 label[for=party_geography_désert]:after {
   background-image: image-url('form-icons/geo_desert.svg');
 }
-
 label[for=party_geography_forêt]:after {
   background-image: image-url('form-icons/geo_foret.svg');
 }
-
 label[for=party_geography_montagne]:after {
   background-image: image-url('form-icons/geo_montagne.svg');
 }
 
-/* #############################################################################
-############################# MYTHICAL CREATURES ###############################
-############################################################################# */
+// MYTHICAL CREATURES
 
 .form-myth-creatures label:after {
   content:'';
@@ -463,25 +398,22 @@ label[for=party_geography_montagne]:after {
 label[for=party_creatures_le_chien_de_niko]:after {
   background-image: image-url('form-icons/myth_chien.svg');
 }
-
 label[for=party_creatures_le_sphynx_de_max]:after {
   background-image: image-url('form-icons/myth_sphynx.svg');
 }
-
 label[for=party_creatures_la_chouette_de_gaëtan]:after {
   background-image: image-url('form-icons/myth_chouette.svg');
 }
-
 label[for=party_creatures_la_baleine_de_louise]:after {
   background-image: image-url('form-icons/myth_baleine.svg');
 }
-
 label[for=party_creatures_la_loutre_harmoniciste_de_jj]:after {
   background-image: image-url('form-icons/myth_loutre.svg');
 }
 
 
-/* LOADER */
+// FORM SUBMIT LOADER
+
 .loader-wrapper {
   width:100vw;
   height:100vh;
