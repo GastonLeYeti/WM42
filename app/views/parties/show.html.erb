@@ -48,7 +48,13 @@
       <div class="col s8 bible" id="bible">
         <div class="row">
           <div class="col s12">
-            <p class="bible_text"><%= @party.bible.gsub(/\/n/, "<br><br>").html_safe %></p>
+            <p class="bible_text">
+              <% if @party.bible.blank? %>
+                Pas de bible pour le moment ...
+              <% else %>
+                <%= @party.bible.html_safe %>
+              <% end %>
+            </p>
           </div>
         </div>
       </div>

@@ -40,12 +40,8 @@
                 <span class="pils"><i class="material-icons">language</i> <%= party.universe.name %></span>
               </div>
               <blockquote class="txt_xs">
-                <% party_bible = party.bible %>
-                <% if party_bible.length > 102 %>
-                  <%= party_bible[0, 84] + "..." %>
-                <% else %>
-                  <%= party_bible %>
-                <% end %>
+                <% party_bible = party.bible || "Pas de bible pour le moment ..." %>
+                <%= truncate(party_bible, length: 97, separator: ' ', omission: '...') %>
               </blockquote>
             </div>
         <% end %>

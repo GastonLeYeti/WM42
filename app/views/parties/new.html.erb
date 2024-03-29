@@ -31,9 +31,9 @@
     </div>
     <div class="row progress-row">
       <div class="steps">
-        <span class="active" data-form-target="stepper1">First</span>
-        <span data-form-target="stepper2">Second</span>
-        <span data-form-target="stepper3">Third</span>
+        <span class="active" data-form-target="stepper1">Votre Univers</span>
+        <span data-form-target="stepper2">Populations</span>
+        <span data-form-target="stepper3">décors</span>
       </div>
       <div class="progress">
         <div class="determinate" style="width: 10%" data-form-target="stepperBar"></div>
@@ -53,7 +53,7 @@
             </div>
             <div class="row mt-0 form-section-1" data-form-target="section1">
               <div class="first-column col s6">
-                <h5> Durée de la partie </h5>
+                <h5> Taille de la partie </h5>
                   <div class="form-sizes">
                     <%= f.input :party_size,
                     placeholder: 'Durée de la partie',
@@ -93,7 +93,7 @@
           <div class="form-section-2 d-none" data-form-target="section2">
             <div class="row">
               <div class="col s7">
-                <h5 class="mt-0">Sélectionnez des races pour votre univers </h2>
+                <h5 class="mt-0">Sélectionnez des races pour votre univers </h5>
                 <div class="form-races grid-4-cols">
                   <%= f.input :races,
                               placeholder: "Ajoutez des races",
@@ -105,7 +105,7 @@
                 </div>
               </div>
               <div class="col s5">
-                <h5> Puis deux créatures mythiques </h5>
+                <h5> Ajoutez des créatures mythiques </h5>
                 <div class="form-myth-creatures">
                   <%= f.input :creatures,
                               placeholder: "Ajoutez deux créatures mythiques",
@@ -190,38 +190,3 @@
     </div>
   </div>
 </div>
-
-
-<%# <%= simple_form_for @party do |f| %>
-<%#   <%= f.input :name, label: 'Nom de la partie' %>
-<%#   <% f.input :bible, :as => :hidden, :input_html => { :value => 'blblblblbl' } %>
-<%# <%= f.input :universe_id, collection: @universes, label_method: :universe_type %>
-<%#   <%= f.input :player_1, label: 'Joueur 1', required: true %>
-<%#   <%= f.input :player_2, label: 'Joueur 2' %>
-<%#   <%= f.input :player_3, label: 'player_3' %>
-<%#   <%= f.input :player_4, label: 'player_4' %>
-<%#   <%= f.input :player_5, label: 'player_5' %>
-<%#   <%= f.input :player_6, label: 'player_6' %>
-<%#   <%= f.input :player_7, label: 'player_7' %>
-<%#   <%= f.input :player_8, label: 'player_8' %>
-<%#   <%= f.input :player_9, label: 'player_9' %>
-<%#   <%= f.input :player_10, label: 'player_10' %>
-<%#   <%= f.input :party_size, label: 'party_size' %>
-<%#   <%= f.input :race_1_name, label: 'race_1_name' %>
-<%#   <%= f.input :race_2_name, label: 'race_2_name' %>
-<%#   <%= f.input :race_3_name, label: 'race_3_name' %>
-<%#   <%= f.input :universe_type, label: 'universe_type' %>
-<%#   <%= f.input :geography_1, label: 'geography_1' %>
-<%#   <%= f.input :geography_2, label: 'geography_2' %>
-<%#   <%= f.input :city_1_name, label: 'city_1_name' %>
-<%#   <%= f.input :city_1_size, label: 'city_1_size' %>
-<%#   <%= f.input :city_1_building_1, label: 'city_1_building_1' %>
-<%#   <%= f.input :city_1_building_2, label: 'city_1_building_2' %>
-<%#   <%= f.input :city_2_name, label: 'city_2_name' %>
-<%#   <%= f.input :city_2_size, label: 'city_2_size' %>
-<%#   <%= f.input :city_2_building_1, label: 'city_2_building_1' %>
-<%#   <%= f.input :city_2_building_2, label: 'city_2_building_2' %>
-<%#   <%= f.input :mythical_creature_1_name, label: 'mythical_creature_1_name' %>
-<%#   <%= f.input :mythical_creature_2_name, label: 'mythical_creature_2_name' %>
-<%#   <%= f.button :submit %>
-<%# <% end %>

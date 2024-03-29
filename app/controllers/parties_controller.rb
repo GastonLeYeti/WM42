@@ -1,6 +1,6 @@
-class PartiesController < ApplicationController
+require 'openai'
 
-  # require 'openai'
+class PartiesController < ApplicationController
 
   def index
     @party = Party.all
@@ -66,6 +66,7 @@ class PartiesController < ApplicationController
       @city_map_1 = City.new
       @city_map_1.map = @city_map
       @city_map_1.name = party.city_1_name
+      @city_map_1.size = party.city_1_size
       @city_map_1.save!
     end
 
@@ -73,6 +74,7 @@ class PartiesController < ApplicationController
       @city_map_2 = City.new
       @city_map_2.map = @city_map
       @city_map_2.name = party.city_2_name
+      @city_map_2.size = party.city_2_size
       @city_map_2.save!
     end
   end
@@ -86,42 +88,53 @@ class PartiesController < ApplicationController
 
   def generate_bible(party)
 
-    # party.bible = "wlh téma la bibel"
+    party.bible = "wlh téma la bible"
 
     token = ENV['OPENAI_API_KEY']
     client = OpenAI::Client.new(access_token: token)
-    p prompt = "
-    Pourrais tu me décrire en huit paragraphes une introduction pour une partie de JDR à un monde qui s'appel #{party.name} ?
-    Il est composer de #{party.races}
-    La géographie de la carte est composé de #{party.geography[0]} et #{party.geography[1]}
+    prompt = "Je voudrais que tu rédiges une introduction détaillée et immersive pour une partie de jeu de rôle dans un monde appelé #{party.name}.
+    Ce monde est habité par des #{party.races.join(', ')}.
+    La géographie de la carte est principalement composée de #{party.geography[0]} et de #{party.geography[1]}.
 
-    Please write in humorous tone, narrative writing style, French language.
-    "
-    # Les joureurs s'appels #{party.player_1}, #{party.player_2}, #{party.player_3}, #{party.player_4}, #{party.player_5}, #{party.player_6}, #{party.player_7}, #{party.player_8}, #{party.player_9}, #{party.player_10}
+    Il y a une ville importante nommée #{party.city_1_name}.
+    #{(party.city_2_name.present? ? "Une seconde ville, #{party.city_2_name}, est également présente. " : "")}
 
-    response = client.completions(
+    Les joueurs présents dans cette aventure sont :
+    #{(party.player_1.present? ? "#{party.player_1}" : "")}
+    #{(party.player_2.present? ? ", #{party.player_2}" : "")}
+    #{(party.player_3.present? ? ", #{party.player_3}" : "")}
+    #{(party.player_4.present? ? ", #{party.player_4}" : "")}
+    #{(party.player_5.present? ? ", #{party.player_5}" : "")}
+    #{(party.player_6.present? ? " et #{party.player_6}." : ".") }
+
+    Je souhaiterais que tu décrives les villes et les décors de manière détaillée, en ajoutant autant d'éléments intéressants que possible. L'introduction devrait comporter au minimum 8 paragraphes, sans les nommer explicitement.
+
+    Veuillez rédiger le texte dans un style narratif, avec beaucoup d'humoristique en français."
+
+    p prompt
+
+    response = client.chat(
       parameters: {
-        model: "text-davinci-003",
-        prompt: prompt,
-        max_tokens: 3500
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.3,
       })
 
-    reponse_full = response.parsed_response["choices"][0]["text"]
+    p response
 
-    paragraphes = reponse_full.split("\n\n") # Sépare les paragraphes
+    reponse_full = response.dig("choices", 0, "message", "content")
 
-    nouveaux_paragraphes = [] # Crée un tableau vide
-    nouveaux_paragraphes << paragraphes.shift # Ajoute le premier paragraphe sans <br>
+    # afficher en console la réponse de l'IA avec un texte avant et après pour bien voir le début et la fin de la réponse
+    puts "/////////////////////////////////////////////////////"
+    puts "Réponse de l'IA :"
+    puts reponse_full
+    puts "Fin de la réponse de l'IA"
+    puts "/////////////////////////////////////////////////////"
 
-    paragraphes.each do |paragraphe| # Pour chaque paragraphe
-      nouveaux_paragraphes << "<br><br>#{paragraphe}" # Ajoute les paragraphes avec <br>
-    end
+    # on remplace dans la réponse les \n\n par des <br><br> pour que le texte soit bien affiché en html
+    reponse_full = reponse_full.gsub("\n\n", "<br><br>")
 
-    nouvelle_reponse = nouveaux_paragraphes.join # Rejoint les paragraphes
+    party.bible = reponse_full
 
-    party.bible = nouvelle_reponse
-
-
-    # party.bible = "wlh téma la bibel"
   end
 end
