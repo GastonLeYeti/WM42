@@ -14,10 +14,10 @@ class Pnj < ApplicationRecord
 
     (1..nomb).each do |pnj|
       Pnj.create!(
-        name: Faker::Games::WarhammerFantasy.hero,
+        name: Faker::Games::Heroes.name,
         lvl: rand(1..10),
         status: %w(Allier Ennemi).sample,
-        description: Faker::Games::WarhammerFantasy.quote,
+        description: Faker::Games::WorldOfWarcraft.quote,
         job_id: Job.all.sample.id,
         race_id: Race.all.sample.id,
         architecture_id: Architecture.all.sample.id,

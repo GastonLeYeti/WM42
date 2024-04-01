@@ -94,10 +94,12 @@ class PartiesController < ApplicationController
     client = OpenAI::Client.new(access_token: token)
     prompt = "Je voudrais que tu rédiges une introduction détaillée et immersive pour une partie de jeu de rôle dans un monde appelé #{party.name}.
     Ce monde est habité par des #{party.races.join(', ')}.
-    La géographie de la carte est principalement composée de #{party.geography[0]} et de #{party.geography[1]}.
+    La géographie de la carte est principalement composée de #{party.geography[0]} #{(party.geography[1].present? ? "et de #{party.geography[1]}" : " ")}.
 
     Il y a une ville importante nommée #{party.city_1_name}.
+    Tu dois détailler les bâtiments principaux de cette ville, qui sont #{party.city_1_building_1} et #{party.city_1_building_2}.
     #{(party.city_2_name.present? ? "Une seconde ville, #{party.city_2_name}, est également présente. " : "")}
+    #{(party.city_2_name.present? ? "Tu dois détailler les bâtiments principaux de cette ville, qui sont #{party.city_2_building_1} et #{party.city_2_building_2}." : "")}
 
     Les joueurs présents dans cette aventure sont :
     #{(party.player_1.present? ? "#{party.player_1}" : "")}
@@ -109,7 +111,7 @@ class PartiesController < ApplicationController
 
     Je souhaiterais que tu décrives les villes et les décors de manière détaillée, en ajoutant autant d'éléments intéressants que possible. L'introduction devrait comporter au minimum 8 paragraphes, sans les nommer explicitement.
 
-    Veuillez rédiger le texte dans un style narratif, avec beaucoup d'humoristique en français."
+    Rédiger le texte dans un style narratif, avec beaucoup d'humour en français."
 
     p prompt
 
@@ -123,13 +125,6 @@ class PartiesController < ApplicationController
     p response
 
     reponse_full = response.dig("choices", 0, "message", "content")
-
-    # afficher en console la réponse de l'IA avec un texte avant et après pour bien voir le début et la fin de la réponse
-    puts "/////////////////////////////////////////////////////"
-    puts "Réponse de l'IA :"
-    puts reponse_full
-    puts "Fin de la réponse de l'IA"
-    puts "/////////////////////////////////////////////////////"
 
     # on remplace dans la réponse les \n\n par des <br><br> pour que le texte soit bien affiché en html
     reponse_full = reponse_full.gsub("\n\n", "<br><br>")

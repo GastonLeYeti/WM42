@@ -18,12 +18,12 @@ class Weapon < ApplicationRecord
 
     (1..nmb_mix).each do |armory|
       Weapon.create!(
-      name: Faker::Games::DnD.ranged_weapon + " de " + Faker::Games::DnD.alignment,
+      name: Faker::Games::Zelda.item,
       level: rand(1..10),
       rarity: %w(Commun Rare Épique Légendaire).sample,
       price: rand(1..100),
       lootable: %w(true false).sample,
-      description: Faker::Games::WarhammerFantasy.quote,
+      description: Faker::Games::Witcher.quote,
       party_id: party.id,
       armory_id: universe_armories.sample.id
       )
@@ -32,12 +32,12 @@ class Weapon < ApplicationRecord
 
     (1..nmb_mix).each do |armory|
       Weapon.create!(
-      name: Faker::Games::DnD.melee_weapon + " de " + Faker::Games::DnD.alignment,
+      name: Faker::Games::Zelda.item,
       level: rand(1..10),
       rarity: %w(Commun Rare Épique Légendaire).sample,
       price: rand(1..100),
       lootable: %w(true false).sample,
-      description: Faker::Games::WarhammerFantasy.quote,
+      description: Faker::Games::LeagueOfLegends.quote,
       party_id: party.id,
       armory_id: universe_armories.sample.id
       )

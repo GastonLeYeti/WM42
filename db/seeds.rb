@@ -1106,6 +1106,186 @@ creature90 = Creature.new(
 creature90.save!
 p "creature Chiens de l'enfer created!"
 
+creature91 = Creature.new(
+  :name                => "Rats mutants",
+  :lvl                 => 3,
+  :universe_id         => metaId,
+  :description         => "Le rat est une créature de la famille des muridés. Il est très intelligent et peut être très dangereux. Il est très apprécié pour sa viande et sa fourure. Il peut tuer un joueur en un coup."
+)
+creature91.save!
+p "creature Rats mutants created!"
+
+creature92 = Creature.new(
+  :name                => "Scorpions géants",
+  :lvl                 => 5,
+  :universe_id         => metaId,
+  :description         => "Le scorpion est une créature de la famille des scorpionidés. Il est très intelligent et peut être très dangereux. Il est très apprécié pour sa viande. Il peut tuer un joueur en un coup."
+)
+creature92.save!
+p "creature Scorpions géants created!"
+
+creature93 = Creature.new(
+  :name                => "Poulets explosifs",
+  :lvl                 => 2,
+  :universe_id         => metaId,
+  :description         => "Ces poulets ont été génétiquement modifiés pour exploser au contact. Ils sont très utiles pour se débarrasser des ennemis, mais attention à ne pas se faire prendre dans l'explosion !"
+)
+creature93.save!
+p "creature Poulets explosifs created!"
+
+creature94 = Creature.new(
+  :name                => "Lapins tueurs",
+  :lvl                 => 4,
+  :universe_id         => metaId,
+  :description         => "Ces lapins ont muté et sont devenus très agressifs. Ils attaquent tout ce qui bouge et peuvent infliger de sérieux dégâts avec leurs griffes acérées."
+)
+creature94.save!
+p "creature Lapins tueurs created!"
+
+creature95 = Creature.new(
+  :name                => "Grenouilles géantes",
+  :lvl                 => 3,
+  :universe_id         => metaId,
+  :description         => "Ces grenouilles ont été exposées à des radiations et ont grandi de manière démesurée. Elles peuvent sauter très haut et écraser leurs ennemis avec leur poids."
+)
+creature95.save!
+p "creature Grenouilles géantes created!"
+
+creature96 = Creature.new(
+  :name                => "Mouches carnivores",
+  :lvl                 => 2,
+  :universe_id         => metaId,
+  :description         => "Ces mouches ont développé un goût pour la chair fraîche. Elles volent en essaim et peuvent rapidement submerger leurs proies."
+)
+creature96.save!
+p "creature Mouches carnivores created!"
+
+creature97 = Creature.new(
+  :name                => "Chenilles explosives",
+  :lvl                 => 2,
+  :universe_id         => metaId,
+  :description         => "Ces chenilles ont la capacité de se faire exploser lorsqu'elles se sentent menacées. Elles sont souvent utilisées comme pièges par les gobelins."
+)
+creature97.save!
+p "creature Chenilles explosives created!"
+
+creature98 = Creature.new(
+  :name                => "Abeilles assassines",
+  :lvl                 => 4,
+  :universe_id         => metaId,
+  :description         => "Ces abeilles sont très agressives et attaquent en essaim. Leur venin est mortel et peut tuer un joueur en quelques secondes."
+)
+creature98.save!
+p "creature Abeilles assassines created!"
+
+creature99 = Creature.new(
+  :name                => "Moustiques géants",
+  :lvl                 => 3,
+  :universe_id         => metaId,
+  :description         => "Ces moustiques ont grandi de manière démesurée à cause des radiations. Ils se nourrissent de sang et peuvent vider un joueur de toute son énergie en quelques minutes."
+)
+creature99.save!
+p "creature Moustiques géants created!"
+
+creature100 = Creature.new(
+  :name                => "Chauves-souris vampires",
+  :lvl                 => 5,
+  :universe_id         => metaId,
+  :description         => "Ces chauves-souris se nourrissent de sang et peuvent transformer leurs victimes en vampires. Elles attaquent en groupe et sont très difficiles à repousser."
+)
+creature100.save!
+p "creature Chauves-souris vampires created!"
+
+creature101 = Creature.new(
+  :name                => "Limaces géantes",
+  :lvl                 => 2,
+  :universe_id         => metaId,
+  :description         => "Ces limaces ont été exposées à des produits chimiques et ont grandi de manière démesurée. Elles laissent une traînée de bave derrière elles et peuvent rendre le sol glissant."
+)
+creature101.save!
+p "creature Limaces géantes created!"
+
+creature102 = Creature.new(
+  :name                => "Araignées de lave",
+  :lvl                 => 4,
+  :universe_id         => metaId,
+  :description         => "Ces araignées vivent dans les zones volcaniques et peuvent cracher de la lave. Leur venin est très douloureux et peut causer des brûlures."
+)
+creature102.save!
+p "creature Araignées de lave created!"
+
+creature103 = Creature.new(
+  :name                => "Sangsues géantes",
+  :lvl                 => 3,
+  :universe_id         => metaId,
+  :description         => "Ces sangsues ont grandi de manière démesurée et peuvent vider un joueur de toute son énergie en quelques minutes. Elles se cachent souvent dans l'eau et attaquent par surprise."
+)
+creature103.save!
+p "creature Sangsues géantes created!"
+
+creature104 = Creature.new(
+  :name               => "Crapauds mutants",
+  :lvl                => 3,
+  :universe_id        => metaId,
+  :description        => "Ces crapauds ont muté à cause des radiations et ont développé des pouvoirs psychiques. Ils peuvent contrôler l'esprit de leurs victimes et les forcer à attaquer leurs alliés."
+)
+creature104.save!
+p "creature Crapauds mutants created!"
+
+creature105 = Creature.new(
+  :name               => "Mouches à viande",
+  :lvl                => 2,
+  :universe_id        => metaId,
+  :description        => "Ces mouches sont attirées par la viande et peuvent rapidement recouvrir un cadavre. Elles peuvent pondre des œufs dans les plaies ouvertes et causer des infections."
+)
+creature105.save!
+p "creature Mouches à viande created!"
+
+creature106 = Creature.new(
+  :name               => "Fourmis géantes",
+  :lvl                => 4,
+  :universe_id        => metaId,
+  :description        => "Ces fourmis ont grandi de manière démesurée et peuvent soulever des objets plusieurs fois leur poids. Elles attaquent en groupe et peuvent rapidement submerger un joueur."
+)
+creature106.save!
+p "creature Fourmis géantes created!"
+
+creature107 = Creature.new(
+  :name               => "Guêpes assassines",
+  :lvl                => 5,
+  :universe_id        => metaId,
+  :description        => "Ces guêpes sont très agressives et attaquent en essaim. Leur venin est mortel et peut tuer un joueur en quelques secondes."
+)
+creature107.save!
+p "creature Guêpes assassines created!"
+
+creature108 = Creature.new(
+  :name               => "Cafards mutants",
+  :lvl                => 3,
+  :universe_id        => metaId,
+  :description        => "Ces cafards ont muté à cause des radiations et sont devenus très résistants. Ils peuvent survivre dans des conditions extrêmes et sont très difficiles à tuer."
+)
+creature108.save!
+p "creature Cafards mutants created!"
+
+creature109 = Creature.new(
+  :name               => "Moustiques tueurs",
+  :lvl                => 2,
+  :universe_id        => metaId,
+  :description        => "Ces moustiques sont porteurs d'un virus mortel qui peut tuer un joueur en quelques jours. Ils attaquent en groupe et peuvent rapidement infecter toute une région."
+)
+creature109.save!
+p "creature Moustiques tueurs created!"
+
+creature110 = Creature.new(
+  :name               => "Araignées de glace",
+  :lvl                => 4,
+  :universe_id        => metaId,
+  :description        => "Ces araignées vivent dans les zones froides et peuvent geler leurs victimes avec leur venin. Elles sont très rapides et attaquent en groupe."
+)
+creature110.save!
+p "creature Araignées de glace created!"
+
 p "Finished! #{Creature.count} creatures created!"
 
 p "#############################################"
@@ -1684,7 +1864,7 @@ archerId = archer.id
 p "job #{archer.name} created!"
 
 thief = Job.new(
-  :name         => "thief",
+  :name         => "voleur",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1694,7 +1874,7 @@ thiefId = thief.id
 p "job #{thief.name} created!"
 
 priest = Job.new(
-  :name         => "priest",
+  :name         => "prêtre",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1704,7 +1884,7 @@ priestId = priest.id
 p "job #{priest.name} created!"
 
 warrior = Job.new(
-  :name         => "warrior",
+  :name         => "guerrier",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1734,7 +1914,7 @@ mage_midId = mage_mid.id
 p "job #{mage_mid.name} created!"
 
 rogue = Job.new(
-  :name         => "rogue",
+  :name         => "roublard",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1744,7 +1924,7 @@ rogueId = rogue.id
 p "job #{rogue.name} created!"
 
 cleric = Job.new(
-  :name         => "cleric",
+  :name         => "guérisseur",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1754,7 +1934,7 @@ clericId = cleric.id
 p "job #{cleric.name} created!"
 
 bard = Job.new(
-  :name         => "bard",
+  :name         => "barde",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1764,7 +1944,7 @@ bardId = bard.id
 p "job #{bard.name} created!"
 
 druid = Job.new(
-  :name         => "druid",
+  :name         => "druide",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1794,7 +1974,7 @@ rangerId = ranger.id
 p "job #{ranger.name} created!"
 
 monk = Job.new(
-  :name         => "monk",
+  :name         => "moine",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1804,7 +1984,7 @@ monkId = monk.id
 p "job #{monk.name} created!"
 
 warlock = Job.new(
-  :name         => "warlock",
+  :name         => "sorcier",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1814,7 +1994,7 @@ warlockId = warlock.id
 p "job #{warlock.name} created!"
 
 barbarian = Job.new(
-  :name         => "barbarian",
+  :name         => "barbare",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1824,7 +2004,7 @@ barbarianId = barbarian.id
 p "job #{barbarian.name} created!"
 
 sorcerer = Job.new(
-  :name         => "sorcerer",
+  :name         => "sorcier",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1834,7 +2014,7 @@ sorcererId = sorcerer.id
 p "job #{sorcerer.name} created!"
 
 fighter = Job.new(
-  :name         => "fighter",
+  :name         => "combattant",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1844,7 +2024,7 @@ fighterId = fighter.id
 p "job #{fighter.name} created!"
 
 artificer = Job.new(
-  :name         => "artificer",
+  :name         => "artificier",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1854,7 +2034,7 @@ artificerId = artificer.id
 p "job #{artificer.name} created!"
 
 alchemist = Job.new(
-  :name         => "alchemist",
+  :name         => "alchemiste",
   :weaponized   => "true",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1864,7 +2044,7 @@ alchemistId = alchemist.id
 p "job #{alchemist.name} created!"
 
 inventor = Job.new(
-  :name         => "inventor",
+  :name         => "inventeur",
   :weaponized   => "false",
   :weapon_range => "long",
   :universe_id  => metaId,
@@ -1875,7 +2055,7 @@ p "job #{inventor.name} created!"
 
 
 marchand = Job.new(
-  :name         => "merchant",
+  :name         => "commerçant",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1885,7 +2065,7 @@ marchandId = marchand.id
 p "job #{marchand.name} created!"
 
 infiermer = Job.new(
-  :name         => "nurse",
+  :name         => "infirmière",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1905,7 +2085,7 @@ barmanId = barman.id
 p "job #{barman.name} created!"
 
 military = Job.new(
-  :name         => "military",
+  :name         => "militaire",
   :weaponized   => "true",
   :weapon_range => "mid",
   :universe_id  => metaId,
@@ -1915,7 +2095,7 @@ militaryId = military.id
 p "job #{military.name} created!"
 
 military_cac = Job.new(
-  :name         => "military",
+  :name         => "militaire",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1935,7 +2115,7 @@ tavernierId = tavernier.id
 p "job #{tavernier.name} created!"
 
 prostituee = Job.new(
-  :name         => "prostitute",
+  :name         => "prostituée",
   :weaponized   => "false",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -1945,7 +2125,7 @@ prostitueeId = prostituee.id
 p "job #{prostituee.name} created!"
 
 weaponseller = Job.new(
-  :name         => "weapon seller",
+  :name         => "marchand",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => metaId,
@@ -2007,7 +2187,7 @@ survivorId = survivor.id
 p "job #{survivor.name} created!"
 
 bountyhunter = Job.new(
-  :name         => "Chasseur de prime",
+  :name         => "Chasseur",
   :weaponized   => "true",
   :weapon_range => "cac",
   :universe_id  => postApocalypticId,
