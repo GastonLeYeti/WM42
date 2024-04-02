@@ -24,21 +24,16 @@ class PartiesController < ApplicationController
     @party = Party.new(party_params)
     @party.name = party_params[:name]
     @party.user_id = current_user.id
-    @universe = Universe.find_by_id(@party.universe_id)
-    @party.universe_id = @universe.id
-    @party.universe_id = party_params[:universe_id]
-    @universe.id = @party.universe_id
+    @universe = Universe.find(party_params[:universe_id])
+    @party.universe = @universe
 
     generate_bible(@party)
 
-    if @party.party_size == "petite"
-      party_generator_sized = 10
-    elsif @party.party_size == "moyenne"
-      party_generator_sized = 30
-    elsif @party.party_size == "grande"
-      party_generator_sized = 50
-    else
-      party_generator_sized = 50
+    party_generator_sized = case @party.party_size
+      when "petite" then 10
+      when "moyenne" then 30
+      when "grande" then 50
+      else 50
     end
 
     if @party.save!
@@ -92,7 +87,7 @@ class PartiesController < ApplicationController
 
     token = ENV['OPENAI_API_KEY']
     client = OpenAI::Client.new(access_token: token)
-    prompt = "Je voudrais que tu rédiges une introduction détaillée et immersive pour une partie de jeu de rôle dans un monde appelé #{party.name}.
+    prompt = "Rédiges une introduction détaillée et immersive pour une partie de jeu de rôle dans un monde appelé #{party.name}.
     Ce monde est habité par des #{party.races.join(', ')}.
     La géographie de la carte est principalement composée de #{party.geography[0]} #{(party.geography[1].present? ? "et de #{party.geography[1]}" : " ")}.
 
@@ -113,7 +108,7 @@ class PartiesController < ApplicationController
 
     Rédiger le texte dans un style narratif, avec beaucoup d'humour en français."
 
-    p prompt
+    # p prompt
 
     response = client.chat(
       parameters: {
@@ -122,11 +117,9 @@ class PartiesController < ApplicationController
         temperature: 0.3,
       })
 
-    p response
+    # p response
 
     reponse_full = response.dig("choices", 0, "message", "content")
-
-    # on remplace dans la réponse les \n\n par des <br><br> pour que le texte soit bien affiché en html
     reponse_full = reponse_full.gsub("\n\n", "<br><br>")
 
     party.bible = reponse_full
